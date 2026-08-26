@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" class="dark theme-teal">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Oyewole Toluwalase — Frontend Developer</title>
+    <meta
+      name="description"
+      content="Frontend developer building accessible, human-centered web and Web3 products with React, TypeScript and Tailwind CSS."
+    />
+    <meta name="author" content="Oyewole Toluwalase" />
+    <link rel="canonical" href="https://tolex-tech.lovable.app/" />
+    <meta name="theme-color" content="#0c0e12" />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:title" content="Oyewole Toluwalase — Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Frontend developer building accessible, human-centered web and Web3 products with React, TypeScript and Tailwind CSS."
+    />
+    <meta property="og:url" content="https://tolex-tech.lovable.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://tolex-tech.lovable.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Oyewole Toluwalase — I build things for the web." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Oyewole Toluwalase — Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Frontend developer building accessible, human-centered web and Web3 products."
+    />
+    <meta name="twitter:image" content="https://tolex-tech.lovable.app/og-image.png" />
+    <meta name="twitter:creator" content="@oyetoludan01" />
+
+    <!-- Fonts moved out of index.css: an @import there chains an extra
+         round-trip behind the stylesheet before any text can paint. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+
+    <!-- Applies the stored theme before first paint, otherwise every visitor
+         sees a flash of the default theme while React boots. -->
+    <script>
+      (function () {
+        try {
+          var modes = ["dark", "light"];
+          var themes = ["teal", "purple", "amber"];
+          var mode = localStorage.getItem("theme-mode");
+          var color = localStorage.getItem("color-theme");
+
+          if (modes.indexOf(mode) === -1) {
+            mode = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+          }
+          if (themes.indexOf(color) === -1) color = "teal";
+
+          var root = document.documentElement;
+          root.classList.remove("dark", "light");
+          root.classList.remove("theme-teal", "theme-purple", "theme-amber");
+          root.classList.add(mode, "theme-" + color);
+          root.style.colorScheme = mode;
+        } catch (e) {
+          /* storage blocked — the default classes on <html> already apply */
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

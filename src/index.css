@@ -1,0 +1,495 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts are loaded via <link> in index.html — an @import here would chain an
+   extra render-blocking request behind this stylesheet. */
+
+/* Design System - Multi-Theme Portfolio */
+
+@layer base {
+  /* ===== TEAL THEME ===== */
+  
+  /* Teal Dark (Default) */
+  :root,
+  .dark.theme-teal {
+    --background: 220 20% 6%;
+    --foreground: 210 20% 95%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 174 72% 50%;
+    --primary-foreground: 220 20% 6%;
+    /* Accent color used for TEXT. On dark backgrounds the vivid primary
+       already clears WCAG AA, so it is the same value here. */
+    --primary-strong: 174 72% 50%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 174 72% 50%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 174 72% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Portfolio Variables */
+    --gradient-primary: linear-gradient(135deg, hsl(174 72% 50%), hsl(190 80% 45%));
+    --gradient-hero: linear-gradient(180deg, hsl(220 20% 6%) 0%, hsl(220 18% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 18% 12%), hsl(220 18% 8%));
+    --gradient-glow: radial-gradient(circle at center, hsl(174 72% 50% / 0.15), transparent 70%);
+    
+    --shadow-glow: 0 0 40px hsl(174 72% 50% / 0.15);
+    --shadow-card: 0 4px 20px hsl(220 20% 4% / 0.5);
+    --shadow-elevated: 0 8px 32px hsl(220 20% 4% / 0.6);
+
+    /* Sidebar defaults */
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 174 72% 50%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 174 72% 50%;
+  }
+
+  /* Teal Light */
+  .light.theme-teal {
+    --background: 180 20% 98%;
+    --foreground: 220 20% 10%;
+
+    --card: 180 15% 95%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 180 15% 95%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 174 72% 40%;
+    --primary-foreground: 180 20% 98%;
+    /* Teal at 40% only reaches 2.5:1 on a near-white page — too pale to read. */
+    --primary-strong: 174 72% 28%;
+
+    --secondary: 180 10% 90%;
+    --secondary-foreground: 220 15% 20%;
+
+    --muted: 180 10% 92%;
+    --muted-foreground: 220 12% 38%;
+
+    --accent: 174 72% 40%;
+    --accent-foreground: 180 20% 98%;
+
+    --destructive: 0 84.2% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 180 10% 85%;
+    --input: 180 10% 85%;
+    --ring: 174 72% 40%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(174 72% 40%), hsl(190 80% 35%));
+    --gradient-hero: linear-gradient(180deg, hsl(180 20% 98%) 0%, hsl(180 15% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(180 15% 97%), hsl(180 15% 93%));
+    --gradient-glow: radial-gradient(circle at center, hsl(174 72% 40% / 0.1), transparent 70%);
+    
+    --shadow-glow: 0 0 40px hsl(174 72% 40% / 0.1);
+    --shadow-card: 0 4px 20px hsl(220 20% 80% / 0.3);
+    --shadow-elevated: 0 8px 32px hsl(220 20% 80% / 0.4);
+
+    --sidebar-background: 180 15% 95%;
+    --sidebar-foreground: 220 20% 10%;
+    --sidebar-primary: 174 72% 40%;
+    --sidebar-primary-foreground: 180 20% 98%;
+    --sidebar-accent: 180 10% 90%;
+    --sidebar-accent-foreground: 220 15% 20%;
+    --sidebar-border: 180 10% 85%;
+    --sidebar-ring: 174 72% 40%;
+  }
+
+  /* ===== PURPLE THEME ===== */
+
+  /* Purple Dark */
+  .dark.theme-purple {
+    --background: 270 25% 6%;
+    --foreground: 270 15% 95%;
+
+    --card: 270 20% 10%;
+    --card-foreground: 270 15% 95%;
+
+    --popover: 270 20% 10%;
+    --popover-foreground: 270 15% 95%;
+
+    --primary: 270 70% 55%;
+    --primary-foreground: 270 25% 6%;
+    --primary-strong: 270 70% 65%;
+
+    --secondary: 270 15% 15%;
+    --secondary-foreground: 270 15% 90%;
+
+    --muted: 270 15% 18%;
+    --muted-foreground: 270 10% 55%;
+
+    --accent: 270 70% 55%;
+    --accent-foreground: 270 25% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 15% 18%;
+    --input: 270 15% 18%;
+    --ring: 270 70% 55%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(270 70% 55%), hsl(290 75% 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(270 25% 6%) 0%, hsl(270 20% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(270 20% 12%), hsl(270 20% 8%));
+    --gradient-glow: radial-gradient(circle at center, hsl(270 70% 55% / 0.15), transparent 70%);
+    
+    --shadow-glow: 0 0 40px hsl(270 70% 55% / 0.15);
+    --shadow-card: 0 4px 20px hsl(270 25% 4% / 0.5);
+    --shadow-elevated: 0 8px 32px hsl(270 25% 4% / 0.6);
+
+    --sidebar-background: 270 20% 10%;
+    --sidebar-foreground: 270 15% 95%;
+    --sidebar-primary: 270 70% 55%;
+    --sidebar-primary-foreground: 270 25% 6%;
+    --sidebar-accent: 270 15% 15%;
+    --sidebar-accent-foreground: 270 15% 90%;
+    --sidebar-border: 270 15% 18%;
+    --sidebar-ring: 270 70% 55%;
+  }
+
+  /* Purple Light */
+  .light.theme-purple {
+    --background: 270 20% 98%;
+    --foreground: 270 25% 10%;
+
+    --card: 270 15% 95%;
+    --card-foreground: 270 25% 10%;
+
+    --popover: 270 15% 95%;
+    --popover-foreground: 270 25% 10%;
+
+    --primary: 270 70% 50%;
+    --primary-foreground: 270 20% 98%;
+    --primary-strong: 270 70% 45%;
+
+    --secondary: 270 10% 90%;
+    --secondary-foreground: 270 15% 20%;
+
+    --muted: 270 10% 92%;
+    --muted-foreground: 270 12% 38%;
+
+    --accent: 270 70% 50%;
+    --accent-foreground: 270 20% 98%;
+
+    --destructive: 0 84.2% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 10% 85%;
+    --input: 270 10% 85%;
+    --ring: 270 70% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(270 70% 50%), hsl(290 75% 45%));
+    --gradient-hero: linear-gradient(180deg, hsl(270 20% 98%) 0%, hsl(270 15% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(270 15% 97%), hsl(270 15% 93%));
+    --gradient-glow: radial-gradient(circle at center, hsl(270 70% 50% / 0.1), transparent 70%);
+    
+    --shadow-glow: 0 0 40px hsl(270 70% 50% / 0.1);
+    --shadow-card: 0 4px 20px hsl(270 20% 80% / 0.3);
+    --shadow-elevated: 0 8px 32px hsl(270 20% 80% / 0.4);
+
+    --sidebar-background: 270 15% 95%;
+    --sidebar-foreground: 270 25% 10%;
+    --sidebar-primary: 270 70% 50%;
+    --sidebar-primary-foreground: 270 20% 98%;
+    --sidebar-accent: 270 10% 90%;
+    --sidebar-accent-foreground: 270 15% 20%;
+    --sidebar-border: 270 10% 85%;
+    --sidebar-ring: 270 70% 50%;
+  }
+
+  /* ===== AMBER THEME ===== */
+
+  /* Amber Dark */
+  .dark.theme-amber {
+    --background: 30 25% 6%;
+    --foreground: 40 20% 95%;
+
+    --card: 30 20% 10%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 30 20% 10%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 38 92% 50%;
+    --primary-foreground: 30 25% 6%;
+    --primary-strong: 38 92% 55%;
+
+    --secondary: 30 15% 15%;
+    --secondary-foreground: 40 15% 90%;
+
+    --muted: 30 15% 18%;
+    --muted-foreground: 30 10% 55%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 30 25% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 15% 18%;
+    --input: 30 15% 18%;
+    --ring: 38 92% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(38 92% 50%), hsl(25 95% 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(30 25% 6%) 0%, hsl(30 20% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(30 20% 12%), hsl(30 20% 8%));
+    --gradient-glow: radial-gradient(circle at center, hsl(38 92% 50% / 0.15), transparent 70%);
+    
+    --shadow-glow: 0 0 40px hsl(38 92% 50% / 0.15);
+    --shadow-card: 0 4px 20px hsl(30 25% 4% / 0.5);
+    --shadow-elevated: 0 8px 32px hsl(30 25% 4% / 0.6);
+
+    --sidebar-background: 30 20% 10%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 30 25% 6%;
+    --sidebar-accent: 30 15% 15%;
+    --sidebar-accent-foreground: 40 15% 90%;
+    --sidebar-border: 30 15% 18%;
+    --sidebar-ring: 38 92% 50%;
+  }
+
+  /* Amber Light */
+  .light.theme-amber {
+    --background: 45 30% 98%;
+    --foreground: 30 25% 10%;
+
+    --card: 45 25% 95%;
+    --card-foreground: 30 25% 10%;
+
+    --popover: 45 25% 95%;
+    --popover-foreground: 30 25% 10%;
+
+    --primary: 38 92% 45%;
+    --primary-foreground: 45 30% 98%;
+    /* Amber is the worst offender on white — 2.4:1 before darkening. */
+    --primary-strong: 38 92% 30%;
+
+    --secondary: 45 15% 90%;
+    --secondary-foreground: 30 15% 20%;
+
+    --muted: 45 15% 92%;
+    --muted-foreground: 30 12% 38%;
+
+    --accent: 38 92% 45%;
+    --accent-foreground: 45 30% 98%;
+
+    --destructive: 0 84.2% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 45 15% 85%;
+    --input: 45 15% 85%;
+    --ring: 38 92% 45%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(38 92% 45%), hsl(25 95% 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(45 30% 98%) 0%, hsl(45 25% 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(45 25% 97%), hsl(45 25% 93%));
+    --gradient-glow: radial-gradient(circle at center, hsl(38 92% 45% / 0.1), transparent 70%);
+    
+    --shadow-glow: 0 0 40px hsl(38 92% 45% / 0.1);
+    --shadow-card: 0 4px 20px hsl(30 20% 80% / 0.3);
+    --shadow-elevated: 0 8px 32px hsl(30 20% 80% / 0.4);
+
+    --sidebar-background: 45 25% 95%;
+    --sidebar-foreground: 30 25% 10%;
+    --sidebar-primary: 38 92% 45%;
+    --sidebar-primary-foreground: 45 30% 98%;
+    --sidebar-accent: 45 15% 90%;
+    --sidebar-accent-foreground: 30 15% 20%;
+    --sidebar-border: 45 15% 85%;
+    --sidebar-ring: 38 92% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Honour the OS "reduce motion" setting across the whole site. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glass {
+    @apply backdrop-blur-xl bg-card/80 border border-border/50;
+  }
+
+  .glass-strong {
+    @apply backdrop-blur-2xl bg-card/90 border border-border/60;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--card));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.4);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/*
+ * The starting opacity lives here rather than as a separate `opacity-0` class.
+ * These are plain CSS classes, not Tailwind utilities, so `motion-safe:` and
+ * friends cannot be applied to them — pairing them with a Tailwind opacity
+ * utility left the content permanently invisible when the variant didn't match.
+ */
+.animate-slide-up {
+  opacity: 0;
+  animation: slide-up 0.6s ease-out forwards;
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Reduced motion: show everything immediately, never animate it in. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-up,
+  .animate-fade-in {
+    opacity: 1;
+    animation: none;
+  }
+
+  .animate-float,
+  .animate-pulse-glow {
+    animation: none;
+  }
+}
+
+/* Animation delays for staggered effects */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
