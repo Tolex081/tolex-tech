@@ -64,7 +64,16 @@ const ProjectsSection = () => {
                   </button>
                 </div>
 
-                <div className={`lg:col-span-5 ${flipped ? "lg:order-1 lg:pr-4" : "lg:-ml-16 relative z-10"}`}>
+                {/*
+                  The text column overlaps the cover from whichever side it sits
+                  on, so alternating rows mirror each other instead of only the
+                  even ones overlapping.
+                */}
+                <div
+                  className={`lg:col-span-5 relative z-10 ${
+                    flipped ? "lg:order-1 lg:-mr-16" : "lg:-ml-16"
+                  }`}
+                >
                   <p className="text-primary-strong font-mono text-sm mb-2">Featured Project</p>
                   <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">{project.title}</h3>
                   <div className="glass rounded-xl p-5 mb-4">
