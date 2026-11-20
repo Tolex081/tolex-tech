@@ -1,25 +1,17 @@
-export const COLOR_THEMES = ["teal", "purple", "amber"] as const;
+/*
+ * The site has one colour theme drawn in two lights. Only the mode is a
+ * choice; the old teal / purple / amber palettes are gone.
+ */
 export const MODES = ["dark", "light"] as const;
 
-export type ColorTheme = (typeof COLOR_THEMES)[number];
 export type Mode = (typeof MODES)[number];
 
 export const MODE_KEY = "theme-mode";
-export const COLOR_KEY = "color-theme";
-
-export const DEFAULT_COLOR_THEME: ColorTheme = "teal";
-
-export const colorThemeOptions: { id: ColorTheme; label: string; swatch: string }[] = [
-  { id: "teal", label: "Teal", swatch: "bg-[hsl(174,72%,50%)]" },
-  { id: "purple", label: "Purple", swatch: "bg-[hsl(270,70%,55%)]" },
-  { id: "amber", label: "Amber", swatch: "bg-[hsl(38,92%,50%)]" },
-];
+/** Left over from the multi-palette version; cleared on load. */
+export const LEGACY_COLOR_KEY = "color-theme";
 
 export const isMode = (value: unknown): value is Mode =>
   typeof value === "string" && (MODES as readonly string[]).includes(value);
-
-export const isColorTheme = (value: unknown): value is ColorTheme =>
-  typeof value === "string" && (COLOR_THEMES as readonly string[]).includes(value);
 
 /** localStorage throws in some privacy modes, so every access is guarded. */
 export const readStored = (key: string): string | null => {
@@ -38,16 +30,29 @@ export const writeStored = (key: string, value: string) => {
   }
 };
 
-/** Falls back to the OS preference rather than assuming dark. */
-export const systemMode = (): Mode => {
-  if (typeof window === "undefined" || !window.matchMedia) return "dark";
-  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+export const removeStored = (key: string) => {
+  try {
+    window.localStorage.removeItem(key);
+  } catch {
+    /* nothing to clean up */
+  }
 };
 
-export const applyTheme = (mode: Mode, colorTheme: ColorTheme) => {
+/** Falls back to the OS preference rather than assuming a mode. */
+export const systemMode = (): Mode => {
+  if (typeof window === "undefined" || !window.matchMedia) return "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+};
+
+export const THEME_COLORS: Record<Mode, string> = {
+  light: "#ecedea",
+  dark: "#131415",
+};
+
+export const applyTheme = (mode: Mode) => {
   const root = document.documentElement;
   root.classList.remove(...MODES);
-  root.classList.remove(...COLOR_THEMES.map((theme) => `theme-${theme}`));
-  root.classList.add(mode, `theme-${colorTheme}`);
+  root.classList.add(mode);
   root.style.colorScheme = mode;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute("content", THEME_COLORS[mode]);
 };

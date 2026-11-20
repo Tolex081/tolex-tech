@@ -5,8 +5,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { ExternalLink, Github } from "lucide-react";
-import ProjectCover from "@/components/ProjectCover";
+import { InkLink } from "@/components/Ink";
 import type { Project } from "@/data/projects";
 
 interface Props {
@@ -15,25 +14,26 @@ interface Props {
   onOpenChange: (open: boolean) => void;
 }
 
+/** Only opened for projects with a real screenshot or deployment to show. */
 const ProjectPreviewModal = ({ project, open, onOpenChange }: Props) => {
   if (!project) return null;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl w-[95vw] max-h-[90vh] overflow-y-auto glass">
-        <DialogHeader>
-          <DialogTitle className="text-foreground text-xl">{project.title}</DialogTitle>
-          <DialogDescription className="text-muted-foreground">
+      <DialogContent className="max-h-[90vh] w-[95vw] max-w-4xl overflow-y-auto border-border bg-background p-6 sm:p-8">
+        <DialogHeader className="text-left">
+          <DialogTitle className="text-[1.75rem] font-light stretch-wide">{project.title}</DialogTitle>
+          <DialogDescription className="font-serif text-[1.0625rem] text-muted-foreground">
             {project.description}
           </DialogDescription>
         </DialogHeader>
 
-        <div className="relative w-full aspect-video rounded-lg overflow-hidden border border-border bg-secondary/40">
+        <div className="relative aspect-video w-full border border-border">
           {project.live ? (
             <iframe
               src={project.live}
               title={`${project.title} live preview`}
-              className="w-full h-full"
+              className="h-full w-full"
               loading="lazy"
               /* No allow-same-origin: combined with allow-scripts it would let the
                  framed page escape the sandbox entirely. */
@@ -48,39 +48,20 @@ const ProjectPreviewModal = ({ project, open, onOpenChange }: Props) => {
               height={450}
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
             />
-          ) : (
-            <ProjectCover title={project.title} tech={project.tech} />
-          )}
+          ) : null}
         </div>
 
-        <ul className="flex flex-wrap gap-2 font-mono text-xs text-muted-foreground">
-          {project.tech.map((tech) => (
-            <li key={tech} className="px-2 py-1 rounded-md bg-secondary/60">
-              {tech}
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex flex-wrap gap-4 pt-2">
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary-strong"
-          >
-            <Github size={18} aria-hidden="true" /> View code
-          </a>
+        <div className="flex flex-wrap items-baseline gap-x-8 gap-y-3 font-sans text-[0.875rem]">
+          <p className="text-muted-foreground">{project.tech.join(" / ")}</p>
+          <InkLink href={project.github} target="_blank" rel="noopener noreferrer" tone="accent" arrow="out">
+            View code
+          </InkLink>
           {project.live && (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary-strong"
-            >
-              <ExternalLink size={18} aria-hidden="true" /> Open live demo
-            </a>
+            <InkLink href={project.live} target="_blank" rel="noopener noreferrer" tone="accent" arrow="out">
+              Open live demo
+            </InkLink>
           )}
         </div>
       </DialogContent>
