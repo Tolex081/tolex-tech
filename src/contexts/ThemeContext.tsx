@@ -1,25 +1,21 @@
 import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
 import {
   applyTheme,
-  COLOR_KEY,
-  DEFAULT_COLOR_THEME,
-  isColorTheme,
   isMode,
+  LEGACY_COLOR_KEY,
   MODE_KEY,
   readStored,
+  removeStored,
   systemMode,
   writeStored,
-  type ColorTheme,
   type Mode,
 } from "@/lib/theme";
 
-export type { ColorTheme, Mode };
+export type { Mode };
 
 interface ThemeContextType {
   mode: Mode;
-  colorTheme: ColorTheme;
   setMode: (mode: Mode) => void;
-  setColorTheme: (theme: ColorTheme) => void;
   toggleMode: () => void;
 }
 
@@ -34,43 +30,42 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [mode, setMode] = useState<Mode>(() => {
+  const [mode, setModeState] = useState<Mode>(() => {
     const stored = readStored(MODE_KEY);
     return isMode(stored) ? stored : systemMode();
   });
-
-  const [colorTheme, setColorTheme] = useState<ColorTheme>(() => {
-    const stored = readStored(COLOR_KEY);
-    return isColorTheme(stored) ? stored : DEFAULT_COLOR_THEME;
-  });
+  // Only remember the mode once the visitor actually picks one.
+  const [chosen, setChosen] = useState(() => isMode(readStored(MODE_KEY)));
 
   useEffect(() => {
-    writeStored(MODE_KEY, mode);
-    writeStored(COLOR_KEY, colorTheme);
-    applyTheme(mode, colorTheme);
-  }, [mode, colorTheme]);
+    removeStored(LEGACY_COLOR_KEY);
+  }, []);
+
+  useEffect(() => {
+    applyTheme(mode);
+    if (chosen) writeStored(MODE_KEY, mode);
+  }, [mode, chosen]);
 
   // Follow the OS until the visitor makes an explicit choice.
   useEffect(() => {
-    if (isMode(readStored(MODE_KEY))) return;
-    if (!window.matchMedia) return;
-
-    const query = window.matchMedia("(prefers-color-scheme: light)");
-    const onChange = (event: MediaQueryListEvent) => setMode(event.matches ? "light" : "dark");
+    if (chosen || !window.matchMedia) return;
+    const query = window.matchMedia("(prefers-color-scheme: dark)");
+    const onChange = (event: MediaQueryListEvent) => setModeState(event.matches ? "dark" : "light");
     query.addEventListener("change", onChange);
     return () => query.removeEventListener("change", onChange);
+  }, [chosen]);
+
+  const setMode = useCallback((next: Mode) => {
+    setChosen(true);
+    setModeState(next);
   }, []);
 
-  const toggleMode = useCallback(
-    () => setMode((prev) => (prev === "dark" ? "light" : "dark")),
-    []
-  );
+  const toggleMode = useCallback(() => {
+    setChosen(true);
+    setModeState((prev) => (prev === "dark" ? "light" : "dark"));
+  }, []);
 
   return (
-    <ThemeContext.Provider
-      value={{ mode, colorTheme, setMode, setColorTheme, toggleMode }}
-    >
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={{ mode, setMode, toggleMode }}>{children}</ThemeContext.Provider>
   );
 };

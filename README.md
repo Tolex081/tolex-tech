@@ -63,7 +63,7 @@ to update the site:
   tech: ["React", "TypeScript"],
   github: "https://github.com/Tolex081/my-project",
   live: "https://my-project.vercel.app",  // omit if not deployed
-  image: myScreenshot,                     // omit for a themed cover
+  image: myScreenshot,                     // omit until you have a real one
 }
 ```
 
@@ -71,25 +71,33 @@ Two deliberate rules:
 
 - **`live` is optional.** Leave it out and the "live demo" link is hidden
   instead of quietly pointing back at the repo.
-- **`image` is optional.** Without it a theme-aware cover renders. Add a real
-  screenshot (`src/assets/projects/…`) when you have one — never a stock photo.
+- **`image` is optional.** The Preview button only appears once a project has
+  a real screenshot (`src/assets/projects/…`) or a live URL — never a stock photo.
 
-## Theming
+## Design
 
-Three color themes (teal, purple, amber) × light/dark, all driven by CSS custom
-properties in `src/index.css`. The visitor's choice is stored in `localStorage`
-and applied by a small inline script in `index.html` *before* first paint, so
-there's no theme flash.
+One calm theme (sleeve-board grey, graphite ink, one cobalt accent) in light
+and dark, driven by CSS custom properties in `src/index.css`. Structure comes
+from space, type and hairline rules only: no cards, gradients or shadows.
+Fonts are Archivo (wide display) and Brygada 1918 (prose), self-hosted via
+`@fontsource-variable`.
 
-To add a theme: define `.dark.theme-<name>` and `.light.theme-<name>` blocks in
-`src/index.css`, then add the name to `COLOR_THEMES` and `colorThemeOptions` in
-`src/lib/theme.ts`.
+- Light/dark follows the OS until the visitor picks one; the choice is stored
+  in `localStorage` and applied by an inline script in `index.html` before
+  first paint, so there's no flash.
+- Every link and button uses `InkLink` / `InkButton` (`src/components/Ink.tsx`)
+  for the shared Motion hover.
+- The one scroll animation (GSAP ScrollTrigger) is the playhead in the
+  Projects tracklist (`src/components/ProjectsSection.tsx`).
+
+`PRODUCT.md` and `DESIGN.md` record the product brief and design system.
 
 ## Accessibility
 
 The site aims to stay usable for everyone: skip-to-content link, visible focus
-rings, real anchors for navigation, `aria-current` on the active section, and a
-global `prefers-reduced-motion` override that disables every animation.
+rings, real anchors for navigation, `aria-current` on the active section, 44px
+link hit areas, and `prefers-reduced-motion` respected by Motion, GSAP and the
+dialog (colour feedback stays; movement stops).
 
 Please keep it that way — don't nest interactive elements, and give every
 control an accessible name.

@@ -1,30 +1,27 @@
+import { InkLink } from "@/components/Ink";
 import { socialLinks } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 interface Props {
-  size?: number;
-  variant?: "boxed" | "plain";
   className?: string;
 }
 
-const SocialLinks = ({ size = 20, variant = "boxed", className }: Props) => (
-  <ul className={cn("flex gap-4", className)}>
-    {socialLinks.map((social) => (
-      <li key={social.label}>
-        <a
-          href={social.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={cn(
-            "inline-flex text-muted-foreground transition-colors duration-300 hover:text-primary-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg",
-            variant === "boxed" && "p-3 border border-border hover:border-primary"
-          )}
-          aria-label={social.label}
-        >
-          <social.icon size={size} aria-hidden="true" />
-        </a>
-      </li>
-    ))}
+/** Credits-line socials: set as words, not icon tiles. */
+const SocialLinks = ({ className }: Props) => (
+  <ul className={cn("flex flex-wrap gap-x-6 gap-y-2 font-sans text-[0.875rem]", className)}>
+    {socialLinks.map((social) => {
+      const external = !social.href.startsWith("mailto:");
+      return (
+        <li key={social.label}>
+          <InkLink
+            href={social.href}
+            {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          >
+            {social.label}
+          </InkLink>
+        </li>
+      );
+    })}
   </ul>
 );
 

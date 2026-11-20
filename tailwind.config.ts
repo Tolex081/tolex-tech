@@ -6,17 +6,10 @@ export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ["'Archivo Variable'", "'Archivo'", "system-ui", "sans-serif"],
+        serif: ["'Brygada 1918 Variable'", "'Brygada 1918'", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -24,15 +17,10 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        faint: "hsl(var(--faint))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
-          /*
-           * Use `text-primary-strong` for accent-colored TEXT. The vivid
-           * `--primary` is tuned for fills and borders and drops to ~2.4:1 as
-           * text on the light themes, well under WCAG AA.
-           */
-          strong: "hsl(var(--primary-strong))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -58,53 +46,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "var(--radius)",
+        sm: "var(--radius)",
       },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        "image-tilt": {
-          "0%": { transform: "rotate(-8deg) scale(1)" },
-          "100%": { transform: "rotate(0deg) scale(1.02)" },
-        },
-        "nav-expand": {
-          "0%": { transform: "scale(0.8)", opacity: "0" },
-          "100%": { transform: "scale(1)", opacity: "1" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "image-tilt": "image-tilt 0.4s ease-out forwards",
-        "nav-expand": "nav-expand 0.3s ease-out forwards",
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        /*
-         * `gradient-hero` was also defined here with hardcoded dark colors,
-         * shadowing the theme-aware `.bg-gradient-hero` in index.css. Whichever
-         * won, one theme broke — the CSS variable version is the real one.
-         */
+      maxWidth: {
+        measure: "62ch",
       },
     },
   },

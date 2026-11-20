@@ -3,28 +3,28 @@ import logo from "@/assets/logo.png";
 import SocialLinks from "@/components/SocialLinks";
 import { site } from "@/data/site";
 
+/** The sleeve's bottom credit line. */
 const Footer = () => (
-  /* pb accounts for the floating mobile nav sitting above the fold. */
-  <footer className="py-8 pb-28 md:pb-8 px-4 border-t border-border/50">
-    <div className="container mx-auto max-w-6xl">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-        <SocialLinks variant="plain" size={18} />
+  <footer className="px-4 sm:px-6 lg:px-10">
+    <div className="mx-auto flex max-w-[78rem] flex-col gap-6 border-t border-border py-8 font-sans text-[0.875rem] text-muted-foreground md:flex-row md:items-baseline md:justify-between">
+      <p className="flex items-center gap-2.5">
+        <img
+          src={logo}
+          alt=""
+          width={20}
+          height={20}
+          loading="lazy"
+          decoding="async"
+          className="h-5 w-5 object-contain"
+        />
+        <span className="inline-flex items-center gap-1.5">
+          Built with <Heart className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" /><span className="sr-only">love</span> by {site.name}
+        </span>
+      </p>
 
-        <p className="text-muted-foreground text-sm font-mono flex items-center gap-2">
-          <img
-            src={logo}
-            alt=""
-            width={28}
-            height={28}
-            loading="lazy"
-            decoding="async"
-            className="h-7 w-7 object-contain"
-          />
-          Built with <Heart className="w-4 h-4 text-primary-strong" aria-hidden="true" /> by {site.name}
-        </p>
+      <SocialLinks />
 
-        <p className="text-muted-foreground text-sm font-mono">© {new Date().getFullYear()}</p>
-      </div>
+      <p className="tnum">© {new Date().getFullYear()}</p>
     </div>
   </footer>
 );

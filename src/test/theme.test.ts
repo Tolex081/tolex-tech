@@ -1,11 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import {
-  applyTheme,
-  isColorTheme,
-  isMode,
-  readStored,
-  writeStored,
-} from "@/lib/theme";
+import { applyTheme, isMode, readStored, writeStored } from "@/lib/theme";
 
 describe("theme validation", () => {
   it("rejects values that are not real modes", () => {
@@ -15,12 +9,6 @@ describe("theme validation", () => {
     expect(isMode("banana")).toBe(false);
     expect(isMode(null)).toBe(false);
   });
-
-  it("rejects values that are not real color themes", () => {
-    expect(isColorTheme("teal")).toBe(true);
-    expect(isColorTheme("theme-teal")).toBe(false);
-    expect(isColorTheme(undefined)).toBe(false);
-  });
 });
 
 describe("applyTheme", () => {
@@ -28,19 +16,17 @@ describe("applyTheme", () => {
     document.documentElement.className = "";
   });
 
-  it("sets exactly one mode and one color class", () => {
-    applyTheme("dark", "teal");
-    applyTheme("light", "purple");
+  it("sets exactly one mode class", () => {
+    applyTheme("dark");
+    applyTheme("light");
 
     const classes = [...document.documentElement.classList];
     expect(classes).toContain("light");
     expect(classes).not.toContain("dark");
-    expect(classes).toContain("theme-purple");
-    expect(classes.filter((c) => c.startsWith("theme-"))).toHaveLength(1);
   });
 
   it("keeps colorScheme in sync so form controls match", () => {
-    applyTheme("light", "amber");
+    applyTheme("light");
     expect(document.documentElement.style.colorScheme).toBe("light");
   });
 });

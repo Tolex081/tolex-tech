@@ -1,4 +1,5 @@
 import React from "react";
+import { InkButton } from "@/components/Ink";
 
 interface Props {
   children: React.ReactNode;
@@ -24,21 +25,21 @@ class ErrorBoundary extends React.Component<Props, State> {
     if (!this.state.hasError) return this.props.children;
 
     return (
-      <div className="flex min-h-screen items-center justify-center bg-background px-4">
-        <div className="text-center max-w-md">
-          <h1 className="mb-3 text-2xl font-bold text-foreground">Something went wrong</h1>
-          <p className="mb-6 text-muted-foreground">
+      <main className="flex min-h-screen items-center bg-background px-4 sm:px-6 lg:px-10">
+        <div className="mx-auto w-full max-w-[78rem] border-t border-border pt-10">
+          <h1 className="text-[clamp(2rem,1rem+4vw,3.5rem)] font-light leading-none stretch-wide">
+            Something went wrong
+          </h1>
+          <p className="mt-6 max-w-measure text-[1.125rem] text-muted-foreground">
             Sorry about that. Reloading the page usually sorts it out.
           </p>
-          <button
-            type="button"
-            onClick={() => window.location.reload()}
-            className="px-6 py-3 rounded-lg font-medium bg-primary-strong text-primary-foreground transition-colors hover:bg-primary-strong/90"
-          >
-            Reload page
-          </button>
+          <div className="mt-10 font-sans">
+            <InkButton tone="accent" arrow="right" onClick={() => window.location.reload()}>
+              Reload page
+            </InkButton>
+          </div>
         </div>
-      </div>
+      </main>
     );
   }
 }

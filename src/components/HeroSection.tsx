@@ -1,132 +1,87 @@
-import { useState } from "react";
-import { FileText } from "lucide-react";
 import avatarJpg from "@/assets/avatar.jpg";
 import avatarWebp from "@/assets/avatar.webp";
+import { InkLink } from "@/components/Ink";
 import SocialLinks from "@/components/SocialLinks";
 import { site } from "@/data/site";
 import { scrollToSection } from "@/lib/motion";
 
-const HeroSection = () => {
-  const [isHovered, setIsHovered] = useState(false);
+const [firstName, ...rest] = site.name.split(" ");
+const lastName = rest.join(" ");
 
-  const handleAnchor = (event: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
-    event.preventDefault();
-    scrollToSection(hash);
-  };
+/**
+ * The front of the sleeve: the name set wide and light as one band across
+ * the page, the tagline as the record's title, a short liner note, and the
+ * portrait kept small like a sleeve photograph. Credits run along the
+ * bottom rule at the fold.
+ */
+const HeroSection = () => (
+  <section id="home" aria-labelledby="hero-heading" className="px-4 pt-28 sm:px-6 md:pt-28 lg:px-10">
+    <div className="mx-auto flex min-h-[calc(100svh-7rem)] max-w-[78rem] flex-col">
+      <div className="flex flex-1 flex-col justify-center pb-12 md:pb-14">
+        <h1
+          id="hero-heading"
+          className="text-[clamp(2.6rem,0.5rem+9.4vw,8.75rem)] font-light leading-[0.92] tracking-[-0.03em] stretch-wide"
+        >
+          <span className="block">{firstName}</span>
+          <span className="block">{lastName}</span>
+        </h1>
 
-  return (
-    <section
-      id="home"
-      aria-labelledby="hero-heading"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-hero px-4 pt-24 pb-28 md:pb-20"
-    >
-      {/* Background glow */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] max-w-full bg-primary/5 rounded-full blur-3xl"
-        aria-hidden="true"
-      />
-
-      <div className="container mx-auto max-w-6xl relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text */}
-          <div className="order-2 lg:order-1 text-center lg:text-left">
-            <p className="text-primary-strong font-mono text-sm md:text-base mb-4 animate-slide-up delay-100">
-              Hi, my name is
-            </p>
-            <h1
-              id="hero-heading"
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 animate-slide-up delay-200"
-            >
-              {site.name}
-            </h1>
-            <p className="text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mb-6 animate-slide-up delay-300">
+        <div className="mt-10 grid gap-y-10 md:mt-12 md:grid-cols-12 md:gap-x-8">
+          <div className="md:col-span-8 lg:col-span-7">
+            <p className="font-serif text-[clamp(1.5rem,1.1rem+1.4vw,2.375rem)] italic leading-tight">
               {site.tagline}
             </p>
-            <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto lg:mx-0 mb-8 animate-slide-up delay-400">
-              I'm a <span className="text-primary-strong">Frontend Developer</span> moving into{" "}
-              <span className="text-primary-strong">full-stack</span>, building for the web and for
-              Web3 communities. Currently focused on accessible, human-centered products.
+
+            <p className="mt-5 max-w-[38rem] text-[1.125rem] leading-relaxed text-muted-foreground">
+              Hi — I'm a <span className="text-foreground">Frontend Developer</span> moving into{" "}
+              <span className="text-foreground">full-stack</span>, building for the web and for Web3
+              communities, where thousands of people use what I ship. Currently focused on accessible,
+              human-centered products.
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-slide-up delay-500">
-              <a
+            <div className="mt-8 flex flex-wrap items-baseline gap-x-10 gap-y-4 font-sans text-[1rem]">
+              <InkLink
                 href="#projects"
-                onClick={(event) => handleAnchor(event, "#projects")}
-                className="px-8 py-3 bg-primary-strong text-primary-foreground rounded-lg font-medium transition-colors duration-300 hover:bg-primary-strong/90 glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                tone="accent"
+                arrow="right"
+                onClick={(event) => {
+                  event.preventDefault();
+                  scrollToSection("#projects");
+                }}
               >
-                View My Work
-              </a>
-              <a
-                href={site.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-transparent border-2 border-primary text-primary-strong rounded-lg font-medium transition-colors duration-300 hover:bg-primary-strong hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-              >
-                <FileText className="w-4 h-4" aria-hidden="true" />
+                View my work
+              </InkLink>
+              <InkLink href={site.resumeUrl} target="_blank" rel="noopener noreferrer" tone="accent" arrow="out">
                 Résumé
-              </a>
+              </InkLink>
             </div>
-
-            <SocialLinks
-              className="justify-center lg:justify-start animate-slide-up delay-500"
-              size={20}
-            />
           </div>
 
-          {/* Avatar */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-            <div
-              className="relative"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <div
-                aria-hidden="true"
-                className={`absolute inset-0 border-2 border-primary rounded-2xl translate-x-4 translate-y-4 motion-safe:transition-transform motion-safe:duration-500 ease-out ${
-                  isHovered ? "rotate-0" : "-rotate-[8deg]"
-                }`}
+          <div className="w-36 sm:w-44 md:col-span-3 md:col-start-10 md:w-auto md:max-w-[13rem] md:justify-self-end">
+            <picture>
+              <source srcSet={avatarWebp} type="image/webp" />
+              <img
+                src={avatarJpg}
+                alt={`${site.name}'s avatar — an illustrated character in a blue suit and bow tie`}
+                width={400}
+                height={400}
+                fetchPriority="high"
+                decoding="async"
+                className="aspect-square w-full object-cover"
               />
-              <div
-                className={`relative w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-2xl motion-safe:transition-transform motion-safe:duration-500 ease-out ${
-                  isHovered ? "rotate-0 scale-[1.02]" : "-rotate-[8deg]"
-                }`}
-              >
-                <picture>
-                  <source srcSet={avatarWebp} type="image/webp" />
-                  <img
-                    src={avatarJpg}
-                    alt={`${site.name}'s avatar — an illustrated character in a blue suit and bow tie`}
-                    width={400}
-                    height={400}
-                    fetchPriority="high"
-                    decoding="async"
-                    className="w-full h-full object-cover object-center"
-                  />
-                </picture>
-              </div>
-              <div
-                aria-hidden="true"
-                className={`absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl transition-opacity duration-500 ${
-                  isHovered ? "opacity-100" : "opacity-50"
-                }`}
-              />
-            </div>
+            </picture>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float hidden md:block"
-        aria-hidden="true"
-      >
-        <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center pt-2">
-          <div className="w-1 h-2 bg-primary rounded-full motion-safe:animate-bounce" />
-        </div>
+      <div className="flex flex-col gap-4 border-t border-border py-5 sm:flex-row sm:items-baseline sm:justify-between">
+        <p className="font-sans text-[0.875rem] text-muted-foreground">
+          {site.role} · {site.location}
+        </p>
+        <SocialLinks />
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default HeroSection;
