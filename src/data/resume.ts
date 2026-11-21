@@ -34,6 +34,15 @@ export const experience: Role[] = [
     ],
   },
   {
+    title: "Youth Corps Member (NYSC)",
+    org: "Oyo State Water Corporation, Ibadan",
+    when: "Feb 2024 – Feb 2025",
+    points: [
+      "Supported operation and maintenance of the municipal water supply across the Ibadan metropolis in the Water Engineering Department.",
+      "Ran field inspections and water-quality data collection, and wrote the technical reports from them.",
+    ],
+  },
+  {
     title: "Web3 Community Builder",
     org: "Web3 communities",
     when: "Before 2025",
@@ -41,6 +50,30 @@ export const experience: Role[] = [
       "Built trivia games, badge and card generators and small interactive tools for Web3 communities, used by thousands of members.",
       "Learned to ship fast and design for people who won't read instructions: mobile first, one obvious action, no sign-up wall.",
     ],
+  },
+];
+
+export interface Credential {
+  title: string;
+  from: string;
+  when?: string;
+}
+
+/** Degree first, then certification and membership. Taken from the engineering CV. */
+export const education: Credential[] = [
+  {
+    title: "B.Eng. Water Resources & Environmental Engineering",
+    from: "University of Ilorin",
+    when: "2023",
+  },
+  {
+    title: "HSE Level 1, 2 & 3",
+    from: "World Safety Organization (IACSEET accredited)",
+    when: "2023",
+  },
+  {
+    title: "Graduate Member (GMNSE)",
+    from: "Nigerian Society of Engineers",
   },
 ];
 
