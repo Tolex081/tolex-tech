@@ -3,6 +3,7 @@ import { InkButton, InkLink } from "@/components/Ink";
 import ProjectPreviewModal from "@/components/ProjectPreviewModal";
 import Section from "@/components/Section";
 import { featuredProjects, otherProjects, type Project } from "@/data/projects";
+import { cycleTint, tintClass, type Tint } from "@/lib/tints";
 import { cn } from "@/lib/utils";
 
 interface LinksProps {
@@ -49,28 +50,30 @@ const ProjectLinks = ({ project, onPreview }: LinksProps) => (
 
 interface PlateProps extends LinksProps {
   lead?: boolean;
+  tint: Tint;
 }
 
 /**
- * A featured project mounted like an atlas plate: an outer white mount and a
- * fine inner keyline that hugs the work itself (title, italic caption of
- * what it was built with, description, links). No empty specimen field: once
+ * A featured project mounted like a hand-tinted atlas plate: an outer mount
+ * washed in the project's own light of the day, and a fine keyline in the
+ * same pigment around bare white plate that holds the work itself (title,
+ * italic caption of what it was built with, description, links). No empty specimen field: once
  * a project has a real screenshot it can be mounted here. The lead plate
  * runs the full width; the next two hang as a pair.
  */
-const FeaturedPlate = ({ project, onPreview, lead = false }: PlateProps) => (
-  <li className={cn(lead && "md:col-span-2")}>
-    <article className="h-full rounded-plate bg-plate p-2.5 shadow-plate ring-1 ring-inset ring-border">
+const FeaturedPlate = ({ project, onPreview, lead = false, tint }: PlateProps) => (
+  <li className={cn(tintClass[tint], lead && "md:col-span-2")}>
+    <article className="h-full rounded-plate bg-tint-wash p-2.5 shadow-plate ring-1 ring-inset ring-tint/20">
       <div
         className={cn(
-          "h-full rounded-[0.875rem] p-6 ring-1 ring-inset ring-border sm:p-8",
+          "h-full rounded-[0.875rem] bg-plate p-6 ring-1 ring-inset ring-tint/40 sm:p-8",
           lead && "md:grid md:grid-cols-12 md:items-end md:gap-x-10 md:p-10"
         )}
       >
         <div className={cn(lead && "md:col-span-6")}>
           <h4
             className={cn(
-              "break-words leading-[1.02] tracking-[-0.02em]",
+              "break-words leading-[1.02] tracking-[-0.02em] text-tint",
               lead ? "text-[clamp(2.25rem,1.4rem+3vw,4rem)]" : "text-[clamp(2rem,1.5rem+1.6vw,2.75rem)]"
             )}
           >
@@ -92,10 +95,11 @@ const FeaturedPlate = ({ project, onPreview, lead = false }: PlateProps) => (
   </li>
 );
 
-/** The rest of the work as a strict index: fixed columns, one row each. */
-const IndexRow = ({ project, onPreview }: LinksProps) => (
-  <li className="grid grid-cols-[minmax(0,1fr)] gap-x-10 gap-y-2 border-b border-border py-6 md:grid-cols-[minmax(0,15rem)_1fr_auto] md:items-baseline">
-    <h4 className="text-[1.5rem] leading-tight">{project.title}</h4>
+/** The rest of the work as a strict index: fixed columns, one row each,
+ * each title set in its own light of the day. */
+const IndexRow = ({ project, onPreview, tint }: LinksProps & { tint: Tint }) => (
+  <li className={cn(tintClass[tint], "grid grid-cols-[minmax(0,1fr)] gap-x-10 gap-y-2 border-b border-border py-6 md:grid-cols-[minmax(0,15rem)_1fr_auto] md:items-baseline")}>
+    <h4 className="text-[1.5rem] leading-tight text-tint">{project.title}</h4>
     <div>
       <p className="max-w-measure text-[0.9375rem] text-muted-foreground">{project.description}</p>
       <p className="mt-1.5 text-[0.8125rem] text-faint">
@@ -117,7 +121,13 @@ const ProjectsSection = () => {
       <h3 className="sr-only">Featured projects</h3>
       <ol className="grid grid-cols-[minmax(0,1fr)] gap-6 md:grid-cols-2 md:gap-8">
         {featuredProjects.map((project, index) => (
-          <FeaturedPlate key={project.title} project={project} onPreview={setSelected} lead={index === 0} />
+          <FeaturedPlate
+            key={project.title}
+            project={project}
+            onPreview={setSelected}
+            lead={index === 0}
+            tint={cycleTint(index)}
+          />
         ))}
       </ol>
 
@@ -125,8 +135,13 @@ const ProjectsSection = () => {
         Other noteworthy projects
       </h3>
       <ol className="border-t border-border">
-        {otherProjects.map((project) => (
-          <IndexRow key={project.title} project={project} onPreview={setSelected} />
+        {otherProjects.map((project, index) => (
+          <IndexRow
+            key={project.title}
+            project={project}
+            onPreview={setSelected}
+            tint={cycleTint(index, featuredProjects.length)}
+          />
         ))}
       </ol>
 

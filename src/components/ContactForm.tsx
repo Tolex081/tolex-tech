@@ -153,7 +153,7 @@ const ContactForm = () => {
         </PillButton>
 
         <p role="status" aria-live="polite" className="font-serif text-[1rem] italic text-muted-foreground">
-          {sent ? "Thanks — your message is on its way." : "I usually reply within a day or two."}
+          {sent && "Thanks — your message is on its way."}
         </p>
       </div>
     </form>

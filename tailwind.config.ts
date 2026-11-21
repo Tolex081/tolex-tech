@@ -20,6 +20,11 @@ export default {
         faint: "hsl(var(--faint))",
         plate: "hsl(var(--plate))",
         horizon: "hsl(var(--horizon))",
+        /* The current sky pigment, set by a .tint-<name> class (src/index.css). */
+        tint: {
+          DEFAULT: "hsl(var(--tint, var(--foreground)) / <alpha-value>)",
+          wash: "hsl(var(--tint-wash, var(--muted)) / <alpha-value>)",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

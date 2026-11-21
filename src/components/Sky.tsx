@@ -20,8 +20,10 @@ gsap.registerPlugin(ScrollTrigger);
  *
  * The page's one scroll animation: as the visitor reads down, they descend
  * through the sky. The planes rise past at three different rates and the
- * horizon haze warms in toward the contact section at the foot of the page.
- * Reduced motion holds a still sky with the haze half in.
+ * light passes through a day: rose dawn light over the clouds burns off as
+ * About arrives, and a golden dusk haze rises toward the contact section
+ * at the foot of the page (by night, an aurora fading into a magenta
+ * afterglow). Reduced motion holds a still sky with both half in.
  *
  * Apart from the scroll, each plane drifts sideways on a slow loop, the far
  * haze slowest and the near wisps fastest.
@@ -66,16 +68,20 @@ const Sky = () => {
   const midRef = useRef<HTMLDivElement>(null);
   const nearRef = useRef<HTMLDivElement>(null);
   const hazeRef = useRef<HTMLDivElement>(null);
+  const dawnRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const far = farRef.current;
     const mid = midRef.current;
     const near = nearRef.current;
     const haze = hazeRef.current;
-    if (!far || !mid || !near || !haze) return;
+    const dawn = dawnRef.current;
+    if (!far || !mid || !near || !haze || !dawn) return;
 
+    /* A still sky holds the day at mid-morning: some dawn, some dusk. */
     if (prefersReducedMotion()) {
       haze.style.opacity = "0.5";
+      dawn.style.opacity = "0.5";
       return;
     }
 
@@ -89,7 +95,10 @@ const Sky = () => {
         .to(far, { y: () => -vh() * 0.18 }, 0)
         .to(mid, { y: () => -vh() * 0.55 }, 0)
         .to(near, { y: () => -vh() * 1.25 }, 0)
-        .fromTo(haze, { opacity: 0 }, { opacity: 1, ease: "power2.in" }, 0);
+        .fromTo(haze, { opacity: 0 }, { opacity: 1, ease: "power2.in" }, 0)
+        /* Dawn light burns off by the time About is in view, leaving clear
+           blue morning for the middle of the page. */
+        .fromTo(dawn, { opacity: 1 }, { opacity: 0, duration: 0.09, ease: "power1.out" }, 0);
     });
 
     /* Page height shifts as fonts and content settle; re-measure the end. */
@@ -127,6 +136,12 @@ const Sky = () => {
       <div ref={nearRef} className={`${plane} h-[250vh] opacity-50 dark:opacity-[0.12]`}>
         <Plane light={nearLight} dark={nearDark} width={1728} height={1000} drift={80} phase={0.1} />
       </div>
+
+      {/* Dawn light lies over the clouds too, so they catch the rose. */}
+      <div
+        ref={dawnRef}
+        className="absolute inset-0 bg-[linear-gradient(to_bottom,hsl(var(--dawn-high)/0.7)_0%,hsl(var(--dawn-low)/0.5)_38%,hsl(var(--dawn-low)/0)_80%)] dark:bg-[linear-gradient(to_bottom,hsl(var(--dawn-high)/0.38)_0%,hsl(var(--dawn-low)/0.22)_40%,hsl(var(--dawn-low)/0)_80%)]"
+      />
 
       <div
         ref={hazeRef}

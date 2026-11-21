@@ -40,8 +40,16 @@ still works — it just doesn't land in your inbox automatically.
 
 ### Résumé
 
-Drop your CV at `public/resume.pdf`. The **Résumé** button in the hero already
-points there.
+The résumé lives at `/resume` (`src/pages/Resume.tsx`), built from
+`src/data/resume.ts` plus the identity, projects and skills already in the other
+data files. The page prints cleanly to A4, and its **Download PDF** button
+serves `public/resume.pdf`. After editing the résumé, regenerate that PDF:
+
+```sh
+npm run resume:pdf   # builds, serves dist/, prints /resume with Edge or Chrome
+```
+
+Set `CHROME_PATH` if your browser isn't in a standard location.
 
 ## Editing content
 
@@ -53,6 +61,7 @@ to update the site:
 | `src/data/site.ts` | Name, tagline, email, socials, navigation |
 | `src/data/projects.ts` | Featured and secondary projects |
 | `src/data/skills.ts` | Skill groups and proficiency bands |
+| `src/data/resume.ts` | Résumé summary, experience and project bullets |
 
 ### Adding a project
 

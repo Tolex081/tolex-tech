@@ -1,12 +1,24 @@
 ---
 name: Tolex Tech
-description: A developer portfolio set as a field guide to one sky, with projects mounted as plates over drifting cloud and one dusk-violet accent.
+description: A developer portfolio set as a field guide to one sky through a whole day, with projects mounted as hand-tinted plates over drifting cloud, five sky pigments for the hours and one dusk-violet accent for everything clickable.
 colors:
   dusk-violet: "hsl(246 48% 48%)"
   dusk-violet-night: "hsl(248 92% 81%)"
   high-sky: "hsl(210 52% 94%)"
-  zenith: "hsl(212 60% 90%)"
-  horizon-haze: "hsl(28 48% 91%)"
+  zenith: "hsl(208 72% 85%)"
+  horizon-haze: "hsl(34 92% 80%)"
+  dawn-rose-light: "hsl(336 78% 86%)"
+  dawn-peach-light: "hsl(24 95% 86%)"
+  rose: "hsl(342 62% 42%)"
+  rose-wash: "hsl(345 80% 94%)"
+  cobalt: "hsl(214 78% 38%)"
+  cobalt-wash: "hsl(212 85% 93%)"
+  teal: "hsl(180 80% 24%)"
+  teal-wash: "hsl(176 55% 90%)"
+  coral: "hsl(10 72% 42%)"
+  coral-wash: "hsl(14 90% 93%)"
+  amber: "hsl(28 90% 32%)"
+  amber-wash: "hsl(38 95% 89%)"
   plate-mount: "hsl(220 50% 99%)"
   cloud-white: "hsl(0 0% 100%)"
   sky-tint: "hsl(212 48% 90%)"
@@ -19,7 +31,19 @@ colors:
   signal-red: "hsl(356 66% 42%)"
   night-sky: "hsl(222 45% 9%)"
   night-zenith: "hsl(224 50% 6%)"
-  afterglow: "hsl(255 30% 16%)"
+  afterglow: "hsl(300 42% 20%)"
+  aurora-violet: "hsl(266 70% 42%)"
+  aurora-teal: "hsl(174 70% 30%)"
+  rose-night: "hsl(342 90% 78%)"
+  rose-wash-night: "hsl(342 35% 19%)"
+  cobalt-night: "hsl(212 95% 76%)"
+  cobalt-wash-night: "hsl(214 45% 19%)"
+  teal-night: "hsl(172 62% 60%)"
+  teal-wash-night: "hsl(178 40% 15%)"
+  coral-night: "hsl(12 95% 74%)"
+  coral-wash-night: "hsl(12 38% 18%)"
+  amber-night: "hsl(38 92% 64%)"
+  amber-wash-night: "hsl(34 42% 16%)"
   night-plate: "hsl(222 34% 13%)"
   moonlit-cloud: "hsl(220 35% 78%)"
   night-tint: "hsl(222 30% 17%)"
@@ -143,23 +167,24 @@ components:
 
 **Creative North Star: "The Cloud Atlas"**
 
-The page is a field guide to one sky, after the 1896 International Cloud Atlas. A fixed sky sits behind everything: a pale zenith fading into high clear air, three planes of cumulus and wisp roughened by fractal noise, and a warm horizon haze that rises in as the visitor reads down toward contact. Content either sits straight on that sky or is mounted on white plates, the way specimens were mounted in an atlas, with an italic Fraunces caption beneath.
+The page is a field guide to one sky through a whole day, after the 1896 International Cloud Atlas and its hand-tinted plates. A fixed sky sits behind everything: three planes of cumulus and wisp roughened by fractal noise, rose dawn light at the top that burns off into clear blue morning, and a golden dusk haze that rises in as the visitor reads down toward contact. Content either sits straight on that sky or is mounted on white plates, the way specimens were mounted in an atlas, with an italic Fraunces caption beneath.
 
-Density is low and the pace is slow. Sections are separated by space, never by rules or bands. Hierarchy comes from the contrast between a high-contrast Didone display set large and a plain, sturdy grotesque for everything you read or press. One accent, dusk violet, marks only what moves or can be clicked.
+Density is low and the pace is slow. Sections are separated by space, never by rules or bands. Hierarchy comes from the contrast between a high-contrast Didone display set large and a plain, sturdy grotesque for everything you read or press. Colour has two jobs that never swap: dusk violet marks only what moves or can be clicked, and five sky pigments (rose, cobalt, teal, coral, amber) are the light of each hour, carried by headings, captions and mounts.
 
-The world exists in two lights from the same tokens. By day: pale blue air warming to peach haze. By night: deep ink-blue sky, moonlit cloud at low opacity, and a faint violet afterglow at the horizon.
+The world exists in two lights from the same tokens. By day: rose and peach dawn, clear blue noon, golden dusk. By night: a violet and teal aurora at the top, deep ink-blue sky with moonlit cloud at low opacity, and a magenta afterglow at the horizon.
 
 **Key Characteristics:**
 - One fixed, layered sky behind every screen, including 404 and error.
 - White plate mounts with a fine inner keyline and a long daylight shadow.
 - Fraunces, set soft (SOFT 100, WONK 0), for display, headings and italic captions; Hanken Grotesk for body and UI.
-- Dusk violet only on interactive or moving things.
+- Dusk violet only on interactive or moving things; sky pigments only on static things.
+- Each section, skill band and project plate takes one sky pigment, in time-of-day order down the page.
 - One shared hover grammar: 0.4s on cubic-bezier(0.22, 1, 0.36, 1).
 - Exactly one scroll-driven animation: the sky descent. Separately, the cloud planes drift sideways on their own slow loops.
 
 ## Colors
 
-A cool, airy sky palette with a single warm note at the horizon and one saturated violet accent, mirrored into a night palette under `.dark`.
+A sky palette that passes through a day: rose and peach dawn light, clear blue noon, a golden dusk haze, five sky pigments for the hours, and one saturated violet accent for interaction, all mirrored into a night palette under `.dark`.
 
 ### Primary
 - **Dusk Violet** (`dusk-violet`; `dusk-violet-night` in dark mode): primary pill fill, accent text links (project Code / Live / Preview, email, WhatsApp), focus ring, text caret, selection highlight, and the focus glow on fields. Nothing static wears it.
@@ -167,10 +192,11 @@ A cool, airy sky palette with a single warm note at the horizon and one saturate
 ### Neutral
 - **High Sky** (`high-sky` / `night-sky`): page ground and the base field fill (at 60% alpha).
 - **Zenith** (`zenith` / `night-zenith`): top stop of the sky gradient, fading to High Sky by 60% of the viewport.
-- **Horizon Haze** (`horizon-haze` / `afterglow`): the haze layer that fades in from the foot of the viewport as the page scrolls; warm peach by day, dim violet by night.
+- **Horizon Haze** (`horizon-haze` / `afterglow`): the haze layer that fades in from the foot of the viewport as the page scrolls; golden dusk by day, magenta afterglow by night.
+- **Dawn Light** (`dawn-rose-light` + `dawn-peach-light` / `aurora-violet` + `aurora-teal`): a gradient laid over the clouds at the top of the page (70% then 50% alpha by day, 38% then 22% by night), so cloud and sky both catch it. It fades out as About arrives.
 - **Plate Mount** (`plate-mount` / `night-plate`): every plate, the nav bar, the dialog, toasts, and the focused field. Also the text colour on violet pills in light mode.
 - **Cloud White** (`cloud-white` / `moonlit-cloud`): fill of the SVG cloud planes only.
-- **Sky Tint** (`sky-tint` / `night-tint`): the current-section pill in the nav, and nothing else. Plates never take a tinted fill.
+- **Sky Tint** (`sky-tint` / `night-tint`): the field fill and the default wash when no pigment is set.
 - **Ink** (`ink` / `starlight`): headings, primary text, active nav item.
 - **Ink Muted** (`ink-muted` / `starlight-muted`): secondary paragraphs, italic captions, quiet links at rest, field labels.
 - **Ink Faint** (`ink-faint` / `starlight-faint`): metadata (tech lists in the index, contact term labels), placeholders, the "learning" skill band.
@@ -179,8 +205,20 @@ A cool, airy sky palette with a single warm note at the horizon and one saturate
 - **Shadow Blue** (`shadow-blue` / `night-shadow`): the tint inside every shadow; shadows are never neutral grey.
 - **Signal Red** (`signal-red` / `signal-red-night`): form validation borders and messages only.
 
+### Sky Pigments
+The light of each hour. Each has an **ink** (passes 4.5:1 on sky, plate and its own wash in both modes) and a pale **wash**. An element picks one with `.tint-<name>` (`src/index.css`, names in `src/lib/tints.ts`) and everything inside uses `text-tint`, `bg-tint-wash`, `border-tint`, `ring-tint`.
+- **Rose** (`rose` / `rose-night`): dawn. The hero: tagline, "Now learning" dot, the avatar's mount and caption.
+- **Cobalt** (`cobalt` / `cobalt-night`): morning. About: heading, the plate's caption, rules and highlight titles.
+- **Teal** (`teal` / `teal-night`): noon. The Skills heading.
+- **Coral** (`coral` / `coral-night`): afternoon. The Projects heading.
+- **Amber** (`amber` / `amber-night`): dusk. Contact: heading, the opening line, the plate's edge and the term labels.
+- Skill bands take coral, teal, amber, rose and cobalt in order; featured plates and index rows take turns through cobalt, rose, teal, amber, coral.
+- The nav's current-section pill is set in that section's wash and ink, so it changes colour on the way down.
+
 ### Named Rules
-**The Moving Edge Rule.** Dusk violet appears only on something that can be clicked, focused, typed into or selected. If an element is static, it is ink, never violet.
+**The Hour Rule.** Every section takes the light of its hour, in order down the page: rose, cobalt, teal, coral, amber. Pigments sit only on static things (headings, captions, labels, rules, mounts); they never mark a link or button.
+
+**The Moving Edge Rule.** Dusk violet appears only on something that can be clicked, focused, typed into or selected. If an element is static, it is ink or a sky pigment, never violet.
 
 **The Two Lights Rule.** Every colour is a token with a day and a night value; nothing is hard-coded per mode. Clouds drop to 12-20% opacity at night so the sky reads as dark air, not grey fog.
 
@@ -201,7 +239,7 @@ A cool, airy sky palette with a single warm note at the horizon and one saturate
 - **Meta** (400, 0.8125rem): tech lists in the index, contact term labels, validation messages.
 
 ### Named Rules
-**The Caption Is Italic Rule.** Anything that annotates a specimen (what it is, what it was built with, where the person is) is Fraunces italic in muted ink. Labels for controls stay in the grotesque.
+**The Caption Is Italic Rule.** Anything that annotates a specimen (what it is, what it was built with, where the person is) is Fraunces italic, in its section's pigment or in muted ink. Labels for controls stay in the grotesque.
 
 **The Regular Weight Rule.** Fraunces is set at 400 everywhere, with `font-optical-sizing: auto` and `font-variation-settings: "SOFT" 100, "WONK" 0` (applied to h1–h4 and `.font-serif` in `src/index.css`). Emphasis in display comes from italic, never from bold.
 
@@ -225,9 +263,9 @@ Depth is atmospheric and physical at once. The sky gives distance: three cloud p
 ### Named Rules
 **The Daylight Rule.** Shadows always fall downward with a negative spread and are tinted with Shadow Blue. No hard offsets, no grey, no glow on static surfaces.
 
-**The One Descent Rule.** The page has exactly one scroll-driven animation: the GSAP timeline that moves the far plane by 18%, the mid plane by 55% and the near wisps by 125% of the viewport height across the whole scroll, and fades the horizon haze from 0 to 1. Nothing else animates on scroll. Under reduced motion the sky holds still with the haze at half.
+**The One Descent Rule.** The page has exactly one scroll-driven animation: the GSAP timeline that moves the far plane by 18%, the mid plane by 55% and the near wisps by 125% of the viewport height across the whole scroll, fades the dawn light from 1 to 0 over the first 18% of the scroll, and fades the horizon haze from 0 to 1. Nothing else animates on scroll. Under reduced motion the sky holds still with the dawn light and the haze both at half.
 
-**The Weather Rule.** Independent of scroll, each cloud plane drifts left on a seamless linear loop: far haze one tile per 210s, mid cloud per 135s, near wisps per 80s, each started at a different phase. Each plane is a strip of four 1440-unit tiles; puffs repeat a tile to each side and the fractal noise is stitched to the tile width and repeated with feTile, so the loop has no seam. The drift is a CSS transform (`.sky-drift`), runs on the compositor, and stops under reduced motion.
+**The Weather Rule.** Independent of scroll, each cloud plane drifts left on a seamless linear loop: far haze one tile per 210s, mid cloud per 135s, near wisps per 80s, each started at a different phase. Each plane is a baked WebP strip of three identical tiles (rendered by `scripts/render-sky.mjs`), sliding a third of its width per loop, so the loop has no seam. The drift is a CSS transform (`.sky-drift`), runs on the compositor, and stops under reduced motion. Never draw the clouds as live SVG filters again: on phones they froze the page.
 
 ## Shapes
 
@@ -254,13 +292,13 @@ Quiet words with an underline that draws itself in.
 - **Background:** Plate Mount.
 - **Shadow Strategy:** Plate level at rest; plates themselves do not lift on hover.
 - **Border:** 1px inset Keyline ring.
-- **Internal Padding:** 10px mount around an image (portrait) or an unfilled inner keyline (featured projects), whose own padding is 24px, 32px from `sm` and 40px on the lead plate from `md`; 24-48px when the plate holds text directly (About aside, Contact).
+- **Internal Padding:** 10px mount around an image (portrait, washed in Rose) or an inner keyline on bare plate (featured projects, mount washed in the project's pigment), whose own padding is 24px, 32px from `sm` and 40px on the lead plate from `md`; 24-48px when the plate holds text directly (About aside, Contact).
 
 ### Featured Plate (signature)
-An atlas specimen: the outer Plate Mount (1.25rem, 10px margin, Plate shadow, inset Keyline), then a second, unfilled inner keyline (0.875rem radius, 1px inset Keyline) that hugs the work itself. Inside it: the project title in Fraunces, the italic caption of what it was built with, then a description at 65ch and accent links. The lead plate runs full width and, from `md`, its inner keyline becomes two 6-column halves aligned to the bottom edge, with title and caption on the left and description and links on the right. The pair below stacks the same content vertically. The keyline frames real content only; it is never an empty panel standing in for an image.
+A hand-tinted atlas specimen: the outer mount washed in the project's sky pigment (1.25rem, 10px margin, Plate shadow, inset ring in the pigment at 20%), then an inner keyline on bare Plate Mount (0.875rem radius, 1px inset ring in the pigment at 40%) that hugs the work itself. Inside it: the project title in Fraunces in the pigment's ink, the italic caption of what it was built with, then a description at 65ch and accent links. The lead plate runs full width and, from `md`, its inner keyline becomes two 6-column halves aligned to the bottom edge, with title and caption on the left and description and links on the right. The pair below stacks the same content vertically. The keyline frames real content only; it is never an empty panel standing in for an image.
 
 ### Ruled Index
-The other projects and skills: rows separated by 1px Keyline, top-ruled at the start. Index rows: Fraunces title at 1.5rem, muted description, faint meta line, accent actions. Skill rows: name left, proficiency right, with rank shown by setting (Ink semibold for core, Ink Muted for comfortable, Ink Faint italic Fraunces for learning).
+The other projects and skills: rows separated by 1px Keyline, top-ruled at the start. Index rows: Fraunces title at 1.5rem in the row's pigment, muted description, faint meta line, accent actions. Skill bands: title and italic blurb in the band's pigment over a 2px pigment rule, rows ruled in the pigment at 20%; name left, proficiency right, with rank shown by setting (pigment semibold for core, Ink Muted for comfortable, Ink Faint italic Fraunces for learning).
 
 ### Inputs / Fields
 - **Style:** 48px high, 1rem radius, High Sky fill at 60%, 1px Field Stroke at 70%, 16px side padding; textarea at least 8.5rem and resizable.
@@ -269,19 +307,20 @@ The other projects and skills: rows separated by 1px Keyline, top-ruled at the s
 - **Label:** 0.875rem, 500, Ink Muted, above the field.
 
 ### Navigation
-A Plate Mount bar at 95% opacity, 1.75rem radius, 60px tall, Plate shadow and Keyline ring, floating over the sky. Wordmark in Fraunces italic at 1.5rem on the left; quiet text links in the middle; a text mode toggle and the "Hire me" primary pill on the right. The section in view is marked with a Sky Tint pill behind its link and `aria-current="location"`. On mobile, links move to a second 48px row under a Keyline divider.
+A Plate Mount bar at 95% opacity, 1.75rem radius, 60px tall, Plate shadow and Keyline ring, floating over the sky. Wordmark in Fraunces italic at 1.5rem on the left; quiet text links in the middle; a text mode toggle and the "Hire me" primary pill on the right. The section in view is marked with a pill in that section's pigment wash, its label in the pigment's ink, and `aria-current="location"`. Below `md`, the links, mode toggle and "Hire me" fold into a menu button and unfold inside the same plate.
 
 ### Dialog
 A plate at Lift level, 1.25rem radius, over a High Sky scrim at 80%. The close control is a muted X that rotates 90° on hover.
 
 ### The Sky (signature)
-A fixed, pointer-transparent layer behind all content: a Zenith-to-High-Sky gradient, three SVG cloud planes (cumulus built from overlapping circles on a flattened base, wisps as long thin ellipses) roughened by `feTurbulence` fractal noise and `feDisplacementMap`, then softly blurred, and a Horizon Haze gradient rising from the bottom. Every full-screen surface, including 404, mounts it; the error screen uses its gradient alone.
+A fixed, pointer-transparent layer behind all content: a Zenith-to-High-Sky gradient, three cloud planes (cumulus built from overlapping circles on a flattened base, wisps as long thin ellipses, roughened by fractal noise and softly blurred, baked to WebP strips per theme by `scripts/render-sky.mjs`), the Dawn Light over the clouds at the top, and a Horizon Haze gradient rising from the bottom. Every full-screen surface, including 404, mounts it; the error screen uses its gradient alone.
 
 ## Do's and Don'ts
 
 ### Do:
 - **Do** mount featured work and grouped specifics on plates: Plate Mount, 1.25rem radius, inset Keyline, Plate shadow.
-- **Do** caption every specimen in Fraunces italic, muted ink.
+- **Do** caption every specimen in Fraunces italic, in its pigment or muted ink.
+- **Do** give every section, band and plate the light of its hour (The Hour Rule), and check each new pigment use passes 4.5:1.
 - **Do** keep Dusk Violet on interactive elements only (The Moving Edge Rule).
 - **Do** use the shared Motion hover on every link and button: 0.4s, cubic-bezier(0.22, 1, 0.36, 1); pills lift 2px into the Lift shadow, text links draw their underline in.
 - **Do** keep nested radii concentric: 1.25rem plate, 10px mount, 0.875rem inner.
@@ -296,4 +335,5 @@ A fixed, pointer-transparent layer behind all content: a Zenith-to-High-Sky grad
 - **Don't** fill the inner keyline or leave it as an empty panel; it frames real content (title, caption, description, links) on bare plate.
 - **Don't** build a grid of identical project cards; lead with mounted plates and put the rest in the ruled index.
 - **Don't** add stat counters or invented metrics.
-- **Don't** introduce a second accent colour.
+- **Don't** put a sky pigment on a link or button, or dusk violet on anything static; the two colour jobs never swap.
+- **Don't** add a sixth pigment or spend pigment as confetti: one pigment per section, band or plate.

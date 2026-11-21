@@ -16,15 +16,16 @@ const techStack = [
   "Claude & Gemini APIs",
 ];
 
-/** The story on the open sky; the specifics mounted on one plate beside it. */
+/** The story on the open sky; the specifics mounted on one plate beside it,
+ * captioned and ruled in the section's morning cobalt. */
 const aside = (
   <div className="rounded-plate bg-plate p-6 shadow-plate ring-1 ring-inset ring-border sm:p-8">
-    <p className="font-serif text-[1.1875rem] italic leading-snug text-muted-foreground">
+    <p className="font-serif text-[1.1875rem] italic leading-snug text-tint">
       Here are a few technologies I've been working with recently:
     </p>
     <ul className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(min(9rem,100%),1fr))] gap-x-6 text-[0.9375rem]">
       {techStack.map((tech) => (
-        <li key={tech} className="border-b border-border py-2.5">
+        <li key={tech} className="border-b border-tint/25 py-2.5">
           {tech}
         </li>
       ))}
@@ -33,7 +34,7 @@ const aside = (
     <dl className="mt-8 space-y-4">
       {highlights.map((item) => (
         <div key={item.title}>
-          <dt className="text-[0.9375rem] font-semibold">{item.title}</dt>
+          <dt className="text-[0.9375rem] font-semibold text-tint">{item.title}</dt>
           <dd className="text-[0.9375rem] text-muted-foreground">{item.description}</dd>
         </div>
       ))}

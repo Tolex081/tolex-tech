@@ -5,6 +5,7 @@ import { useTheme } from "@/contexts/ThemeContext";
 import { navItems, site, whatsappLink } from "@/data/site";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { scrollToSection } from "@/lib/motion";
+import { sectionTint, tintClass } from "@/lib/tints";
 import { cn } from "@/lib/utils";
 
 // Module scope keeps the reference stable across renders.
@@ -72,8 +73,9 @@ const MenuButton = ({
 
 /**
  * A white plate floating over the sky. On wide screens it carries the
- * section nav inline, with the section you are reading marked by a soft
- * sky-tinted pill. Below md the plate holds only the wordmark and a menu
+ * section nav inline, with the section you are reading marked by a pill in
+ * that section's light of the day, so the marker changes colour as you
+ * descend. Below md the plate holds only the wordmark and a menu
  * button; the sections, the theme switch and "Hire me" unfold inside it.
  */
 const SiteHeader = () => {
@@ -147,8 +149,9 @@ const SiteHeader = () => {
                       onClick={(event) => goTo(event, item.href)}
                       aria-current={isActive ? "location" : undefined}
                       className={cn(
+                        tintClass[sectionTint[item.id]],
                         "rounded-full px-3 transition-[background-color,color] duration-300",
-                        isActive && "bg-muted text-foreground"
+                        isActive && "bg-tint-wash text-tint"
                       )}
                     >
                       {item.label}
@@ -197,8 +200,9 @@ const SiteHeader = () => {
                           }}
                           aria-current={isActive ? "location" : undefined}
                           className={cn(
-                            "my-0 flex w-full rounded-2xl px-3 font-serif text-[1.625rem] leading-tight transition-[background-color] duration-300",
-                            isActive && "bg-muted italic"
+                            tintClass[sectionTint[item.id]],
+                            "my-0 flex w-full rounded-2xl px-3 font-serif text-[1.625rem] leading-tight transition-[background-color,color] duration-300",
+                            isActive && "bg-tint-wash italic text-tint"
                           )}
                         >
                           {item.label}
