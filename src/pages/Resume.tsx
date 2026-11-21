@@ -2,7 +2,7 @@ import { useEffect, type ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { InkButton, InkLink, PillLink } from "@/components/Ink";
 import Sky from "@/components/Sky";
-import { experience, moreProjects, selectedProjects, summary, bareUrl } from "@/data/resume";
+import { education, experience, moreProjects, selectedProjects, summary, bareUrl } from "@/data/resume";
 import { mailtoLink, site, socialLinks, whatsappLink } from "@/data/site";
 import { skillGroups } from "@/data/skills";
 import { cycleTint, tintClass, type Tint } from "@/lib/tints";
@@ -235,6 +235,21 @@ const Resume = () => {
                     <dd className="text-muted-foreground">{learning.join(", ")}</dd>
                   </div>
                 </dl>
+              </section>
+
+              <section className="tint-cobalt break-inside-avoid">
+                <Heading>Education</Heading>
+                <ul className="space-y-4 text-[0.9375rem] leading-[1.45]">
+                  {education.map((item) => (
+                    <li key={item.title}>
+                      <p className="font-semibold text-tint">{item.title}</p>
+                      <p className="text-muted-foreground">
+                        {item.from}
+                        {item.when && <span className="tnum text-faint"> · {item.when}</span>}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
               </section>
 
               <section className="tint-rose break-inside-avoid">
