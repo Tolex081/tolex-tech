@@ -17,65 +17,92 @@ export interface Project {
   image?: string;
 }
 
+/**
+ * Newest and most substantial first. Featured are the three largest builds;
+ * the index carries the other real products. Small one-off experiments stay
+ * on GitHub rather than here.
+ */
 export const featuredProjects: Project[] = [
   {
-    title: "Spotify Clone",
+    title: "Sui Money",
     description:
-      "A full-featured Spotify clone with user authentication, music playback, and playlist management. Built to replicate the Spotify experience with modern web technologies.",
-    tech: ["JavaScript", "HTML", "CSS", "Authentication"],
-    github: "https://github.com/Tolex081/My-Spotify-clone",
+      "A budget for a Sui wallet that learns from what you tell it. Label a payment once and it is remembered on Walrus Memory; that memory changes the advice: how much is safe to spend each day, whether a savings goal is on track, and whether a payment you are about to sign cuts into a bill. Reads native USDC on Sui Mainnet through Tatum. Built for the Total Recall hackathon.",
+    tech: ["Next.js", "TypeScript", "Sui", "Walrus Memory", "Tatum", "PostgreSQL"],
+    github: "https://github.com/Tolex081/sui-money-total-recall",
+    live: "https://sui-money.vercel.app",
   },
   {
-    title: "Provernaire Trivia",
+    title: "CrewPass",
     description:
-      "An interactive trivia challenge game with staking functionality. Users can test their knowledge, earn tokens, and stake their rewards in this engaging Web3 gaming platform.",
-    tech: ["JavaScript", "React", "Web3", "Node.js"],
-    github: "https://github.com/Tolex081/provernaire",
+      "Membership NFTs that own their own NEAR account. Each pass earns from its programme, carries achievements and moves from Bronze to Platinum on chain. When it is sold, the buyer takes over the account and the seller keeps no way back in. NEAR Hackathon, NFT track, on testnet.",
+    tech: ["Rust", "NEAR", "TypeScript", "React", "Hono"],
+    github: "https://github.com/Tolex081/crewpass",
+    live: "https://crewpass-steel.vercel.app",
   },
   {
-    title: "Admin Dashboard",
+    title: "Atesta",
     description:
-      "A comprehensive admin dashboard featuring data visualization, user management, and responsive design. Built with vanilla HTML, CSS, and JavaScript.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/Tolex081/Admin-dashboard-project",
+      "Contribution records confirmed by the organisations that saw the work. An organisation reviews the evidence and issues a non-transferable credential NFT on NEAR; anyone can check it against the digest held on chain, and issuers can revoke or supersede it. NEAR Hackathon, NFT track.",
+    tech: ["Next.js", "TypeScript", "Rust", "NEAR", "PostgreSQL"],
+    github: "https://github.com/Tolex081/atesta",
+    live: "https://atesta-near.vercel.app",
   },
 ];
 
 export const otherProjects: Project[] = [
   {
-    title: "Succinct Crab",
-    description: "Catch the crab and prove your love — an interactive game",
-    tech: ["JavaScript", "CSS"],
-    github: "https://github.com/Tolex081/succinctcrab",
+    title: "CircuitWill",
+    description:
+      "A personal money will on X Layer: an agent can propose payments, but only your rule circuits (daily cap, payee whitelist, confirmations, freeze) can let money move. Contracts and circuits are tested; mainnet deployment is prepared, not yet run.",
+    tech: ["Solidity", "Foundry", "JavaScript"],
+    github: "https://github.com/Tolex081/circuitwill",
+    live: "https://circuitwill.vercel.app",
   },
   {
-    title: "PicBreaker",
-    description: "Arrange the puzzle — a fun picture puzzle game",
-    tech: ["JavaScript", "CSS"],
-    github: "https://github.com/Tolex081/PicBreaker",
+    title: "VitaRecall",
+    description:
+      "A care companion that remembers: Gemini replies with recall from Walrus Memory on mainnet, plus Telegram sign-in, care notes and chat history. A hackathon pilot on fictional patient data.",
+    tech: ["React", "Express", "PostgreSQL", "Gemini", "Walrus Memory"],
+    github: "https://github.com/Tolex081/vitarecall",
+    live: "https://vitarecall.vercel.app",
   },
   {
-    title: "Succinct Badge",
-    description: "Generate your Succinct Badge and flex it",
-    tech: ["JavaScript", "CSS"],
-    github: "https://github.com/Tolex081/succinctbadge",
+    title: "Exam Mistake Memory v2",
+    description:
+      "A study-agent prompt that records how sure you were, not just whether you were wrong, so a lucky guess and a confident mistake get different remedies. Tested over five sessions on Walrus Mainnet.",
+    tech: ["Prompt design", "Walrus Memory"],
+    github: "https://github.com/Tolex081/exam-mistake-memory-v2",
   },
   {
-    title: "ZK Egg",
-    description: "Pick your egg and wait for hatching — Web3 game",
-    tech: ["JavaScript", "Web3"],
-    github: "https://github.com/Tolex081/zkegg",
+    title: "ReplyGuy",
+    description:
+      "Paste an X post, get five replies in five tones that read like someone actually read it. The model understands the post before it writes, then a guard in code rejects clichés, repeated openers and overlong replies.",
+    tech: ["Next.js", "TypeScript", "Claude API", "Gemini"],
+    github: "https://github.com/Tolex081/replyguy",
+    live: "https://replyguy-tau.vercel.app",
   },
   {
-    title: "myHub",
-    description: "A personal hub for organizing content",
-    tech: ["JavaScript", "CSS"],
-    github: "https://github.com/Tolex081/myHub",
+    title: "MAME Mosaic Wall",
+    description:
+      "A live photo mosaic for the MAME community: members add their X handle, their avatar lands in the tile it matches best by colour, and together the tiles form the founder's portrait.",
+    tech: ["Next.js", "TypeScript", "Redis", "Sharp"],
+    github: "https://github.com/Tolex081/Mame-Mosaic",
+    live: "https://mame-mosaic.vercel.app",
   },
   {
-    title: "Succinct Edits",
-    description: "Upload, watch and download community games and video edits",
-    tech: ["JavaScript", "CSS"],
-    github: "https://github.com/Tolex081/succinctedits",
+    title: "MoonPay Love Card",
+    description:
+      "An unofficial, mobile-first fan-card generator with a shared community wall. Card text comes from Claude through a serverless function, so the API key never reaches the browser.",
+    tech: ["React", "Tailwind CSS", "Supabase", "Claude API"],
+    github: "https://github.com/Tolex081/moonpay-love-card",
+    live: "https://moonpay-love-card.vercel.app",
+  },
+  {
+    title: "Provernaire Trivia",
+    description:
+      "A trivia challenge with staking: players test their knowledge, earn tokens and stake their rewards. Frontend, backend and staking app shipped as three parts.",
+    tech: ["React", "Node.js", "Web3"],
+    github: "https://github.com/Tolex081/provernaire",
+    live: "https://provernaire.vercel.app",
   },
 ];

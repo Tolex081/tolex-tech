@@ -97,8 +97,21 @@
   h3,
   h4 {
     @apply font-serif font-normal;
-    font-optical-sizing: auto;
     text-wrap: balance;
+  }
+
+  /* Fraunces set soft: its SOFT axis rounds the terminals and bowls so the
+     letters billow like the cumulus behind them. WONK stays off so the
+     italic leans evenly. Optical size follows the rendered size. */
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-serif {
+    font-optical-sizing: auto;
+    font-variation-settings:
+      "SOFT" 100,
+      "WONK" 0;
   }
 
   p {
@@ -150,4 +163,32 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground));
+}
+
+/*
+ * The clouds' own drift: each plane's strip slides left by one of its four
+ * tiles (25% of its width) and loops seamlessly. Speed is set per plane in
+ * Sky.tsx. Reduced motion holds the sky still.
+ */
+@keyframes sky-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-25%, 0, 0);
+  }
+}
+
+.sky-drift {
+  animation-name: sky-drift;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sky-drift {
+    animation: none;
+    will-change: auto;
+  }
 }

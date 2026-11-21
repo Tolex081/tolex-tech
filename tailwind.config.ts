@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["'Schibsted Grotesk Variable'", "'Schibsted Grotesk'", "system-ui", "sans-serif"],
-        serif: ["'Bodoni Moda Variable'", "'Bodoni Moda'", "Didot", "Georgia", "serif"],
+        sans: ["'Hanken Grotesk Variable'", "'Hanken Grotesk'", "system-ui", "sans-serif"],
+        serif: ["'Fraunces Variable'", "'Fraunces'", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",

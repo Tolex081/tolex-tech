@@ -1,8 +1,8 @@
 # Oyewole Toluwalase — Portfolio
 
-Personal portfolio site. Frontend developer working across web and Web3.
+Personal portfolio site. Full-stack developer working across web, Web3 and AI.
 
-**Live:** https://tolex-tech.lovable.app
+**Live:** https://oyetoludan.vercel.app
 
 ## Stack
 
@@ -80,8 +80,10 @@ Two deliberate rules:
 with a single dusk-violet accent, driven by CSS custom properties in
 `src/index.css`. Featured projects, the About details and the contact form sit
 on white "plates" with a soft daylight shadow; everything else sits straight
-on the sky. Fonts are Bodoni Moda (display and italic captions) and Schibsted
-Grotesk (body and UI), self-hosted via `@fontsource-variable`.
+on the sky. The three cloud planes drift sideways on their own slow loops
+(`src/components/Sky.tsx`). Fonts are Fraunces, set soft, for display and
+italic captions, and Hanken Grotesk for body and UI, self-hosted via
+`@fontsource-variable`.
 
 - Every visitor starts in light mode; once they pick dark, the choice is stored
   in `localStorage` and applied by an inline script in `index.html` before

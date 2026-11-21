@@ -15,6 +15,11 @@ gsap.registerPlugin(ScrollTrigger);
  * through the sky. The planes rise past at three different rates and the
  * horizon haze warms in toward the contact section at the foot of the page.
  * Reduced motion holds a still sky with the haze half in.
+ *
+ * Apart from the scroll, the weather moves on its own: each plane drifts
+ * sideways on a slow loop, the far haze slowest and the near wisps fastest,
+ * so the sky is never a still picture. That drift runs on the compositor
+ * (a CSS transform on each plane's strip) and stops under reduced motion.
  */
 
 type Puff = [cx: number, cy: number, r: number];
@@ -51,13 +56,29 @@ const WISPS: [cx: number, cy: number, rx: number, ry: number][] = [
   [1100, 2260, 400, 24],
 ];
 
+/** Width of one tile of sky, in SVG user units. */
+const TILE = 1440;
+/**
+ * Tiles laid side by side in each plane. The plane drifts left by exactly one
+ * tile and loops, so the window must fit inside the other three: that holds
+ * for any screen up to 32:9.
+ */
+const TILES = 4;
+
+/**
+ * One plane of cloud, drawn as a strip of identical tiles so it can drift
+ * forever without a seam. The puffs are repeated a tile to each side and the
+ * fractal noise is stitched to the tile width and repeated (feTile), so a
+ * cloud crossing a tile edge billows the same on both sides.
+ */
 const Plane = ({
   id,
   height,
   freq,
   scale,
   blur,
-  className,
+  drift,
+  phase,
   children,
 }: {
   id: string;
@@ -65,25 +86,60 @@ const Plane = ({
   freq: number;
   scale: number;
   blur: number;
-  className: string;
+  /** Seconds to drift one tile. Nearer planes move faster. */
+  drift: number;
+  /** Where in the loop the plane starts, 0 to 1, so the planes never line up. */
+  phase: number;
   children: React.ReactNode;
-}) => (
-  <svg
-    className={className}
-    viewBox={`0 0 1440 ${height}`}
-    preserveAspectRatio="xMidYMin slice"
-    style={{ fill: "hsl(var(--cloud))" }}
-  >
-    <defs>
-      <filter id={id} x="-30%" y="-60%" width="160%" height="220%">
-        <feTurbulence type="fractalNoise" baseFrequency={freq} numOctaves={4} seed={7} result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale={scale} xChannelSelector="R" yChannelSelector="G" result="billow" />
-        <feGaussianBlur in="billow" stdDeviation={blur} />
-      </filter>
-    </defs>
-    <g filter={`url(#${id})`}>{children}</g>
-  </svg>
-);
+}) => {
+  const pad = 300;
+  return (
+    <svg
+      className="sky-drift h-full w-auto max-w-none"
+      viewBox={`0 0 ${TILE * TILES} ${height}`}
+      preserveAspectRatio="none"
+      style={{
+        aspectRatio: `${TILE * TILES} / ${height}`,
+        fill: "hsl(var(--cloud))",
+        animationDuration: `${drift}s`,
+        animationDelay: `${-drift * phase}s`,
+      }}
+    >
+      <defs>
+        <g id={`${id}-tile`}>{children}</g>
+        <filter
+          id={id}
+          filterUnits="userSpaceOnUse"
+          x={-TILE}
+          y={-pad}
+          width={TILE * (TILES + 2)}
+          height={height + pad * 2}
+        >
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency={freq}
+            numOctaves={4}
+            seed={7}
+            stitchTiles="stitch"
+            x={0}
+            y={-pad}
+            width={TILE}
+            height={height + pad * 2}
+            result="tile-noise"
+          />
+          <feTile in="tile-noise" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale={scale} xChannelSelector="R" yChannelSelector="G" result="billow" />
+          <feGaussianBlur in="billow" stdDeviation={blur} />
+        </filter>
+      </defs>
+      <g filter={`url(#${id})`}>
+        {Array.from({ length: TILES + 2 }, (_, k) => (
+          <use key={k} href={`#${id}-tile`} x={(k - 1) * TILE} />
+        ))}
+      </g>
+    </svg>
+  );
+};
 
 const Sky = () => {
   const farRef = useRef<HTMLDivElement>(null);
@@ -141,7 +197,7 @@ const Sky = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_bottom,hsl(var(--sky-top)),hsl(var(--background))_60%)]" />
 
       <div ref={farRef} className={`${plane} h-[150vh] opacity-60 dark:opacity-[0.16]`}>
-        <Plane id="cloud-far" height={1400} freq={0.012} scale={70} blur={14} className="h-full w-full">
+        <Plane id="cloud-far" height={1400} freq={0.012} scale={70} blur={14} drift={210} phase={0.35}>
           {FAR.map(([cx, cy, r], i) => (
             <circle key={i} cx={cx} cy={cy} r={r} />
           ))}
@@ -149,7 +205,7 @@ const Sky = () => {
       </div>
 
       <div ref={midRef} className={`${plane} h-[190vh] opacity-90 dark:opacity-[0.2]`}>
-        <Plane id="cloud-mid" height={1900} freq={0.009} scale={90} blur={7} className="h-full w-full">
+        <Plane id="cloud-mid" height={1900} freq={0.009} scale={90} blur={7} drift={135} phase={0.7}>
           {MID.map(([cx, cy, r], i) => (
             <circle key={i} cx={cx} cy={cy} r={r} />
           ))}
@@ -157,7 +213,7 @@ const Sky = () => {
       </div>
 
       <div ref={nearRef} className={`${plane} h-[250vh] opacity-50 dark:opacity-[0.12]`}>
-        <Plane id="cloud-near" height={2500} freq={0.02} scale={40} blur={10} className="h-full w-full">
+        <Plane id="cloud-near" height={2500} freq={0.02} scale={40} blur={10} drift={80} phase={0.1}>
           {WISPS.map(([cx, cy, rx, ry], i) => (
             <ellipse key={i} cx={cx} cy={cy} rx={rx} ry={ry} />
           ))}

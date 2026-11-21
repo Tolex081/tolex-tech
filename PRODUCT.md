@@ -8,19 +8,19 @@ web
 
 ## Users
 
-Hiring teams: recruiters and engineering leads screening a frontend developer who is moving into full-stack. They arrive from a CV, a LinkedIn message or a GitHub profile, usually skimming between other candidates, and want to know within a minute what Toluwalase builds, how well, and how to reach him.
+Hiring teams: recruiters and engineering leads screening a full-stack developer who builds for the web, Web3 and AI. They arrive from a CV, a LinkedIn message or a GitHub profile, usually skimming between other candidates, and want to know within a minute what Toluwalase builds, how well, and how to reach him.
 
 ## Product Purpose
 
-Personal portfolio of Oyewole Toluwalase ("Tolex"), a frontend developer in Nigeria. It exists to get him hired: show shipped work, an honest picture of his skills, and make contacting him effortless. Success is a hiring team reaching out by email, WhatsApp or the contact form, or opening his GitHub and résumé.
+Personal portfolio of Oyewole Toluwalase ("Tolex"), a full-stack developer in Nigeria. It exists to get him hired: show shipped work, an honest picture of his skills, and make contacting him effortless. Success is a hiring team reaching out by email, WhatsApp or the contact form, or opening his GitHub and résumé.
 
 ## Positioning
 
-A frontend developer who learned to ship inside Web3 communities: trivia games, badge generators and small interactive tools that thousands of people actually use, built fast for people who won't read instructions. Now extending into Node.js, Express and databases to build complete applications end to end.
+A developer who learned to ship inside Web3 communities (trivia games, badge generators and small interactive tools that thousands of people actually use, built fast for people who won't read instructions) and now ships complete products end to end: a Sui wallet budget backed by Walrus Memory, NFT memberships and credentials on NEAR, and AI tools on the Claude and Gemini APIs, mostly built for hackathons with tests and honest notes on what is live.
 
 ## Operating Context
 
-Visitors read on desktop between other applications and on phones from a LinkedIn or WhatsApp link. Projects link out to GitHub repositories; none has a live deployment recorded yet. The contact form posts to Web3Forms when `VITE_WEB3FORMS_KEY` is set and falls back to the visitor's mail client otherwise.
+Visitors read on desktop between other applications and on phones from a LinkedIn or WhatsApp link. Projects link out to GitHub repositories and, where deployed, to their live Vercel apps (hackathon builds run on testnet or with fictional demo data, and say so). The contact form posts to Web3Forms when `VITE_WEB3FORMS_KEY` is set and falls back to the visitor's mail client otherwise.
 
 ## Capabilities and Constraints
 
