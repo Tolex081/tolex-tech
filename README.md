@@ -76,19 +76,22 @@ Two deliberate rules:
 
 ## Design
 
-One calm theme (sleeve-board grey, graphite ink, one cobalt accent) in light
-and dark, driven by CSS custom properties in `src/index.css`. Structure comes
-from space, type and hairline rules only: no cards, gradients or shadows.
-Fonts are Archivo (wide display) and Brygada 1918 (prose), self-hosted via
-`@fontsource-variable`.
+"Cloud Atlas": one airy sky theme (pale high air by day, ink-blue by night)
+with a single dusk-violet accent, driven by CSS custom properties in
+`src/index.css`. Featured projects, the About details and the contact form sit
+on white "plates" with a soft daylight shadow; everything else sits straight
+on the sky. Fonts are Bodoni Moda (display and italic captions) and Schibsted
+Grotesk (body and UI), self-hosted via `@fontsource-variable`.
 
-- Light/dark follows the OS until the visitor picks one; the choice is stored
+- Every visitor starts in light mode; once they pick dark, the choice is stored
   in `localStorage` and applied by an inline script in `index.html` before
   first paint, so there's no flash.
-- Every link and button uses `InkLink` / `InkButton` (`src/components/Ink.tsx`)
-  for the shared Motion hover.
-- The one scroll animation (GSAP ScrollTrigger) is the playhead in the
-  Projects tracklist (`src/components/ProjectsSection.tsx`).
+- Every link and button uses `InkLink` / `InkButton` (text links) or
+  `PillLink` / `PillButton` (`src/components/Ink.tsx`) for the shared Motion
+  hover.
+- The one scroll animation (GSAP ScrollTrigger) lives in
+  `src/components/Sky.tsx`: three cloud layers drift past at different speeds
+  as you scroll, and a warm horizon haze fades in toward the contact section.
 
 `PRODUCT.md` and `DESIGN.md` record the product brief and design system.
 

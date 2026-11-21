@@ -1,12 +1,12 @@
 import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
 import {
   applyTheme,
+  DEFAULT_MODE,
   isMode,
   LEGACY_COLOR_KEY,
   MODE_KEY,
   readStored,
   removeStored,
-  systemMode,
   writeStored,
   type Mode,
 } from "@/lib/theme";
@@ -30,9 +30,10 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // Light by default; a visitor's own choice is remembered and wins.
   const [mode, setModeState] = useState<Mode>(() => {
     const stored = readStored(MODE_KEY);
-    return isMode(stored) ? stored : systemMode();
+    return isMode(stored) ? stored : DEFAULT_MODE;
   });
   // Only remember the mode once the visitor actually picks one.
   const [chosen, setChosen] = useState(() => isMode(readStored(MODE_KEY)));
@@ -45,15 +46,6 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     applyTheme(mode);
     if (chosen) writeStored(MODE_KEY, mode);
   }, [mode, chosen]);
-
-  // Follow the OS until the visitor makes an explicit choice.
-  useEffect(() => {
-    if (chosen || !window.matchMedia) return;
-    const query = window.matchMedia("(prefers-color-scheme: dark)");
-    const onChange = (event: MediaQueryListEvent) => setModeState(event.matches ? "dark" : "light");
-    query.addEventListener("change", onChange);
-    return () => query.removeEventListener("change", onChange);
-  }, [chosen]);
 
   const setMode = useCallback((next: Mode) => {
     setChosen(true);

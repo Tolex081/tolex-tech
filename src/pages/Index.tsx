@@ -5,27 +5,31 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import SiteHeader from "@/components/SiteHeader";
+import Sky from "@/components/Sky";
 
 const Index = () => (
-  <div className="min-h-screen bg-background">
+  <div className="relative min-h-screen">
     <a
       href="#main"
-      className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-background focus:px-4 focus:py-2 focus:font-sans focus:text-foreground"
+      className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-plate focus:px-5 focus:py-3 focus:font-sans focus:text-foreground focus:shadow-plate"
     >
       Skip to content
     </a>
 
+    <Sky />
     <SiteHeader />
 
-    <main id="main">
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
-    </main>
+    <div className="relative z-10">
+      <main id="main">
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ContactSection />
+      </main>
 
-    <Footer />
+      <Footer />
+    </div>
   </div>
 );
 

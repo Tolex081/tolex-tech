@@ -1,5 +1,11 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { applyTheme, isMode, readStored, writeStored } from "@/lib/theme";
+import { applyTheme, DEFAULT_MODE, isMode, readStored, writeStored } from "@/lib/theme";
+
+describe("default mode", () => {
+  it("starts every visitor in light", () => {
+    expect(DEFAULT_MODE).toBe("light");
+  });
+});
 
 describe("theme validation", () => {
   it("rejects values that are not real modes", () => {

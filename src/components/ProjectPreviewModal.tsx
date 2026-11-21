@@ -20,15 +20,15 @@ const ProjectPreviewModal = ({ project, open, onOpenChange }: Props) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-h-[90vh] w-[95vw] max-w-4xl overflow-y-auto border-border bg-background p-6 sm:p-8">
+      <DialogContent className="max-h-[90vh] w-[95vw] max-w-4xl overflow-y-auto p-6 sm:p-8">
         <DialogHeader className="text-left">
-          <DialogTitle className="text-[1.75rem] font-light stretch-wide">{project.title}</DialogTitle>
-          <DialogDescription className="font-serif text-[1.0625rem] text-muted-foreground">
+          <DialogTitle className="font-serif text-[2rem] font-normal leading-tight">{project.title}</DialogTitle>
+          <DialogDescription className="text-[1.0625rem] text-muted-foreground">
             {project.description}
           </DialogDescription>
         </DialogHeader>
 
-        <div className="relative aspect-video w-full border border-border">
+        <div className="relative aspect-video w-full overflow-hidden rounded-2xl ring-1 ring-inset ring-border">
           {project.live ? (
             <iframe
               src={project.live}
@@ -53,8 +53,8 @@ const ProjectPreviewModal = ({ project, open, onOpenChange }: Props) => {
           ) : null}
         </div>
 
-        <div className="flex flex-wrap items-baseline gap-x-8 gap-y-3 font-sans text-[0.875rem]">
-          <p className="text-muted-foreground">{project.tech.join(" / ")}</p>
+        <div className="flex flex-wrap items-baseline gap-x-8 gap-y-3 text-[0.9375rem]">
+          <p className="text-muted-foreground">{project.tech.join(" · ")}</p>
           <InkLink href={project.github} target="_blank" rel="noopener noreferrer" tone="accent" arrow="out">
             View code
           </InkLink>
