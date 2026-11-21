@@ -9,7 +9,7 @@ related_targets: []
 
 The single-page portfolio (`src/pages/Index.tsx` and its sections), plus the 404 and error screens that share its world. Mode: Experience. Audience: hiring teams skimming candidates. Action: contact (email, WhatsApp, form), open GitHub and résumé.
 
-Constraints from the owner: an airy, light look in the spirit of thegreatola.com (craft bar only, never its layout, colours or copy). For this direction the owner lifted the earlier no-gradient and no-card rules. Still binding: one calm colour theme with one accent, in light and dark; a distinctive font pair (not Inter, not Arial); Motion hovers on every link and button; exactly one GSAP scroll animation; keep all content and links. No invented metrics: the owner has supplied no numbers.
+Constraints from the owner: an airy, light look in the spirit of thegreatola.com (craft bar only, never its layout, colours or copy). For this direction the owner lifted the earlier no-gradient and no-card rules. The owner later asked for colour (2026-11-21, "Painted sky"): the sky passes through a day (rose dawn, blue noon, golden dusk; aurora to magenta afterglow at night) and five sky pigments tint sections, bands and plates. Still binding: dusk violet as the one interactive accent, in light and dark; a distinctive font pair (not Inter, not Arial); Motion hovers on every link and button; exactly one GSAP scroll animation; keep all content and links. No invented metrics: the owner has supplied no numbers.
 
 ## Direction contract
 

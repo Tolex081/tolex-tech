@@ -3,18 +3,40 @@
 @tailwind utilities;
 
 /*
- * One sky in two lights. By day the page is pale high air that warms toward
- * a low horizon haze at the foot of the page; by night it is deep ink-blue
- * with a faint violet glow at the horizon. Projects sit on white plate
- * mounts. Dusk violet is the one accent and only marks what moves or can be
- * clicked.
+ * One sky through a whole day. Reading down the page is a day passing: rose
+ * dawn light at the top, clear blue morning and noon, then a golden dusk
+ * haze at the contact section. By night the same descent runs from an
+ * aurora of violet and teal down to a magenta afterglow. Projects sit on
+ * white plate mounts.
+ *
+ * Colour has two jobs and they never swap:
+ *   Dusk violet marks what moves or can be clicked, and nothing else.
+ *   The five sky pigments (rose, cobalt, teal, coral, amber) are the light at
+ *   each hour: every section, skill band and project plate takes one, for
+ *   its heading, captions and mount. Set one with .tint-<name>, then use
+ *   text-tint, bg-tint-wash, border-tint, ring-tint.
  */
 @layer base {
   :root,
   .light {
     --background: 210 52% 94%; /* high sky   #eaf1f8 */
-    --sky-top: 212 60% 90%; /* zenith, a shade deeper */
-    --horizon: 28 48% 91%; /* low haze   #f3e7dc */
+    --sky-top: 208 72% 85%; /* zenith, a clear deeper blue */
+    --horizon: 34 92% 80%; /* golden dusk haze */
+    --dawn-high: 336 78% 86%; /* rose light high in the dawn sky */
+    --dawn-low: 24 95% 86%; /* peach light lower down */
+
+    /* Sky pigments: an ink that reads on sky and plate (AA 4.5:1+) and a
+       pale wash for mounts and markers. */
+    --rose: 342 62% 42%;
+    --rose-wash: 345 80% 94%;
+    --cobalt: 214 78% 38%;
+    --cobalt-wash: 212 85% 93%;
+    --teal: 180 80% 24%;
+    --teal-wash: 176 55% 90%;
+    --coral: 10 72% 42%;
+    --coral-wash: 14 90% 93%;
+    --amber: 28 90% 32%;
+    --amber-wash: 38 95% 89%;
     --plate: 220 50% 99%; /* mount      #fbfcfe */
     --cloud: 0 0% 100%;
     --shadow: 216 45% 28%;
@@ -44,7 +66,20 @@
   .dark {
     --background: 222 45% 9%; /* night sky  #0d1422 */
     --sky-top: 224 50% 6%;
-    --horizon: 255 30% 16%; /* afterglow */
+    --horizon: 300 42% 20%; /* magenta afterglow */
+    --dawn-high: 266 70% 42%; /* aurora violet */
+    --dawn-low: 174 70% 30%; /* aurora teal */
+
+    --rose: 342 90% 78%;
+    --rose-wash: 342 35% 19%;
+    --cobalt: 212 95% 76%;
+    --cobalt-wash: 214 45% 19%;
+    --teal: 172 62% 60%;
+    --teal-wash: 178 40% 15%;
+    --coral: 12 95% 74%;
+    --coral-wash: 12 38% 18%;
+    --amber: 38 92% 64%;
+    --amber-wash: 34 42% 16%;
     --plate: 222 34% 13%;
     --cloud: 220 35% 78%; /* moonlit */
     --shadow: 225 60% 2%;
@@ -165,6 +200,30 @@ html {
   background: hsl(var(--muted-foreground));
 }
 
+/* Pick the hour's light for an element and everything inside it. */
+@layer utilities {
+  .tint-rose {
+    --tint: var(--rose);
+    --tint-wash: var(--rose-wash);
+  }
+  .tint-cobalt {
+    --tint: var(--cobalt);
+    --tint-wash: var(--cobalt-wash);
+  }
+  .tint-teal {
+    --tint: var(--teal);
+    --tint-wash: var(--teal-wash);
+  }
+  .tint-coral {
+    --tint: var(--coral);
+    --tint-wash: var(--coral-wash);
+  }
+  .tint-amber {
+    --tint: var(--amber);
+    --tint-wash: var(--amber-wash);
+  }
+}
+
 /*
  * The clouds' own drift: each plane's strip slides left by one of its three
  * tiles (a third of its width) and loops seamlessly. Speed is set per plane in
@@ -190,5 +249,48 @@ html {
   .sky-drift {
     animation: none;
     will-change: auto;
+  }
+}
+
+/*
+ * Print (the résumé at /resume): A4 with even margins, the type a step
+ * smaller, and always the day palette on white paper, even if the visitor
+ * is browsing in night mode.
+ */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 15mm;
+  }
+
+  html {
+    font-size: 11.5px;
+    scrollbar-width: none;
+  }
+
+  .dark {
+    --foreground: 214 32% 13%;
+    --muted-foreground: 214 16% 33%;
+    --faint: 214 12% 39%;
+    --border: 213 32% 85%;
+    --plate: 0 0% 100%;
+    --background: 0 0% 100%;
+    --primary: 246 48% 48%;
+    --rose: 342 62% 42%;
+    --cobalt: 214 78% 38%;
+    --teal: 180 80% 24%;
+    --coral: 10 72% 42%;
+    --amber: 28 90% 32%;
+    color-scheme: light;
+  }
+
+  body {
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a {
+    color: inherit;
   }
 }

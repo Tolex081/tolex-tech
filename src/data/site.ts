@@ -10,8 +10,9 @@ export const site = {
   email: "oyetoludan@gmail.com",
   whatsapp: "2349037010581",
   whatsappDisplay: "+234 903 701 0581",
-  /** Drop your CV at `public/resume.pdf` and this button goes live. */
-  resumeUrl: "/resume.pdf",
+  /** The résumé page (src/pages/Resume.tsx) and the PDF cut from it (`npm run resume:pdf`). */
+  resumeUrl: "/resume",
+  resumePdf: "/resume.pdf",
   url: "https://oyetoludan.vercel.app",
 } as const;
 
