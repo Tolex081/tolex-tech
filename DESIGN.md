@@ -32,40 +32,40 @@ colors:
   signal-red-night: "hsl(356 90% 76%)"
 typography:
   display:
-    fontFamily: "'Bodoni Moda Variable', 'Bodoni Moda', Didot, Georgia, serif"
+    fontFamily: "'Fraunces Variable', 'Fraunces', Georgia, serif"
     fontSize: "clamp(3rem, 1.2rem + 6.4vw, 6rem)"
     fontWeight: 400
     lineHeight: 0.94
     letterSpacing: "-0.025em"
     fontVariation: "opsz auto"
   headline:
-    fontFamily: "'Bodoni Moda Variable', 'Bodoni Moda', Didot, Georgia, serif"
+    fontFamily: "'Fraunces Variable', 'Fraunces', Georgia, serif"
     fontSize: "clamp(2.5rem, 1.6rem + 3.2vw, 4.25rem)"
     fontWeight: 400
     lineHeight: 1.02
     letterSpacing: "-0.02em"
   title:
-    fontFamily: "'Bodoni Moda Variable', 'Bodoni Moda', Didot, Georgia, serif"
+    fontFamily: "'Fraunces Variable', 'Fraunces', Georgia, serif"
     fontSize: "1.75rem"
     fontWeight: 400
     lineHeight: 1.25
   caption:
-    fontFamily: "'Bodoni Moda Variable', 'Bodoni Moda', Didot, Georgia, serif"
+    fontFamily: "'Fraunces Variable', 'Fraunces', Georgia, serif"
     fontSize: "1.25rem"
     fontWeight: 400
     lineHeight: 1.375
   body:
-    fontFamily: "'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif"
+    fontFamily: "'Hanken Grotesk Variable', 'Hanken Grotesk', system-ui, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.6
   label:
-    fontFamily: "'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif"
+    fontFamily: "'Hanken Grotesk Variable', 'Hanken Grotesk', system-ui, sans-serif"
     fontSize: "0.9375rem"
     fontWeight: 500
     lineHeight: 1
   meta:
-    fontFamily: "'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif"
+    fontFamily: "'Hanken Grotesk Variable', 'Hanken Grotesk', system-ui, sans-serif"
     fontSize: "0.8125rem"
     fontWeight: 400
     lineHeight: 1.5
@@ -143,7 +143,7 @@ components:
 
 **Creative North Star: "The Cloud Atlas"**
 
-The page is a field guide to one sky, after the 1896 International Cloud Atlas. A fixed sky sits behind everything: a pale zenith fading into high clear air, three planes of cumulus and wisp roughened by fractal noise, and a warm horizon haze that rises in as the visitor reads down toward contact. Content either sits straight on that sky or is mounted on white plates, the way specimens were mounted in an atlas, with an italic Bodoni caption beneath.
+The page is a field guide to one sky, after the 1896 International Cloud Atlas. A fixed sky sits behind everything: a pale zenith fading into high clear air, three planes of cumulus and wisp roughened by fractal noise, and a warm horizon haze that rises in as the visitor reads down toward contact. Content either sits straight on that sky or is mounted on white plates, the way specimens were mounted in an atlas, with an italic Fraunces caption beneath.
 
 Density is low and the pace is slow. Sections are separated by space, never by rules or bands. Hierarchy comes from the contrast between a high-contrast Didone display set large and a plain, sturdy grotesque for everything you read or press. One accent, dusk violet, marks only what moves or can be clicked.
 
@@ -152,10 +152,10 @@ The world exists in two lights from the same tokens. By day: pale blue air warmi
 **Key Characteristics:**
 - One fixed, layered sky behind every screen, including 404 and error.
 - White plate mounts with a fine inner keyline and a long daylight shadow.
-- Bodoni Moda for display, headings and italic captions; Schibsted Grotesk for body and UI.
+- Fraunces, set soft (SOFT 100, WONK 0), for display, headings and italic captions; Hanken Grotesk for body and UI.
 - Dusk violet only on interactive or moving things.
 - One shared hover grammar: 0.4s on cubic-bezier(0.22, 1, 0.36, 1).
-- Exactly one scroll-driven animation: the sky descent.
+- Exactly one scroll-driven animation: the sky descent. Separately, the cloud planes drift sideways on their own slow loops.
 
 ## Colors
 
@@ -186,10 +186,10 @@ A cool, airy sky palette with a single warm note at the horizon and one saturate
 
 ## Typography
 
-**Display Font:** Bodoni Moda Variable (opsz axis; with Bodoni Moda, Didot, Georgia)
-**Body Font:** Schibsted Grotesk Variable (with system-ui)
+**Display Font:** Fraunces Variable (opsz, wght, SOFT and WONK axes, set at SOFT 100 and WONK 0; with Fraunces, Georgia)
+**Body Font:** Hanken Grotesk Variable (with system-ui)
 
-**Character:** A hairline-and-thick Didone with optical sizing, set at regular weight, gives the atlas its engraved, plate-caption voice; the grotesque underneath is plain, compact and newsy, so reading and UI never compete with it.
+**Character:** A soft old-style serif with optical sizing, its terminals and bowls rounded by the SOFT axis so the letters billow like the cumulus behind them; set at regular weight it keeps the atlas's plate-caption voice without Didone hairlines. The grotesque underneath is open, friendly and plain, so reading and UI never compete with it.
 
 ### Hierarchy
 - **Display** (400, clamp 3rem to 6rem, 0.94, -0.025em): the hero name only, two lines, the second in italic.
@@ -201,9 +201,9 @@ A cool, airy sky palette with a single warm note at the horizon and one saturate
 - **Meta** (400, 0.8125rem): tech lists in the index, contact term labels, validation messages.
 
 ### Named Rules
-**The Caption Is Italic Rule.** Anything that annotates a specimen (what it is, what it was built with, where the person is) is Bodoni italic in muted ink. Labels for controls stay in the grotesque.
+**The Caption Is Italic Rule.** Anything that annotates a specimen (what it is, what it was built with, where the person is) is Fraunces italic in muted ink. Labels for controls stay in the grotesque.
 
-**The Regular Weight Rule.** Bodoni is set at 400 everywhere, with `font-optical-sizing: auto`. Emphasis in display comes from italic, never from bold.
+**The Regular Weight Rule.** Fraunces is set at 400 everywhere, with `font-optical-sizing: auto` and `font-variation-settings: "SOFT" 100, "WONK" 0` (applied to h1–h4 and `.font-serif` in `src/index.css`). Emphasis in display comes from italic, never from bold.
 
 ## Layout
 
@@ -226,6 +226,8 @@ Depth is atmospheric and physical at once. The sky gives distance: three cloud p
 **The Daylight Rule.** Shadows always fall downward with a negative spread and are tinted with Shadow Blue. No hard offsets, no grey, no glow on static surfaces.
 
 **The One Descent Rule.** The page has exactly one scroll-driven animation: the GSAP timeline that moves the far plane by 18%, the mid plane by 55% and the near wisps by 125% of the viewport height across the whole scroll, and fades the horizon haze from 0 to 1. Nothing else animates on scroll. Under reduced motion the sky holds still with the haze at half.
+
+**The Weather Rule.** Independent of scroll, each cloud plane drifts left on a seamless linear loop: far haze one tile per 210s, mid cloud per 135s, near wisps per 80s, each started at a different phase. Each plane is a strip of four 1440-unit tiles; puffs repeat a tile to each side and the fractal noise is stitched to the tile width and repeated with feTile, so the loop has no seam. The drift is a CSS transform (`.sky-drift`), runs on the compositor, and stops under reduced motion.
 
 ## Shapes
 
@@ -255,10 +257,10 @@ Quiet words with an underline that draws itself in.
 - **Internal Padding:** 10px mount around an image (portrait) or an unfilled inner keyline (featured projects), whose own padding is 24px, 32px from `sm` and 40px on the lead plate from `md`; 24-48px when the plate holds text directly (About aside, Contact).
 
 ### Featured Plate (signature)
-An atlas specimen: the outer Plate Mount (1.25rem, 10px margin, Plate shadow, inset Keyline), then a second, unfilled inner keyline (0.875rem radius, 1px inset Keyline) that hugs the work itself. Inside it: the project title in Bodoni, the italic caption of what it was built with, then a description at 65ch and accent links. The lead plate runs full width and, from `md`, its inner keyline becomes two 6-column halves aligned to the bottom edge, with title and caption on the left and description and links on the right. The pair below stacks the same content vertically. The keyline frames real content only; it is never an empty panel standing in for an image.
+An atlas specimen: the outer Plate Mount (1.25rem, 10px margin, Plate shadow, inset Keyline), then a second, unfilled inner keyline (0.875rem radius, 1px inset Keyline) that hugs the work itself. Inside it: the project title in Fraunces, the italic caption of what it was built with, then a description at 65ch and accent links. The lead plate runs full width and, from `md`, its inner keyline becomes two 6-column halves aligned to the bottom edge, with title and caption on the left and description and links on the right. The pair below stacks the same content vertically. The keyline frames real content only; it is never an empty panel standing in for an image.
 
 ### Ruled Index
-The other projects and skills: rows separated by 1px Keyline, top-ruled at the start. Index rows: Bodoni title at 1.5rem, muted description, faint meta line, accent actions. Skill rows: name left, proficiency right, with rank shown by setting (Ink semibold for core, Ink Muted for comfortable, Ink Faint italic Bodoni for learning).
+The other projects and skills: rows separated by 1px Keyline, top-ruled at the start. Index rows: Fraunces title at 1.5rem, muted description, faint meta line, accent actions. Skill rows: name left, proficiency right, with rank shown by setting (Ink semibold for core, Ink Muted for comfortable, Ink Faint italic Fraunces for learning).
 
 ### Inputs / Fields
 - **Style:** 48px high, 1rem radius, High Sky fill at 60%, 1px Field Stroke at 70%, 16px side padding; textarea at least 8.5rem and resizable.
@@ -267,7 +269,7 @@ The other projects and skills: rows separated by 1px Keyline, top-ruled at the s
 - **Label:** 0.875rem, 500, Ink Muted, above the field.
 
 ### Navigation
-A Plate Mount bar at 95% opacity, 1.75rem radius, 60px tall, Plate shadow and Keyline ring, floating over the sky. Wordmark in Bodoni italic at 1.5rem on the left; quiet text links in the middle; a text mode toggle and the "Hire me" primary pill on the right. The section in view is marked with a Sky Tint pill behind its link and `aria-current="location"`. On mobile, links move to a second 48px row under a Keyline divider.
+A Plate Mount bar at 95% opacity, 1.75rem radius, 60px tall, Plate shadow and Keyline ring, floating over the sky. Wordmark in Fraunces italic at 1.5rem on the left; quiet text links in the middle; a text mode toggle and the "Hire me" primary pill on the right. The section in view is marked with a Sky Tint pill behind its link and `aria-current="location"`. On mobile, links move to a second 48px row under a Keyline divider.
 
 ### Dialog
 A plate at Lift level, 1.25rem radius, over a High Sky scrim at 80%. The close control is a muted X that rotates 90° on hover.
@@ -279,7 +281,7 @@ A fixed, pointer-transparent layer behind all content: a Zenith-to-High-Sky grad
 
 ### Do:
 - **Do** mount featured work and grouped specifics on plates: Plate Mount, 1.25rem radius, inset Keyline, Plate shadow.
-- **Do** caption every specimen in Bodoni italic, muted ink.
+- **Do** caption every specimen in Fraunces italic, muted ink.
 - **Do** keep Dusk Violet on interactive elements only (The Moving Edge Rule).
 - **Do** use the shared Motion hover on every link and button: 0.4s, cubic-bezier(0.22, 1, 0.36, 1); pills lift 2px into the Lift shadow, text links draw their underline in.
 - **Do** keep nested radii concentric: 1.25rem plate, 10px mount, 0.875rem inner.
@@ -288,7 +290,7 @@ A fixed, pointer-transparent layer behind all content: a Zenith-to-High-Sky grad
 
 ### Don't:
 - **Don't** add a second scroll-driven animation; the sky descent is the only one.
-- **Don't** set Bodoni bold or use a system display face; emphasis in display is italic.
+- **Don't** set Fraunces bold, turn WONK on, or use a system display face; emphasis in display is italic.
 - **Don't** use neutral grey or hard offset shadows; shadows are Shadow Blue and fall softly downward.
 - **Don't** lift plates on hover; only pills lift.
 - **Don't** fill the inner keyline or leave it as an empty panel; it frames real content (title, caption, description, links) on bare plate.

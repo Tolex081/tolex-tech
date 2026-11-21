@@ -30,3 +30,8 @@ dist-ssr
 
 # TypeScript incremental build cache
 *.tsbuildinfo
+
+# Impeccable review screenshots and local OG renders (the shipped OG image
+# is public/og-image.png, re-rendered from .impeccable/og/og.html)
+.impeccable/review/
+.impeccable/og/*.png

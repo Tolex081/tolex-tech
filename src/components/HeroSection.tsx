@@ -9,7 +9,7 @@ const [firstName, ...rest] = site.name.split(" ");
 const lastName = rest.join(" ");
 
 /**
- * High clear air: the name large in Bodoni, the second line in its italic,
+ * High clear air: the name large in soft Fraunces, the second line in its italic,
  * the tagline and intro beneath, and the portrait mounted as the first plate
  * with its caption. The About plate rises into view at the foot of the fold.
  */
@@ -31,16 +31,16 @@ const HeroSection = () => (
           </p>
 
           <p className="mt-4 max-w-[40rem] text-[1.125rem] leading-relaxed text-muted-foreground">
-            Hi — I'm a <span className="text-foreground">Frontend Developer</span> moving into{" "}
-            <span className="text-foreground">full-stack</span>, building for the web and for Web3
-            communities, where thousands of people use what I ship. Currently focused on accessible,
-            human-centered products.
+            Hi — I'm a <span className="text-foreground">Full-stack Developer</span> building for the web,
+            Web3 and AI: wallet budgeting on Sui, NFT memberships and credentials on NEAR, and assistants
+            that remember. I learned to ship in Web3 communities, where thousands of people use what I
+            build.
           </p>
 
           <p className="mt-6 flex items-center gap-2.5 text-[0.9375rem] text-muted-foreground">
             <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-foreground/60" />
             <span>
-              Now learning <span className="text-foreground">Node.js, Express and databases</span>
+              Now learning <span className="text-foreground">Sui Move, Rust and Solidity</span>
             </span>
           </p>
 

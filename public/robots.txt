@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tolex-tech.lovable.app/sitemap.xml
+Sitemap: https://oyetoludan.vercel.app/sitemap.xml

@@ -5,14 +5,14 @@ export const site = {
   name: "Oyewole Toluwalase",
   handle: "Tolex",
   tagline: "I build things for the web.",
-  role: "Frontend Developer",
+  role: "Full-stack Developer",
   location: "Nigeria",
   email: "oyetoludan@gmail.com",
   whatsapp: "2349037010581",
   whatsappDisplay: "+234 903 701 0581",
   /** Drop your CV at `public/resume.pdf` and this button goes live. */
   resumeUrl: "/resume.pdf",
-  url: "https://tolex-tech.lovable.app",
+  url: "https://oyetoludan.vercel.app",
 } as const;
 
 export const whatsappLink = `https://wa.me/${site.whatsapp}`;
