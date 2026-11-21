@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { InkButton } from "@/components/Ink";
+import { PillButton } from "@/components/Ink";
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -78,9 +78,9 @@ const ContactForm = () => {
   const fieldClass = (hasError: boolean) => cn(hasError && "border-destructive");
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 text-left" noValidate>
-      <div className="grid gap-8 sm:grid-cols-2">
-        <div className="space-y-1">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 text-left" noValidate>
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div className="space-y-2">
           <Label htmlFor="name">Name</Label>
           <Input
             id="name"
@@ -92,13 +92,13 @@ const ContactForm = () => {
             {...register("name")}
           />
           {errors.name && (
-            <p id="name-error" role="alert" className="font-sans text-[0.8125rem] text-destructive">
+            <p id="name-error" role="alert" className="text-[0.8125rem] text-destructive">
               {errors.name.message}
             </p>
           )}
         </div>
 
-        <div className="space-y-1">
+        <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
           <Input
             id="email"
@@ -111,14 +111,14 @@ const ContactForm = () => {
             {...register("email")}
           />
           {errors.email && (
-            <p id="email-error" role="alert" className="font-sans text-[0.8125rem] text-destructive">
+            <p id="email-error" role="alert" className="text-[0.8125rem] text-destructive">
               {errors.email.message}
             </p>
           )}
         </div>
       </div>
 
-      <div className="space-y-1">
+      <div className="space-y-2">
         <Label htmlFor="message">Message</Label>
         <Textarea
           id="message"
@@ -130,7 +130,7 @@ const ContactForm = () => {
           {...register("message")}
         />
         {errors.message && (
-          <p id="message-error" role="alert" className="font-sans text-[0.8125rem] text-destructive">
+          <p id="message-error" role="alert" className="text-[0.8125rem] text-destructive">
             {errors.message.message}
           </p>
         )}
@@ -142,18 +142,17 @@ const ContactForm = () => {
         <input id="company" type="text" tabIndex={-1} autoComplete="off" {...register("company")} />
       </div>
 
-      <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3">
-        <InkButton
+      <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-4">
+        <PillButton
           type="submit"
           disabled={isSubmitting}
-          tone="accent"
           arrow={isSubmitting ? "none" : "right"}
-          className="font-sans text-[1.0625rem]"
+          className="min-h-12 px-6 text-[1rem]"
         >
           {isSubmitting ? "Sending…" : "Send message"}
-        </InkButton>
+        </PillButton>
 
-        <p role="status" aria-live="polite" className="font-serif text-[0.9375rem] italic text-muted-foreground">
+        <p role="status" aria-live="polite" className="font-serif text-[1rem] italic text-muted-foreground">
           {sent ? "Thanks — your message is on its way." : "I usually reply within a day or two."}
         </p>
       </div>

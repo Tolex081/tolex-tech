@@ -35,7 +35,7 @@ Visitors read on desktop between other applications and on phones from a LinkedI
 
 - Name and handle: Oyewole Toluwalase, "Tolex". Logo at `src/assets/logo.png`; illustrated avatar (character in a blue suit and bow tie) at `src/assets/avatar.{jpg,webp}`.
 - Tagline: "I build things for the web."
-- Owner's binding constraints for the site (2026-11-20): no gradients; no boxes or card grids, organise with space, type and thin lines; one calm colour theme with exactly one accent colour; a distinctive font pair (not Inter, not Arial).
+- Owner's binding constraints for the site (2026-11-20): one calm colour theme with exactly one accent colour; a distinctive font pair (not Inter, not Arial); Motion hovers on every link and button; exactly one GSAP scroll animation; keep all content and links. The owner later asked for an airy look (the craft level of thegreatola.com, not its design), which lifted the earlier no-gradient and no-card rules.
 
 ## Evidence on Hand
 

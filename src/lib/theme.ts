@@ -38,15 +38,12 @@ export const removeStored = (key: string) => {
   }
 };
 
-/** Falls back to the OS preference rather than assuming a mode. */
-export const systemMode = (): Mode => {
-  if (typeof window === "undefined" || !window.matchMedia) return "light";
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-};
+/** Every visitor starts in light until they choose dark themselves. */
+export const DEFAULT_MODE: Mode = "light";
 
 export const THEME_COLORS: Record<Mode, string> = {
-  light: "#ecedea",
-  dark: "#131415",
+  light: "#eaf1f8",
+  dark: "#0d1422",
 };
 
 export const applyTheme = (mode: Mode) => {

@@ -1,353 +1,393 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-20T14:52:34.860Z",
+  "generatedAt": "2026-11-21T14:30:02.279Z",
   "title": "Design System: Tolex Tech",
   "extensions": {
     "colorMeta": {
-      "cobalt": {
+      "dusk-violet": {
         "role": "primary",
-        "displayName": "Suit Cobalt",
-        "canonical": "hsl(230 63% 50%)",
-        "approxHex": "#2f4ad0",
+        "displayName": "Dusk Violet",
+        "canonical": "hsl(246 48% 48%)",
+        "hex": "#4b40b5",
+        "cssVar": "--primary",
+        "mode": "light",
         "tonalRamp": [
-          "hsl(230 38% 15%)",
-          "hsl(230 63% 25%)",
-          "hsl(230 63% 35%)",
-          "hsl(230 63% 45%)",
-          "hsl(230 63% 60%)",
-          "hsl(230 63% 75%)",
-          "hsl(230 38% 88%)",
-          "hsl(230 38% 95%)"
+          "#1f1d2f",
+          "#302c53",
+          "#3e387b",
+          "#4d41b3",
+          "#776fc3",
+          "#a5a0cf",
+          "#d1d0e2",
+          "#f1f0f4"
         ]
       },
-      "cobalt-lifted": {
+      "dusk-violet-night": {
         "role": "primary",
-        "displayName": "Suit Cobalt, Lifted (dark)",
-        "canonical": "hsl(230 100% 81%)",
-        "approxHex": "#9eaeff",
+        "displayName": "Dusk Violet, Night",
+        "canonical": "hsl(248 92% 81%)",
+        "hex": "#aea2fb",
+        "cssVar": "--primary",
+        "mode": "dark",
         "tonalRamp": [
-          "hsl(230 60% 15%)",
-          "hsl(230 100% 25%)",
-          "hsl(230 100% 35%)",
-          "hsl(230 100% 45%)",
-          "hsl(230 100% 60%)",
-          "hsl(230 100% 75%)",
-          "hsl(230 60% 88%)",
-          "hsl(230 60% 95%)"
+          "#1f1d2f",
+          "#302c53",
+          "#3e387b",
+          "#4d41b3",
+          "#776fc3",
+          "#a5a0cf",
+          "#d1d0e2",
+          "#f1f0f4"
         ]
       },
-      "sleeve-board": {
+      "high-sky": {
         "role": "neutral",
-        "displayName": "Sleeve Board",
-        "canonical": "hsl(80 8% 92%)",
-        "approxHex": "#ebece9",
+        "displayName": "High Sky",
+        "canonical": "hsl(210 52% 94%)",
+        "hex": "#e8f0f8",
+        "cssVar": "--background",
+        "mode": "light",
         "tonalRamp": [
-          "hsl(80 5% 15%)",
-          "hsl(80 8% 25%)",
-          "hsl(80 8% 35%)",
-          "hsl(80 8% 45%)",
-          "hsl(80 8% 60%)",
-          "hsl(80 8% 75%)",
-          "hsl(80 5% 88%)",
-          "hsl(80 5% 95%)"
+          "#1c2630",
+          "#2a4055",
+          "#35597e",
+          "#3d7ab8",
+          "#6c99c6",
+          "#9eb8d1",
+          "#cfd9e3",
+          "#f0f2f5"
         ]
       },
-      "graphite-ink": {
+      "zenith": {
         "role": "neutral",
-        "displayName": "Graphite Ink",
-        "canonical": "hsl(210 7% 11%)",
-        "approxHex": "#1a1c1e",
-        "tonalRamp": [
-          "hsl(210 4% 15%)",
-          "hsl(210 7% 25%)",
-          "hsl(210 7% 35%)",
-          "hsl(210 7% 45%)",
-          "hsl(210 7% 60%)",
-          "hsl(210 7% 75%)",
-          "hsl(210 4% 88%)",
-          "hsl(210 4% 95%)"
-        ]
+        "displayName": "Zenith",
+        "canonical": "hsl(212 60% 90%)",
+        "hex": "#d6e4f5",
+        "cssVar": "--sky-top",
+        "mode": "light"
       },
-      "second-ink": {
+      "horizon-haze": {
         "role": "neutral",
-        "displayName": "Second Ink",
-        "canonical": "hsl(213 5% 36%)",
-        "approxHex": "#575b60",
+        "displayName": "Horizon Haze",
+        "canonical": "hsl(28 48% 91%)",
+        "hex": "#f3e7dd",
+        "cssVar": "--horizon",
+        "mode": "light",
         "tonalRamp": [
-          "hsl(213 3% 15%)",
-          "hsl(213 5% 25%)",
-          "hsl(213 5% 35%)",
-          "hsl(213 5% 45%)",
-          "hsl(213 5% 60%)",
-          "hsl(213 5% 75%)",
-          "hsl(213 3% 88%)",
-          "hsl(213 3% 95%)"
+          "#2f261d",
+          "#533e2c",
+          "#7b5738",
+          "#b37741",
+          "#c3966f",
+          "#cfb6a0",
+          "#e2d8d0",
+          "#f4f2f0"
         ]
       },
-      "third-ink": {
+      "plate-mount": {
         "role": "neutral",
-        "displayName": "Third Ink",
-        "canonical": "hsl(213 4% 39%)",
-        "approxHex": "#5f6367",
+        "displayName": "Plate Mount",
+        "canonical": "hsl(220 50% 99%)",
+        "hex": "#fbfcfe",
+        "cssVar": "--plate",
+        "mode": "light",
         "tonalRamp": [
-          "hsl(213 2% 15%)",
-          "hsl(213 4% 25%)",
-          "hsl(213 4% 35%)",
-          "hsl(213 4% 45%)",
-          "hsl(213 4% 60%)",
-          "hsl(213 4% 75%)",
-          "hsl(213 2% 88%)",
-          "hsl(213 2% 95%)"
+          "#1d2330",
+          "#2b3954",
+          "#364e7c",
+          "#3f67b6",
+          "#6d8ac5",
+          "#9fafd0",
+          "#cfd6e2",
+          "#f0f1f5"
         ]
       },
-      "hairline": {
+      "cloud-white": {
         "role": "neutral",
-        "displayName": "Hairline",
-        "canonical": "hsl(120 2% 78%)",
-        "approxHex": "#c6c8c6",
-        "tonalRamp": [
-          "hsl(120 1% 15%)",
-          "hsl(120 2% 25%)",
-          "hsl(120 2% 35%)",
-          "hsl(120 2% 45%)",
-          "hsl(120 2% 60%)",
-          "hsl(120 2% 75%)",
-          "hsl(120 1% 88%)",
-          "hsl(120 1% 95%)"
-        ]
+        "displayName": "Cloud White",
+        "canonical": "hsl(0 0% 100%)",
+        "hex": "#ffffff",
+        "cssVar": "--cloud",
+        "mode": "light"
       },
-      "ruled-line": {
+      "sky-tint": {
         "role": "neutral",
-        "displayName": "Ruled Line",
-        "canonical": "hsl(120 2% 62%)",
-        "approxHex": "#9ca09c",
-        "tonalRamp": [
-          "hsl(120 1% 15%)",
-          "hsl(120 2% 25%)",
-          "hsl(120 2% 35%)",
-          "hsl(120 2% 45%)",
-          "hsl(120 2% 60%)",
-          "hsl(120 2% 75%)",
-          "hsl(120 1% 88%)",
-          "hsl(120 1% 95%)"
-        ]
+        "displayName": "Sky Tint",
+        "canonical": "hsl(212 48% 90%)",
+        "hex": "#d9e5f2",
+        "cssVar": "--muted",
+        "mode": "light",
+        "purpose": "Current-section pill in the nav only; plates never take a tinted fill."
       },
-      "cobalt-on": {
+      "ink": {
         "role": "neutral",
-        "displayName": "Cobalt On",
-        "canonical": "hsl(80 8% 95%)",
-        "approxHex": "#f3f3f1",
+        "displayName": "Ink",
+        "canonical": "hsl(214 32% 13%)",
+        "hex": "#17202c",
+        "cssVar": "--foreground",
+        "mode": "light",
         "tonalRamp": [
-          "hsl(80 5% 15%)",
-          "hsl(80 8% 25%)",
-          "hsl(80 8% 35%)",
-          "hsl(80 8% 45%)",
-          "hsl(80 8% 60%)",
-          "hsl(80 8% 75%)",
-          "hsl(80 5% 88%)",
-          "hsl(80 5% 95%)"
+          "#20252c",
+          "#333e4d",
+          "#435670",
+          "#5475a0",
+          "#7d95b5",
+          "#a8b6c7",
+          "#d3d8df",
+          "#f1f2f4"
         ]
       },
-      "error-red": {
-        "role": "status",
-        "displayName": "Error Red",
-        "canonical": "hsl(4 76% 40%)",
-        "approxHex": "#b42318",
-        "tonalRamp": [
-          "hsl(4 46% 15%)",
-          "hsl(4 76% 25%)",
-          "hsl(4 76% 35%)",
-          "hsl(4 76% 45%)",
-          "hsl(4 76% 60%)",
-          "hsl(4 76% 75%)",
-          "hsl(4 46% 88%)",
-          "hsl(4 46% 95%)"
-        ]
-      },
-      "vinyl": {
+      "ink-muted": {
         "role": "neutral",
-        "displayName": "Vinyl",
-        "canonical": "hsl(210 5% 8%)",
-        "approxHex": "#131415",
-        "tonalRamp": [
-          "hsl(210 3% 15%)",
-          "hsl(210 5% 25%)",
-          "hsl(210 5% 35%)",
-          "hsl(210 5% 45%)",
-          "hsl(210 5% 60%)",
-          "hsl(210 5% 75%)",
-          "hsl(210 3% 88%)",
-          "hsl(210 3% 95%)"
-        ]
+        "displayName": "Ink Muted",
+        "canonical": "hsl(214 16% 33%)",
+        "hex": "#475262",
+        "cssVar": "--muted-foreground",
+        "mode": "light"
       },
-      "vinyl-ink": {
+      "ink-faint": {
         "role": "neutral",
-        "displayName": "Vinyl Ink",
-        "canonical": "hsl(75 7% 89%)",
-        "approxHex": "#e4e5e1",
-        "tonalRamp": [
-          "hsl(75 4% 15%)",
-          "hsl(75 7% 25%)",
-          "hsl(75 7% 35%)",
-          "hsl(75 7% 45%)",
-          "hsl(75 7% 60%)",
-          "hsl(75 7% 75%)",
-          "hsl(75 4% 88%)",
-          "hsl(75 4% 95%)"
-        ]
+        "displayName": "Ink Faint",
+        "canonical": "hsl(214 12% 39%)",
+        "hex": "#58626f",
+        "cssVar": "--faint",
+        "mode": "light"
       },
-      "vinyl-second-ink": {
+      "keyline": {
         "role": "neutral",
-        "displayName": "Vinyl Second Ink",
-        "canonical": "hsl(210 3% 64%)",
-        "approxHex": "#a0a3a6",
-        "tonalRamp": [
-          "hsl(210 2% 15%)",
-          "hsl(210 3% 25%)",
-          "hsl(210 3% 35%)",
-          "hsl(210 3% 45%)",
-          "hsl(210 3% 60%)",
-          "hsl(210 3% 75%)",
-          "hsl(210 2% 88%)",
-          "hsl(210 2% 95%)"
-        ]
+        "displayName": "Keyline",
+        "canonical": "hsl(213 32% 85%)",
+        "hex": "#cdd8e5",
+        "cssVar": "--border",
+        "mode": "light"
       },
-      "vinyl-third-ink": {
+      "field-stroke": {
         "role": "neutral",
-        "displayName": "Vinyl Third Ink",
-        "canonical": "hsl(210 3% 56%)",
-        "approxHex": "#8b8f92",
-        "tonalRamp": [
-          "hsl(210 2% 15%)",
-          "hsl(210 3% 25%)",
-          "hsl(210 3% 35%)",
-          "hsl(210 3% 45%)",
-          "hsl(210 3% 60%)",
-          "hsl(210 3% 75%)",
-          "hsl(210 2% 88%)",
-          "hsl(210 2% 95%)"
-        ]
+        "displayName": "Field Stroke",
+        "canonical": "hsl(213 16% 58%)",
+        "hex": "#8392a5",
+        "cssVar": "--input",
+        "mode": "light"
       },
-      "vinyl-hairline": {
+      "shadow-blue": {
         "role": "neutral",
-        "displayName": "Vinyl Hairline",
-        "canonical": "hsl(210 4% 19%)",
-        "approxHex": "#2f3032",
+        "displayName": "Shadow Blue",
+        "canonical": "hsl(216 45% 28%)",
+        "hex": "#274168",
+        "cssVar": "--shadow",
+        "mode": "light"
+      },
+      "signal-red": {
+        "role": "error",
+        "displayName": "Signal Red",
+        "canonical": "hsl(356 66% 42%)",
+        "hex": "#b2242e",
+        "cssVar": "--destructive",
+        "mode": "light",
         "tonalRamp": [
-          "hsl(210 2% 15%)",
-          "hsl(210 4% 25%)",
-          "hsl(210 4% 35%)",
-          "hsl(210 4% 45%)",
-          "hsl(210 4% 60%)",
-          "hsl(210 4% 75%)",
-          "hsl(210 2% 88%)",
-          "hsl(210 2% 95%)"
+          "#331a1b",
+          "#5b2528",
+          "#882b31",
+          "#c92c36",
+          "#d35f67",
+          "#d8979c",
+          "#e5ccce",
+          "#f5eff0"
         ]
       },
-      "vinyl-ruled-line": {
+      "night-sky": {
         "role": "neutral",
-        "displayName": "Vinyl Ruled Line",
-        "canonical": "hsl(210 3% 34%)",
-        "approxHex": "#545759",
+        "displayName": "Night Sky",
+        "canonical": "hsl(222 45% 9%)",
+        "hex": "#0d1321",
+        "cssVar": "--background",
+        "mode": "dark",
         "tonalRamp": [
-          "hsl(210 2% 15%)",
-          "hsl(210 3% 25%)",
-          "hsl(210 3% 35%)",
-          "hsl(210 3% 45%)",
-          "hsl(210 3% 60%)",
-          "hsl(210 3% 75%)",
-          "hsl(210 2% 88%)",
-          "hsl(210 2% 95%)"
+          "#1e232f",
+          "#2d3852",
+          "#3a4d79",
+          "#4565b0",
+          "#7289c0",
+          "#a2afce",
+          "#d0d5e1",
+          "#f0f1f4"
         ]
       },
-      "vinyl-error-red": {
-        "role": "status",
-        "displayName": "Vinyl Error Red",
-        "canonical": "hsl(4 100% 75%)",
-        "approxHex": "#ff8880",
-        "tonalRamp": [
-          "hsl(4 60% 15%)",
-          "hsl(4 100% 25%)",
-          "hsl(4 100% 35%)",
-          "hsl(4 100% 45%)",
-          "hsl(4 100% 60%)",
-          "hsl(4 100% 75%)",
-          "hsl(4 60% 88%)",
-          "hsl(4 60% 95%)"
-        ]
+      "night-zenith": {
+        "role": "neutral",
+        "displayName": "Night Zenith",
+        "canonical": "hsl(224 50% 6%)",
+        "hex": "#080c17",
+        "cssVar": "--sky-top",
+        "mode": "dark"
+      },
+      "afterglow": {
+        "role": "neutral",
+        "displayName": "Afterglow",
+        "canonical": "hsl(255 30% 16%)",
+        "hex": "#231d35",
+        "cssVar": "--horizon",
+        "mode": "dark"
+      },
+      "night-plate": {
+        "role": "neutral",
+        "displayName": "Night Plate",
+        "canonical": "hsl(222 34% 13%)",
+        "hex": "#161d2c",
+        "cssVar": "--plate",
+        "mode": "dark"
+      },
+      "moonlit-cloud": {
+        "role": "neutral",
+        "displayName": "Moonlit Cloud",
+        "canonical": "hsl(220 35% 78%)",
+        "hex": "#b3c0db",
+        "cssVar": "--cloud",
+        "mode": "dark"
+      },
+      "night-tint": {
+        "role": "neutral",
+        "displayName": "Night Tint",
+        "canonical": "hsl(222 30% 17%)",
+        "hex": "#1e2638",
+        "cssVar": "--muted",
+        "mode": "dark",
+        "purpose": "Current-section pill in the nav only (dark mode)."
+      },
+      "starlight": {
+        "role": "neutral",
+        "displayName": "Starlight",
+        "canonical": "hsl(216 30% 92%)",
+        "hex": "#e4e9f1",
+        "cssVar": "--foreground",
+        "mode": "dark"
+      },
+      "starlight-muted": {
+        "role": "neutral",
+        "displayName": "Starlight Muted",
+        "canonical": "hsl(216 16% 72%)",
+        "hex": "#acb5c3",
+        "cssVar": "--muted-foreground",
+        "mode": "dark"
+      },
+      "starlight-faint": {
+        "role": "neutral",
+        "displayName": "Starlight Faint",
+        "canonical": "hsl(216 12% 64%)",
+        "hex": "#98a1ae",
+        "cssVar": "--faint",
+        "mode": "dark"
+      },
+      "night-keyline": {
+        "role": "neutral",
+        "displayName": "Night Keyline",
+        "canonical": "hsl(222 24% 22%)",
+        "hex": "#2b3346",
+        "cssVar": "--border",
+        "mode": "dark"
+      },
+      "night-field-stroke": {
+        "role": "neutral",
+        "displayName": "Night Field Stroke",
+        "canonical": "hsl(220 14% 44%)",
+        "hex": "#606b80",
+        "cssVar": "--input",
+        "mode": "dark"
+      },
+      "night-shadow": {
+        "role": "neutral",
+        "displayName": "Night Shadow",
+        "canonical": "hsl(225 60% 2%)",
+        "hex": "#020408",
+        "cssVar": "--shadow",
+        "mode": "dark"
+      },
+      "signal-red-night": {
+        "role": "error",
+        "displayName": "Signal Red, Night",
+        "canonical": "hsl(356 90% 76%)",
+        "hex": "#f98b92",
+        "cssVar": "--destructive",
+        "mode": "dark"
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "The name only, one band across the first viewport."
+        "purpose": "The hero name only, two lines, the second in italic."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Featured track titles, dialog and fallback-page headings."
+        "purpose": "Section headings and the lead featured plate title."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Section names pinned in the left margin; group and other-track titles."
+        "purpose": "Skill group titles, index row titles, dialog title."
       },
-      "record-title": {
-        "displayName": "Record Title",
-        "purpose": "Tagline in Brygada italic under the name."
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Bodoni italic in muted ink: section and plate captions, the hero tagline, form status line."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Default prose, 62ch measure."
-      },
-      "body-lead": {
-        "displayName": "Body Lead",
-        "purpose": "Featured descriptions, About, liner notes."
+        "purpose": "Running text, capped at 65ch."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Nav, credits, stack lines, social words, actions."
+        "purpose": "Pills, nav links, project actions, field labels."
       },
       "meta": {
         "displayName": "Meta",
-        "purpose": "Form labels, dt labels, field errors."
+        "purpose": "Tech lists in the index, contact term labels, validation messages."
       }
     },
     "shadows": [
       {
-        "name": "focus-line",
-        "value": "inset 0 -1px 0 hsl(var(--primary))",
-        "purpose": "Not elevation: doubles the cobalt line under a focused field. The system has no elevation shadows."
+        "name": "plate",
+        "value": "0 1px 2px hsl(var(--shadow) / 0.06), 0 18px 40px -18px hsl(var(--shadow) / 0.28)",
+        "purpose": "Every plate, the nav bar, pills at rest, toasts."
+      },
+      {
+        "name": "lift",
+        "value": "0 2px 4px hsl(var(--shadow) / 0.08), 0 24px 48px -16px hsl(var(--shadow) / 0.36)",
+        "purpose": "Pills on hover and focus; the open dialog."
+      },
+      {
+        "name": "field-focus",
+        "value": "0 0 0 3px hsl(var(--primary) / 0.18)",
+        "purpose": "Inputs and textareas on focus."
       }
     ],
     "motion": [
       {
-        "name": "ease-ink",
+        "name": "ease-atlas",
         "value": "cubic-bezier(0.22, 1, 0.36, 1)",
-        "purpose": "All Motion hovers (underline draw, arrow lean, dialog close rotate) and the track-number colour."
+        "purpose": "The shared Motion hover curve for every link, pill and the dialog close."
       },
       {
-        "name": "duration-ink",
-        "value": "0.38s",
-        "purpose": "Underline and arrow on hover, focus and tap."
+        "name": "duration-hover",
+        "value": "0.4s",
+        "purpose": "Pill lift, underline draw-in, arrow drift."
       },
       {
-        "name": "duration-colour",
-        "value": "300ms ease-out",
-        "purpose": "Ink colour steps on links, buttons, field lines and the header hairline."
+        "name": "duration-color",
+        "value": "0.3s ease-out",
+        "purpose": "Colour and shadow transitions on links, pills and fields."
       },
       {
-        "name": "duration-track-no",
-        "value": "0.35s",
-        "purpose": "Track number turning cobalt while playing."
+        "name": "pill-lift",
+        "value": "translateY(-2px); press: translateY(0) scale(0.98)",
+        "purpose": "Pill hover and tap."
       },
       {
-        "name": "playhead-scroll",
-        "value": "GSAP ScrollTrigger: start top 55%, end bottom 55%, scrub 0.5, power2.inOut, travel capped at 140px",
-        "purpose": "The page's one scroll animation; skipped under reduced motion."
+        "name": "arrow-drift",
+        "value": "right: translateX(4px); out: translate(2.5px, -2.5px)",
+        "purpose": "Arrow on pills and text links on hover."
       },
       {
-        "name": "reduced-motion",
-        "value": "MotionConfig reducedMotion=user; GSAP skipped; data-state animations off; smooth scroll off",
-        "purpose": "Nothing moves; colour still reports state."
+        "name": "sky-descent",
+        "value": "GSAP ScrollTrigger, scrub 0.6, start 0 to max; far -18vh, mid -55vh, near -125vh; haze opacity 0 to 1 (power2.in)",
+        "purpose": "The page's one scroll animation. Reduced motion: no timeline, haze held at 0.5."
       }
     ],
     "breakpoints": [
@@ -367,118 +407,131 @@
   },
   "components": [
     {
-      "name": "Ink Link, Quiet",
+      "name": "Primary Pill",
       "kind": "button",
+      "refersTo": "pill-primary",
+      "description": "The one call to action per context: violet, fully round, lifts 2px into the Lift shadow with a drifting arrow.",
+      "html": "<a class=\"ds-pill ds-pill-primary\" href=\"#\"><span>View my work</span><svg class=\"ds-arrow\" width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 9999px; font-family: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif; font-size: 1rem; font-weight: 500; line-height: 1; text-decoration: none; box-shadow: 0 1px 2px hsl(var(--shadow) / 0.06), 0 18px 40px -18px hsl(var(--shadow) / 0.28); transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease-out; } .ds-pill-primary { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); } .ds-pill .ds-arrow { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); } .ds-pill:hover, .ds-pill:focus-visible { transform: translateY(-2px); box-shadow: 0 2px 4px hsl(var(--shadow) / 0.08), 0 24px 48px -16px hsl(var(--shadow) / 0.36); } .ds-pill:hover .ds-arrow, .ds-pill:focus-visible .ds-arrow { transform: translateX(4px); } .ds-pill:active { transform: translateY(0) scale(0.98); } .ds-pill:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 3px; }"
+    },
+    {
+      "name": "Plate Pill",
+      "kind": "button",
+      "refersTo": "pill-plate",
+      "description": "Secondary pill on a white mount with an inset keyline; same lift as the primary.",
+      "html": "<button class=\"ds-pill2\" type=\"button\">Download CV</button>",
+      "css": ".ds-pill2 { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border: none; border-radius: 9999px; background: hsl(var(--plate)); color: hsl(var(--foreground)); font-family: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif; font-size: 0.9375rem; font-weight: 500; line-height: 1; box-shadow: inset 0 0 0 1px hsl(var(--border)), 0 1px 2px hsl(var(--shadow) / 0.06), 0 18px 40px -18px hsl(var(--shadow) / 0.28); cursor: pointer; transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease-out; } .ds-pill2:hover, .ds-pill2:focus-visible { transform: translateY(-2px); box-shadow: inset 0 0 0 1px hsl(var(--border)), 0 2px 4px hsl(var(--shadow) / 0.08), 0 24px 48px -16px hsl(var(--shadow) / 0.36); } .ds-pill2:active { transform: translateY(0) scale(0.98); } .ds-pill2:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 3px; }"
+    },
+    {
+      "name": "Accent Ink Link",
+      "kind": "custom",
+      "refersTo": "ink-link-accent",
+      "description": "Violet text link whose 1px underline draws in from the left; external links carry an up-right arrow that drifts.",
+      "html": "<a class=\"ds-ink ds-ink-accent\" href=\"#\"><span class=\"ds-ink-text\">Code</span><svg class=\"ds-ink-arrow\" width=\"15\" height=\"15\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a>",
+      "css": ".ds-ink { display: inline-flex; align-items: baseline; gap: 6px; padding: 11px 0; margin: -11px 0; font-family: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif; font-size: 0.9375rem; font-weight: 500; text-decoration: none; transition: color 0.3s ease-out; } .ds-ink-accent { color: hsl(var(--primary)); } .ds-ink-text { position: relative; } .ds-ink-text::after { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); } .ds-ink-arrow { align-self: center; transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); } .ds-ink:hover .ds-ink-text::after, .ds-ink:focus-visible .ds-ink-text::after { transform: scaleX(1); } .ds-ink:hover .ds-ink-arrow, .ds-ink:focus-visible .ds-ink-arrow { transform: translate(2.5px, -2.5px); } .ds-ink:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 3px; }"
+    },
+    {
+      "name": "Quiet Ink Link",
+      "kind": "custom",
       "refersTo": "ink-link-quiet",
-      "description": "Default link: second ink at rest; hover steps ink to graphite and draws a hairline underline in from the left.",
-      "html": "<a class=\"ds-ink ds-ink-quiet\" href=\"#\"><span class=\"ds-ink-t\">GitHub</span></a>",
-      "css": ".ds-ink{display:inline-flex;align-items:baseline;gap:6px;font-family:\"Archivo Variable\",\"Archivo\",system-ui,sans-serif;font-size:0.875rem;background:none;border:0;padding:11px 0;cursor:pointer;text-decoration:none;transition:color .3s ease-out}.ds-ink .ds-ink-t{position:relative}.ds-ink .ds-ink-t::after{content:\"\";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform-origin:left;transform:scaleX(0);transition:transform .38s cubic-bezier(0.22, 1, 0.36, 1),opacity .38s cubic-bezier(0.22, 1, 0.36, 1)}.ds-ink:hover .ds-ink-t::after,.ds-ink:focus-visible .ds-ink-t::after{transform:scaleX(1);opacity:1}.ds-ink svg{width:.95em;height:.95em;transition:transform .38s cubic-bezier(0.22, 1, 0.36, 1)}.ds-ink:focus-visible{outline:1.5px solid hsl(var(--ring));outline-offset:0}.ds-ink-quiet{color:hsl(var(--muted-foreground))}.ds-ink-quiet:hover,.ds-ink-quiet:focus-visible{color:hsl(var(--foreground))}.ds-ink-accent{color:hsl(var(--primary))}.ds-ink-accent .ds-ink-t::after{transform:scaleX(1);opacity:.45}"
+      "description": "Muted text link for nav and socials; steps to full ink as its underline draws in.",
+      "html": "<a class=\"ds-quiet\" href=\"#\"><span>GitHub</span></a>",
+      "css": ".ds-quiet { display: inline-flex; padding: 11px 0; margin: -11px 0; color: hsl(var(--muted-foreground)); font-family: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif; font-size: 0.9375rem; text-decoration: none; transition: color 0.3s ease-out; } .ds-quiet span { position: relative; } .ds-quiet span::after { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1); } .ds-quiet:hover, .ds-quiet:focus-visible { color: hsl(var(--foreground)); } .ds-quiet:hover span::after, .ds-quiet:focus-visible span::after { transform: scaleX(1); } .ds-quiet:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 3px; }"
     },
     {
-      "name": "Ink Link, Accent",
-      "kind": "button",
-      "refersTo": "ink-link-accent",
-      "description": "Every action: cobalt text, underline at 45% at rest drawn to full on hover, arrow leans 4px toward its destination.",
-      "html": "<a class=\"ds-ink ds-ink-accent ds-ink-right\" href=\"#\"><span class=\"ds-ink-t\">View my work</span><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
-      "css": ".ds-ink{display:inline-flex;align-items:baseline;gap:6px;font-family:\"Archivo Variable\",\"Archivo\",system-ui,sans-serif;font-size:0.875rem;background:none;border:0;padding:11px 0;cursor:pointer;text-decoration:none;transition:color .3s ease-out}.ds-ink .ds-ink-t{position:relative}.ds-ink .ds-ink-t::after{content:\"\";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform-origin:left;transform:scaleX(0);transition:transform .38s cubic-bezier(0.22, 1, 0.36, 1),opacity .38s cubic-bezier(0.22, 1, 0.36, 1)}.ds-ink:hover .ds-ink-t::after,.ds-ink:focus-visible .ds-ink-t::after{transform:scaleX(1);opacity:1}.ds-ink svg{width:.95em;height:.95em;transition:transform .38s cubic-bezier(0.22, 1, 0.36, 1)}.ds-ink:focus-visible{outline:1.5px solid hsl(var(--ring));outline-offset:0}.ds-ink-quiet{color:hsl(var(--muted-foreground))}.ds-ink-quiet:hover,.ds-ink-quiet:focus-visible{color:hsl(var(--foreground))}.ds-ink-accent{color:hsl(var(--primary))}.ds-ink-accent .ds-ink-t::after{transform:scaleX(1);opacity:.45}.ds-ink-right:hover svg,.ds-ink-right:focus-visible svg{transform:translateX(4px)}"
+      "name": "Featured Plate",
+      "kind": "card",
+      "refersTo": "inner-keyline",
+      "description": "An atlas specimen: white mount, then an unfilled inner keyline hugging the Bodoni title, italic caption, description and accent links.",
+      "html": "<article class=\"ds-plate\"><div class=\"ds-keyline\"><h4 class=\"ds-plate-title\">Trivia Arena</h4><p class=\"ds-caption\">React, TypeScript, Tailwind CSS</p><p class=\"ds-plate-desc\">A live trivia game for Web3 communities.</p><a class=\"ds-plate-link\" href=\"#\">Code</a></div></article>",
+      "css": ".ds-plate { max-width: 420px; padding: 10px; border-radius: 1.25rem; background: hsl(var(--plate)); color: hsl(var(--foreground)); box-shadow: inset 0 0 0 1px hsl(var(--border)), 0 1px 2px hsl(var(--shadow) / 0.06), 0 18px 40px -18px hsl(var(--shadow) / 0.28); } .ds-keyline { padding: 32px; border-radius: 0.875rem; box-shadow: inset 0 0 0 1px hsl(var(--border)); } .ds-plate-title { margin: 0; font-family: 'Bodoni Moda Variable', 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: 2.25rem; line-height: 1.02; letter-spacing: -0.02em; } .ds-caption { margin: 12px 0 0; font-family: 'Bodoni Moda Variable', 'Bodoni Moda', Didot, Georgia, serif; font-style: italic; font-size: 1.125rem; line-height: 1.375; color: hsl(var(--muted-foreground)); } .ds-plate-desc { margin: 24px 0 20px; font-family: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif; font-size: 1rem; line-height: 1.65; } .ds-plate-link { font-family: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif; font-size: 0.9375rem; font-weight: 500; color: hsl(var(--primary)); text-decoration: none; text-underline-offset: 4px; } .ds-plate-link:hover, .ds-plate-link:focus-visible { text-decoration: underline; text-decoration-thickness: 1px; } .ds-plate-link:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 3px; }"
     },
     {
-      "name": "Ink Link, External",
-      "kind": "button",
-      "refersTo": "ink-link-accent",
-      "description": "Accent link leaving the site; the up-right arrow leans 2.5px up and out.",
-      "html": "<a class=\"ds-ink ds-ink-accent ds-ink-out\" href=\"#\"><span class=\"ds-ink-t\">Code</span><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a>",
-      "css": ".ds-ink{display:inline-flex;align-items:baseline;gap:6px;font-family:\"Archivo Variable\",\"Archivo\",system-ui,sans-serif;font-size:0.875rem;background:none;border:0;padding:11px 0;cursor:pointer;text-decoration:none;transition:color .3s ease-out}.ds-ink .ds-ink-t{position:relative}.ds-ink .ds-ink-t::after{content:\"\";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform-origin:left;transform:scaleX(0);transition:transform .38s cubic-bezier(0.22, 1, 0.36, 1),opacity .38s cubic-bezier(0.22, 1, 0.36, 1)}.ds-ink:hover .ds-ink-t::after,.ds-ink:focus-visible .ds-ink-t::after{transform:scaleX(1);opacity:1}.ds-ink svg{width:.95em;height:.95em;transition:transform .38s cubic-bezier(0.22, 1, 0.36, 1)}.ds-ink:focus-visible{outline:1.5px solid hsl(var(--ring));outline-offset:0}.ds-ink-quiet{color:hsl(var(--muted-foreground))}.ds-ink-quiet:hover,.ds-ink-quiet:focus-visible{color:hsl(var(--foreground))}.ds-ink-accent{color:hsl(var(--primary))}.ds-ink-accent .ds-ink-t::after{transform:scaleX(1);opacity:.45}.ds-ink-out:hover svg,.ds-ink-out:focus-visible svg{transform:translate(2.5px,-2.5px)}"
+      "name": "Ruled Index Row",
+      "kind": "custom",
+      "refersTo": "plate",
+      "description": "The strict index for other projects: fixed columns, Bodoni title, muted description, faint meta line, hairline below.",
+      "html": "<ol class=\"ds-index\"><li class=\"ds-index-row\"><h4 class=\"ds-index-title\">Badge Maker</h4><div><p class=\"ds-index-desc\">Generates community badges in the browser.</p><p class=\"ds-index-meta\">React · Canvas</p></div><a class=\"ds-index-link\" href=\"#\">Code</a></li></ol>",
+      "css": ".ds-index { list-style: none; margin: 0; padding: 0; border-top: 1px solid hsl(var(--border)); } .ds-index-row { display: grid; grid-template-columns: minmax(0, 15rem) 1fr auto; align-items: baseline; column-gap: 40px; padding: 24px 0; border-bottom: 1px solid hsl(var(--border)); } .ds-index-title { margin: 0; font-family: 'Bodoni Moda Variable', 'Bodoni Moda', Didot, Georgia, serif; font-weight: 400; font-size: 1.5rem; line-height: 1.25; color: hsl(var(--foreground)); } .ds-index-desc { margin: 0; font-family: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif; font-size: 0.9375rem; color: hsl(var(--muted-foreground)); } .ds-index-meta { margin: 6px 0 0; font-family: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif; font-size: 0.8125rem; color: hsl(var(--faint)); } .ds-index-link { font-family: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif; font-size: 0.9375rem; font-weight: 500; color: hsl(var(--primary)); text-decoration: none; } .ds-index-link:hover, .ds-index-link:focus-visible { text-decoration: underline; text-underline-offset: 4px; }"
     },
     {
-      "name": "Ruled Input",
+      "name": "Field",
       "kind": "input",
-      "refersTo": "input-ruled",
-      "description": "A ruled line to write on: bottom line only, cobalt and doubled on focus.",
-      "html": "<label class=\"ds-label\" for=\"ds-name\">Name</label><input id=\"ds-name\" class=\"ds-input\" placeholder=\"Ada Lovelace\">",
-      "css": ".ds-label{display:block;font-family:\"Archivo Variable\",\"Archivo\",system-ui,sans-serif;font-size:0.8125rem;line-height:1;color:hsl(var(--muted-foreground));margin-bottom:4px}.ds-input{display:block;width:100%;height:44px;border:0;border-bottom:1px solid hsl(var(--input));border-radius:0;background:transparent;padding:8px 0;font-family:\"Brygada 1918 Variable\",\"Brygada 1918\",Georgia,serif;font-size:1.0625rem;color:hsl(var(--foreground));caret-color:hsl(var(--primary));transition:border-color .3s,box-shadow .3s}.ds-input::placeholder{color:hsl(var(--faint));font-style:italic}.ds-input:hover{border-bottom-color:hsl(var(--muted-foreground))}.ds-input:focus-visible{outline:none;border-bottom-color:hsl(var(--primary));box-shadow:inset 0 -1px 0 hsl(var(--primary))}"
+      "refersTo": "field",
+      "description": "A soft field set into the plate; violet border, white fill and a faint violet glow on focus.",
+      "html": "<label class=\"ds-field-label\" for=\"ds-name\">Name</label><input class=\"ds-field\" id=\"ds-name\" placeholder=\"Ada Lovelace\" />",
+      "css": ".ds-field-label { display: block; margin-bottom: 8px; font-family: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; line-height: 1; color: hsl(var(--muted-foreground)); } .ds-field { width: 100%; height: 48px; padding: 8px 16px; border: 1px solid hsl(var(--input) / 0.7); border-radius: 1rem; background: hsl(var(--background) / 0.6); color: hsl(var(--foreground)); caret-color: hsl(var(--primary)); font-family: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif; font-size: 1rem; transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s; } .ds-field::placeholder { color: hsl(var(--faint)); } .ds-field:hover { border-color: hsl(var(--input)); } .ds-field:focus-visible { outline: none; border-color: hsl(var(--primary)); background: hsl(var(--plate)); box-shadow: 0 0 0 3px hsl(var(--primary) / 0.18); } .ds-field[aria-invalid='true'] { border-color: hsl(var(--destructive)); }"
     },
     {
-      "name": "Header Navigation",
+      "name": "Floating Nav",
       "kind": "nav",
-      "refersTo": "ink-link-quiet",
-      "description": "Fixed header on the page colour: handle in expanded width, quiet section links with one active cobalt underline, accent Hire me, word theme toggle.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-ink ds-nav-handle\" href=\"#\"><span class=\"ds-ink-t\">tolex</span></a><span class=\"ds-nav-links\"><a class=\"ds-ink ds-ink-quiet\" href=\"#\"><span class=\"ds-ink-t\">About</span></a><a class=\"ds-ink ds-ink-quiet is-active\" href=\"#\"><span class=\"ds-ink-t\">Projects</span></a><a class=\"ds-ink ds-ink-quiet\" href=\"#\"><span class=\"ds-ink-t\">Contact</span></a></span><span class=\"ds-nav-links\"><a class=\"ds-ink ds-ink-accent\" href=\"#\"><span class=\"ds-ink-t\">Hire me</span></a><button class=\"ds-ink ds-ink-quiet\" type=\"button\"><span class=\"ds-ink-t\">Dark</span></button></span></nav>",
-      "css": ".ds-ink{display:inline-flex;align-items:baseline;gap:6px;font-family:\"Archivo Variable\",\"Archivo\",system-ui,sans-serif;font-size:0.875rem;background:none;border:0;padding:11px 0;cursor:pointer;text-decoration:none;transition:color .3s ease-out}.ds-ink .ds-ink-t{position:relative}.ds-ink .ds-ink-t::after{content:\"\";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform-origin:left;transform:scaleX(0);transition:transform .38s cubic-bezier(0.22, 1, 0.36, 1),opacity .38s cubic-bezier(0.22, 1, 0.36, 1)}.ds-ink:hover .ds-ink-t::after,.ds-ink:focus-visible .ds-ink-t::after{transform:scaleX(1);opacity:1}.ds-ink svg{width:.95em;height:.95em;transition:transform .38s cubic-bezier(0.22, 1, 0.36, 1)}.ds-ink:focus-visible{outline:1.5px solid hsl(var(--ring));outline-offset:0}.ds-ink-quiet{color:hsl(var(--muted-foreground))}.ds-ink-quiet:hover,.ds-ink-quiet:focus-visible{color:hsl(var(--foreground))}.ds-ink-accent{color:hsl(var(--primary))}.ds-ink-accent .ds-ink-t::after{transform:scaleX(1);opacity:.45}.ds-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:56px;border-bottom:1px solid hsl(var(--border));background:hsl(var(--background))}.ds-nav-links{display:flex;align-items:baseline;gap:28px}.ds-nav-handle{font-stretch:125%;font-size:0.9375rem;color:hsl(var(--foreground))}.ds-ink.is-active{color:hsl(var(--foreground))}.ds-ink.is-active .ds-ink-t::after{transform:scaleX(1);background:hsl(var(--primary))}"
-    },
-    {
-      "name": "Track Row",
-      "kind": "custom",
-      "refersTo": "tracklist",
-      "description": "Signature tracklist row: tabular number in the left column (cobalt with the 2px playhead while playing), wide light title, measure-bound description, label line of stack and accent actions.",
-      "html": "<ol class=\"ds-tracks\"><li class=\"ds-track is-playing\"><span class=\"ds-track-no\">A1</span><div><h4 class=\"ds-track-t\">Trivia Arena</h4><p class=\"ds-track-d\">A live quiz game played by thousands across Web3 communities.</p><p class=\"ds-track-m\"><span>React / TypeScript / Tailwind</span><a class=\"ds-ink ds-ink-accent ds-ink-out\" href=\"#\"><span class=\"ds-ink-t\">Code</span><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"/><path d=\"M7 17 17 7\"/></svg></a></p></div></li></ol>",
-      "css": ".ds-ink{display:inline-flex;align-items:baseline;gap:6px;font-family:\"Archivo Variable\",\"Archivo\",system-ui,sans-serif;font-size:0.875rem;background:none;border:0;padding:11px 0;cursor:pointer;text-decoration:none;transition:color .3s ease-out}.ds-ink .ds-ink-t{position:relative}.ds-ink .ds-ink-t::after{content:\"\";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:currentColor;transform-origin:left;transform:scaleX(0);transition:transform .38s cubic-bezier(0.22, 1, 0.36, 1),opacity .38s cubic-bezier(0.22, 1, 0.36, 1)}.ds-ink:hover .ds-ink-t::after,.ds-ink:focus-visible .ds-ink-t::after{transform:scaleX(1);opacity:1}.ds-ink svg{width:.95em;height:.95em;transition:transform .38s cubic-bezier(0.22, 1, 0.36, 1)}.ds-ink:focus-visible{outline:1.5px solid hsl(var(--ring));outline-offset:0}.ds-ink-quiet{color:hsl(var(--muted-foreground))}.ds-ink-quiet:hover,.ds-ink-quiet:focus-visible{color:hsl(var(--foreground))}.ds-ink-accent{color:hsl(var(--primary))}.ds-ink-accent .ds-ink-t::after{transform:scaleX(1);opacity:.45}.ds-ink-out:hover svg,.ds-ink-out:focus-visible svg{transform:translate(2.5px,-2.5px)}.ds-tracks{list-style:none;margin:0;padding:0}.ds-track{display:grid;grid-template-columns:4rem 1fr;column-gap:16px;border-top:1px solid hsl(var(--border));padding:40px 0;position:relative}.ds-track-no{padding:0.3em 0 0 12px;font-family:\"Archivo Variable\",\"Archivo\",system-ui,sans-serif;font-size:0.875rem;font-variant-numeric:tabular-nums;color:hsl(var(--faint));transition:color .35s cubic-bezier(0.22, 1, 0.36, 1)}.ds-track.is-playing .ds-track-no{color:hsl(var(--primary))}.ds-track.is-playing::before{content:\"\";position:absolute;left:0;top:calc(40px + 0.3em);width:2px;height:1.125rem;background:hsl(var(--primary))}.ds-track-t{margin:0;font-family:\"Archivo Variable\",\"Archivo\",system-ui,sans-serif;font-stretch:125%;font-weight:300;font-size:clamp(1.75rem,1.2rem + 2vw,2.75rem);line-height:1.05;letter-spacing:-0.015em;color:hsl(var(--foreground))}.ds-track-d{margin:12px 0 0;max-width:62ch;font-family:\"Brygada 1918 Variable\",\"Brygada 1918\",Georgia,serif;font-size:1.125rem;line-height:1.65;color:hsl(var(--foreground))}.ds-track-m{margin:20px 0 0;display:flex;flex-wrap:wrap;align-items:baseline;gap:12px 24px;font-family:\"Archivo Variable\",\"Archivo\",system-ui,sans-serif;font-size:0.875rem;color:hsl(var(--muted-foreground))}"
-    },
-    {
-      "name": "Section Head",
-      "kind": "custom",
-      "refersTo": "section",
-      "description": "The one layout: a full-width hairline, the section name pinned in the left 3 of 12 columns, content in the other 9.",
-      "html": "<section class=\"ds-section\"><h2 class=\"ds-section-t\">Skills</h2><div class=\"ds-section-b\"><p class=\"ds-key\">Key: <span class=\"ds-core\">Core</span> / <span class=\"ds-comf\">Comfortable</span> / <em class=\"ds-learn\">Learning</em></p></div></section>",
-      "css": ".ds-section{display:grid;grid-template-columns:repeat(12,1fr);column-gap:32px;border-top:1px solid hsl(var(--border));padding:56px 0 96px;font-family:\"Brygada 1918 Variable\",\"Brygada 1918\",Georgia,serif;font-size:1.0625rem;line-height:1.6;color:hsl(var(--foreground))}.ds-section-t{grid-column:span 3;margin:0;font-family:\"Archivo Variable\",\"Archivo\",system-ui,sans-serif;font-stretch:125%;font-weight:300;font-size:1.375rem;line-height:1;letter-spacing:-0.01em}.ds-section-b{grid-column:span 9}.ds-key{margin:0;font-family:\"Archivo Variable\",\"Archivo\",system-ui,sans-serif;font-size:0.875rem;color:hsl(var(--faint))}.ds-core{color:hsl(var(--foreground))}.ds-comf{color:hsl(var(--muted-foreground))}.ds-learn{font-family:\"Brygada 1918 Variable\",\"Brygada 1918\",Georgia,serif;color:hsl(var(--faint))}"
+      "refersTo": "nav-bar",
+      "description": "A rounded plate floating over the sky: Bodoni italic wordmark, quiet links with a sky-tint pill on the current section, and the Hire me pill.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-mark\" href=\"#\">Tolex</a><ul class=\"ds-nav-links\"><li><a href=\"#\">About</a></li><li><a href=\"#\" aria-current=\"location\">Projects</a></li><li><a href=\"#\">Contact</a></li></ul><a class=\"ds-nav-cta\" href=\"#\">Hire me</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; padding: 0 8px 0 20px; border-radius: 1.75rem; background: hsl(var(--plate) / 0.95); box-shadow: inset 0 0 0 1px hsl(var(--border)), 0 1px 2px hsl(var(--shadow) / 0.06), 0 18px 40px -18px hsl(var(--shadow) / 0.28); font-family: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif; font-size: 0.9375rem; } .ds-nav-mark { font-family: 'Bodoni Moda Variable', 'Bodoni Moda', Didot, Georgia, serif; font-style: italic; font-size: 1.5rem; line-height: 1; color: hsl(var(--foreground)); text-decoration: none; } .ds-nav-links { display: flex; gap: 2px; margin: 0; padding: 0; list-style: none; } .ds-nav-links a { display: inline-block; padding: 8px 12px; border-radius: 9999px; color: hsl(var(--muted-foreground)); text-decoration: none; transition: background-color 0.3s, color 0.3s; } .ds-nav-links a:hover, .ds-nav-links a:focus-visible { color: hsl(var(--foreground)); } .ds-nav-links a[aria-current] { background: hsl(var(--muted)); color: hsl(var(--foreground)); } .ds-nav-cta { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 9999px; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); font-weight: 500; line-height: 1; text-decoration: none; box-shadow: 0 1px 2px hsl(var(--shadow) / 0.06), 0 18px 40px -18px hsl(var(--shadow) / 0.28); transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease-out; } .ds-nav-cta:hover, .ds-nav-cta:focus-visible { transform: translateY(-2px); box-shadow: 0 2px 4px hsl(var(--shadow) / 0.08), 0 24px 48px -16px hsl(var(--shadow) / 0.36); }"
     }
   ],
   "narrative": {
-    "northStar": "The Back Sleeve",
-    "overview": "The page is the back of a quiet record sleeve. Projects are the tracklist, skills the personnel, contact the credits. Everything is printed straight onto uncoated grey board in graphite ink; in dark mode the board turns over and becomes the vinyl, near-black with grey-white ink. Structure comes from hairline rules and from type alone, never from panels, fills, radii or shadows.\n\nDensity is liner-note density: generous vertical air between sections (up to 144px), tight ruled rows inside them, a wide 12-column page held to 78rem. Display type is Archivo pushed to its expanded width and kept light; prose is Brygada 1918, with its italic doing the work other systems hand to colour or weight. There is exactly one accent, a cobalt taken from the suit in the avatar, and it appears only on things you can act on and on the single active edge.\n\nMotion is small and tactile. Every link and button shares one hover grammar driven by Motion: the ink steps up a shade, a hairline underline draws in from the left, an arrow leans toward its destination. The page has exactly one scroll animation, the cobalt playhead in the tracklist. Under reduced motion nothing moves, but colour still reports state.",
+    "northStar": "The Cloud Atlas",
+    "overview": "The page is a field guide to one sky, after the 1896 International Cloud Atlas. A fixed sky sits behind everything: a pale zenith fading into high clear air, three planes of cumulus and wisp roughened by fractal noise, and a warm horizon haze that rises in as the visitor reads down toward contact. Content either sits straight on that sky or is mounted on white plates, the way specimens were mounted in an atlas, with an italic Bodoni caption beneath.\n\nDensity is low and the pace is slow. Sections are separated by space, never by rules or bands. Hierarchy comes from the contrast between a high-contrast Didone display set large and a plain, sturdy grotesque for everything you read or press. One accent, dusk violet, marks only what moves or can be clicked.\n\nThe world exists in two lights from the same tokens. By day: pale blue air warming to peach haze. By night: deep ink-blue sky, moonlit cloud at low opacity, and a faint violet afterglow at the horizon.",
     "keyCharacteristics": [
-      "Grey sleeve board and graphite ink in light; vinyl near-black and grey-white ink in dark. One theme, two lights.",
-      "Hairlines (1px, hairline colour) are the only structure.",
-      "One cobalt accent, reserved for actions and the active edge.",
-      "Archivo at 125% width, light, for display and section names; Archivo at normal width for labels; Brygada 1918 for prose and italics.",
-      "Square corners everywhere, flat surfaces, no gradients.",
-      "One hover grammar on every interactive element; one GSAP scroll animation on the page."
+      "One fixed, layered sky behind every screen, including 404 and error.",
+      "White plate mounts with a fine inner keyline and a long daylight shadow.",
+      "Bodoni Moda for display, headings and italic captions; Schibsted Grotesk for body and UI.",
+      "Dusk violet only on interactive or moving things.",
+      "One shared hover grammar: 0.4s on cubic-bezier(0.22, 1, 0.36, 1).",
+      "Exactly one scroll-driven animation: the sky descent."
     ],
     "rules": [
       {
-        "name": "The One Cobalt Rule",
-        "body": "Cobalt marks only what can be clicked or acted on, plus the one active edge (current nav item, playing track). Headings, rules, numbers at rest and decoration never take it.",
+        "name": "The Moving Edge Rule",
+        "body": "Dusk violet appears only on something that can be clicked, focused, typed into or selected. If an element is static, it is ink, never violet.",
         "section": "colors"
       },
       {
-        "name": "The Ink Depth Rule",
-        "body": "Rank and importance are expressed by ink depth (graphite, second, third), not by size jumps, badges or colour. Skill proficiency prints darker the more it is used.",
+        "name": "The Two Lights Rule",
+        "body": "Every colour is a token with a day and a night value; nothing is hard-coded per mode. Clouds drop to 12-20% opacity at night so the sky reads as dark air, not grey fog.",
         "section": "colors"
       },
       {
-        "name": "The Width Not Weight Rule",
-        "body": "Display hierarchy comes from Archivo's width axis (`font-stretch` 125% or 112%) and size, at weights 300 to 400. Bold display weights are not part of this world.",
+        "name": "The Caption Is Italic Rule",
+        "body": "Anything that annotates a specimen (what it is, what it was built with, where the person is) is Bodoni italic in muted ink. Labels for controls stay in the grotesque.",
         "section": "typography"
       },
       {
-        "name": "The Sentence Case Rule",
-        "body": "Labels are sentence case at normal tracking. No uppercase, letter-spaced eyebrows or kickers.",
+        "name": "The Regular Weight Rule",
+        "body": "Bodoni is set at 400 everywhere, with `font-optical-sizing: auto`. Emphasis in display comes from italic, never from bold.",
         "section": "typography"
       },
       {
-        "name": "The Printed Flat Rule",
-        "body": "Nothing floats. Depth is never implied by shadow, blur or a fill behind content; separation is a 1px rule. The one inset `box-shadow` in the system (input focus) is a second line drawn under the field, not elevation.",
+        "name": "The Daylight Rule",
+        "body": "Shadows always fall downward with a negative spread and are tinted with Shadow Blue. No hard offsets, no grey, no glow on static surfaces.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Descent Rule",
+        "body": "The page has exactly one scroll-driven animation: the GSAP timeline that moves the far plane by 18%, the mid plane by 55% and the near wisps by 125% of the viewport height across the whole scroll, and fades the horizon haze from 0 to 1. Nothing else animates on scroll. Under reduced motion the sky holds still with the haze at half.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do build structure from 1px hairlines and space; separate rows with a rule.",
-      "Do keep cobalt to actions and the single active edge (nav underline, playing track).",
-      "Do use the Ink Link / Ink Button grammar for every link and button: ink steps up, underline draws in from the left, arrow leans; 0.38s on (0.22, 1, 0.36, 1).",
-      "Do set display and section names in Archivo light at 125% width; set prose in Brygada 1918 and use its italic for titles and asides.",
-      "Do express rank and importance through ink depth (graphite, second, third).",
-      "Do design both lights together: sleeve board by day, vinyl by night, same roles.",
-      "Do keep everything still under reduced motion while colour still reports state."
+      "**Do** mount featured work and grouped specifics on plates: Plate Mount, 1.25rem radius, inset Keyline, Plate shadow.",
+      "**Do** caption every specimen in Bodoni italic, muted ink.",
+      "**Do** keep Dusk Violet on interactive elements only (The Moving Edge Rule).",
+      "**Do** use the shared Motion hover on every link and button: 0.4s, cubic-bezier(0.22, 1, 0.36, 1); pills lift 2px into the Lift shadow, text links draw their underline in.",
+      "**Do** keep nested radii concentric: 1.25rem plate, 10px mount, 0.875rem inner.",
+      "**Do** separate sections with space (96px, 144px from `md`), not rules.",
+      "**Do** keep the sky visible behind every full-screen state, and hold it still under reduced motion."
     ],
     "donts": [
-      "Don't use gradients anywhere.",
-      "Don't put boxes, cards, card grids, tiles or fills behind content.",
-      "Don't round corners or add shadows; the system radius is 0 and depth is flat.",
-      "Don't introduce a second accent colour or use cobalt on headings, numbers at rest or decoration.",
-      "Don't use Inter, Arial or a system display face; the pair is Archivo and Brygada 1918.",
-      "Don't add a second scroll-driven animation; the tracklist playhead is the only one.",
-      "Don't use uppercase letter-spaced eyebrows or kickers above headings.",
-      "Don't put icons in tiles or circles, or replace words with icon-only social buttons."
+      "**Don't** add a second scroll-driven animation; the sky descent is the only one.",
+      "**Don't** set Bodoni bold or use a system display face; emphasis in display is italic.",
+      "**Don't** use neutral grey or hard offset shadows; shadows are Shadow Blue and fall softly downward.",
+      "**Don't** lift plates on hover; only pills lift.",
+      "**Don't** fill the inner keyline or leave it as an empty panel; it frames real content (title, caption, description, links) on bare plate.",
+      "**Don't** build a grid of identical project cards; lead with mounted plates and put the rest in the ruled index.",
+      "**Don't** add stat counters or invented metrics.",
+      "**Don't** introduce a second accent colour."
     ]
   }
 }

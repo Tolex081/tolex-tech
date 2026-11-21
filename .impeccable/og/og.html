@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- Source for public/og-image.png (1200x630). Re-render with:
+     impeccable shot .impeccable/og/og.html --viewport 1200x630 --out .impeccable/og -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face { font-family: "Bodoni"; font-style: normal; font-weight: 400 900;
+    src: url("../../node_modules/@fontsource-variable/bodoni-moda/files/bodoni-moda-latin-opsz-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Bodoni"; font-style: italic; font-weight: 400 900;
+    src: url("../../node_modules/@fontsource-variable/bodoni-moda/files/bodoni-moda-latin-opsz-italic.woff2") format("woff2"); }
+  @font-face { font-family: "Schibsted"; font-weight: 400 900;
+    src: url("../../node_modules/@fontsource-variable/schibsted-grotesk/files/schibsted-grotesk-latin-wght-normal.woff2") format("woff2"); }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    position: relative; font-family: "Schibsted", sans-serif; color: #16202b;
+    background: linear-gradient(to bottom, #dde9f5 0%, #eaf1f8 55%, #f3e7dd 100%);
+  }
+  svg.sky { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .wrap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 88px; }
+  h1 { font-family: "Bodoni", serif; font-weight: 400; font-optical-sizing: auto; font-size: 104px; line-height: 0.94; letter-spacing: -0.025em; }
+  h1 em { display: block; font-style: italic; }
+  .tag { margin-top: 26px; font-family: "Bodoni", serif; font-style: italic; font-size: 40px; color: #16202b; }
+  .role { margin-top: 22px; font-size: 24px; color: #46546a; }
+  .role b { color: #16202b; font-weight: 600; }
+  .plate { width: 320px; padding: 12px; background: #fbfcfe; border-radius: 26px; border: 1px solid #d3dfec;
+    box-shadow: 0 2px 4px rgba(39,61,104,.08), 0 30px 60px -24px rgba(39,61,104,.4); }
+  .plate img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px; }
+  .plate p { padding: 14px 6px 4px; font-family: "Bodoni", serif; font-style: italic; font-size: 20px; color: #46546a; white-space: nowrap; }
+</style>
+</head>
+<body>
+  <svg class="sky" viewBox="0 0 1200 630" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <filter id="billow" x="-30%" y="-60%" width="160%" height="220%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="4" seed="7" result="n" />
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="80" xChannelSelector="R" yChannelSelector="G" result="b" />
+        <feGaussianBlur in="b" stdDeviation="9" />
+      </filter>
+    </defs>
+    <g filter="url(#billow)" fill="#ffffff" opacity="0.85">
+      <circle cx="760" cy="120" r="70" /><circle cx="840" cy="80" r="95" /><circle cx="950" cy="100" r="80" /><circle cx="1030" cy="135" r="55" />
+      <circle cx="120" cy="560" r="80" /><circle cx="220" cy="520" r="105" /><circle cx="340" cy="545" r="85" /><circle cx="430" cy="580" r="60" />
+      <circle cx="1080" cy="560" r="70" /><circle cx="1160" cy="520" r="90" />
+    </g>
+  </svg>
+  <div class="wrap">
+    <div>
+      <h1>Oyewole<em>Toluwalase</em></h1>
+      <p class="tag">I build things for the web.</p>
+      <p class="role"><b>Frontend Developer</b> · Web3 · React · TypeScript</p>
+    </div>
+    <figure class="plate">
+      <img src="../../src/assets/avatar.jpg" alt="" />
+      <p>Frontend Developer, Nigeria</p>
+    </figure>
+  </div>
+</body>
+</html>

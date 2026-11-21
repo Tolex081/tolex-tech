@@ -2,16 +2,20 @@ import Section from "@/components/Section";
 import { proficiencyLabels, proficiencyOrder, skillGroups, type Proficiency } from "@/data/skills";
 import { cn } from "@/lib/utils";
 
-/* Rank is ink depth: the more he uses it, the darker it prints. */
+/*
+ * Skills stay on the open sky as a ruled index: a quiet passage between the
+ * About plate and the project plates. Rank is shown by how strongly each
+ * band is set, from full ink to italic.
+ */
 const levelInk: Record<Proficiency, string> = {
-  core: "text-foreground",
+  core: "text-foreground font-semibold",
   comfortable: "text-muted-foreground",
-  learning: "text-faint italic font-serif",
+  learning: "text-faint font-serif italic text-[1rem]",
 };
 
 const SkillsSection = () => (
   <Section id="skills" title="Skills">
-    <p className="mb-10 font-sans text-[0.875rem] text-faint">
+    <p className="-mt-6 mb-12 text-[0.9375rem] text-muted-foreground md:-mt-10">
       Key:{" "}
       {proficiencyOrder.map((level, index) => (
         <span key={level}>
@@ -21,19 +25,17 @@ const SkillsSection = () => (
       ))}
     </p>
 
-    <div>
+    <div className="grid gap-x-12 gap-y-14 md:grid-cols-3">
       {skillGroups.map((group) => (
-        <div key={group.title} className="grid gap-x-8 gap-y-4 border-t border-border py-8 sm:grid-cols-9">
-          <div className="sm:col-span-4">
-            <h3 className="text-[1.375rem] font-normal leading-tight stretch-semi">{group.title}</h3>
-            <p className="mt-2 italic text-muted-foreground">{group.blurb}</p>
-          </div>
+        <div key={group.title}>
+          <h3 className="text-[1.75rem] leading-tight">{group.title}</h3>
+          <p className="mt-1.5 font-serif text-[1.0625rem] italic text-muted-foreground">{group.blurb}</p>
 
-          <ul className="sm:col-span-5">
+          <ul className="mt-6 border-t border-border">
             {group.skills.map((skill) => (
               <li
                 key={skill.name}
-                className="flex items-baseline justify-between gap-6 border-b border-border py-2.5 font-sans text-[0.9375rem] last:border-b-0"
+                className="flex items-baseline justify-between gap-6 border-b border-border py-3 text-[0.9375rem]"
               >
                 <span>{skill.name}</span>
                 <span className={cn("text-[0.875rem]", levelInk[skill.level])}>

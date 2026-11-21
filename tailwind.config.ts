@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["'Archivo Variable'", "'Archivo'", "system-ui", "sans-serif"],
-        serif: ["'Brygada 1918 Variable'", "'Brygada 1918'", "Georgia", "serif"],
+        sans: ["'Schibsted Grotesk Variable'", "'Schibsted Grotesk'", "system-ui", "sans-serif"],
+        serif: ["'Bodoni Moda Variable'", "'Bodoni Moda'", "Didot", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -18,6 +18,8 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         faint: "hsl(var(--faint))",
+        plate: "hsl(var(--plate))",
+        horizon: "hsl(var(--horizon))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -49,11 +51,20 @@ export default {
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "var(--radius)",
-        sm: "var(--radius)",
+        md: "calc(var(--radius) - 0.5rem)",
+        sm: "calc(var(--radius) - 0.75rem)",
+        plate: "var(--radius)",
+      },
+      boxShadow: {
+        /* Daylight from above: a tight contact shadow plus a long soft fall. */
+        plate:
+          "0 1px 2px hsl(var(--shadow) / 0.06), 0 18px 40px -18px hsl(var(--shadow) / 0.28)",
+        lift:
+          "0 2px 4px hsl(var(--shadow) / 0.08), 0 24px 48px -16px hsl(var(--shadow) / 0.36)",
       },
       maxWidth: {
-        measure: "62ch",
+        measure: "65ch",
+        page: "76rem",
       },
     },
   },

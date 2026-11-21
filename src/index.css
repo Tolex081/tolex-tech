@@ -3,50 +3,61 @@
 @tailwind utilities;
 
 /*
- * One theme, two lights. The page is a record's back sleeve: uncoated grey
- * board with graphite ink by day, the vinyl itself by night. Hairline rules
- * are the only structure; cobalt (taken from the suit in the avatar) is the
- * one accent and only ever marks something you can act on.
+ * One sky in two lights. By day the page is pale high air that warms toward
+ * a low horizon haze at the foot of the page; by night it is deep ink-blue
+ * with a faint violet glow at the horizon. Projects sit on white plate
+ * mounts. Dusk violet is the one accent and only marks what moves or can be
+ * clicked.
  */
 @layer base {
   :root,
   .light {
-    --background: 80 8% 92%; /* sleeve board  #ecedea */
-    --foreground: 210 7% 11%; /* graphite ink  #1a1c1e */
-    --muted-foreground: 213 5% 36%; /* second ink  #575b60 */
-    --faint: 213 4% 39%; /* third ink (meta only, ≥4.5:1) */
-    --border: 120 2% 78%; /* hairline */
-    --input: 120 2% 62%;
-    --primary: 230 63% 50%; /* cobalt #2f4bd0 */
-    --primary-foreground: 80 8% 95%;
-    --destructive: 4 76% 40%;
-    --ring: 230 63% 50%;
+    --background: 210 52% 94%; /* high sky   #eaf1f8 */
+    --sky-top: 212 60% 90%; /* zenith, a shade deeper */
+    --horizon: 28 48% 91%; /* low haze   #f3e7dc */
+    --plate: 220 50% 99%; /* mount      #fbfcfe */
+    --cloud: 0 0% 100%;
+    --shadow: 216 45% 28%;
+    --foreground: 214 32% 13%; /* ink        #16202b */
+    --muted-foreground: 214 16% 33%;
+    --faint: 214 12% 39%;
+    --border: 213 32% 85%;
+    --input: 213 16% 58%;
+    --primary: 246 48% 48%; /* dusk violet #4b3fb5 */
+    --primary-foreground: 220 50% 99%;
+    --destructive: 356 66% 42%;
+    --ring: 246 48% 48%;
 
-    --card: var(--background);
+    --card: var(--plate);
     --card-foreground: var(--foreground);
-    --popover: var(--background);
+    --popover: var(--plate);
     --popover-foreground: var(--foreground);
-    --muted: 80 5% 88%;
+    --muted: 212 48% 90%;
     --accent: var(--muted);
     --accent-foreground: var(--foreground);
     --secondary: var(--muted);
     --secondary-foreground: var(--foreground);
     --destructive-foreground: 0 0% 100%;
-    --radius: 0px;
+    --radius: 1.25rem;
   }
 
   .dark {
-    --background: 210 5% 8%; /* vinyl #131415 */
-    --foreground: 75 7% 89%;
-    --muted-foreground: 210 3% 64%;
-    --faint: 210 3% 56%;
-    --border: 210 4% 19%;
-    --input: 210 3% 34%;
-    --primary: 230 100% 81%; /* cobalt, lifted for the dark */
-    --primary-foreground: 210 5% 8%;
-    --destructive: 4 100% 75%;
-    --ring: 230 100% 81%;
-    --muted: 210 4% 13%;
+    --background: 222 45% 9%; /* night sky  #0d1422 */
+    --sky-top: 224 50% 6%;
+    --horizon: 255 30% 16%; /* afterglow */
+    --plate: 222 34% 13%;
+    --cloud: 220 35% 78%; /* moonlit */
+    --shadow: 225 60% 2%;
+    --foreground: 216 30% 92%;
+    --muted-foreground: 216 16% 72%;
+    --faint: 216 12% 64%;
+    --border: 222 24% 22%;
+    --input: 220 14% 44%;
+    --primary: 248 92% 81%; /* dusk violet, lifted for the night */
+    --primary-foreground: 222 45% 9%;
+    --destructive: 356 90% 76%;
+    --ring: 248 92% 81%;
+    --muted: 222 30% 17%;
   }
 }
 
@@ -60,8 +71,8 @@
     -webkit-text-size-adjust: 100%;
   }
 
-  /* Reduced motion: nothing moves (Motion and GSAP check this too), but
-     colour feedback on hover and focus stays, so state is never lost. */
+  /* Reduced motion: the sky holds still (GSAP and Motion check this too),
+     but colour feedback on hover and focus stays, so state is never lost. */
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -72,7 +83,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-serif antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
     font-size: 1.0625rem;
     line-height: 1.6;
     font-kerning: normal;
@@ -83,7 +94,8 @@
   h2,
   h3,
   h4 {
-    @apply font-sans;
+    @apply font-serif font-normal;
+    font-optical-sizing: auto;
     text-wrap: balance;
   }
 
@@ -97,8 +109,8 @@
   }
 
   :focus-visible {
-    outline: 1.5px solid hsl(var(--ring));
-    outline-offset: 4px;
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
   }
 
   input,
@@ -106,32 +118,25 @@
     caret-color: hsl(var(--primary));
   }
 
-  /* Anchored sections land below the fixed header. */
+  /* Anchored sections land below the floating nav. */
   section[id] {
-    scroll-margin-top: 6.5rem;
+    scroll-margin-top: 7.5rem;
   }
 
   @media (min-width: 768px) {
     section[id] {
-      scroll-margin-top: 4rem;
+      scroll-margin-top: 5.5rem;
     }
   }
 }
 
 @layer utilities {
-  /* Archivo's width axis: the sleeve's wide, light display voice. */
-  .stretch-wide {
-    font-stretch: 125%;
-  }
-  .stretch-semi {
-    font-stretch: 112%;
-  }
   .tnum {
     font-variant-numeric: tabular-nums;
   }
 }
 
-/* Scrollbar in the sleeve's own inks. */
+/* Scrollbar in the sky's own colours. */
 html {
   scrollbar-color: hsl(var(--input)) hsl(var(--background));
   scrollbar-width: thin;
@@ -145,15 +150,8 @@ html {
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--input));
   border: 3px solid hsl(var(--background));
+  border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground));
-}
-
-/* The playhead marks the track in view (set by GSAP's ScrollTrigger). */
-.track .track-no {
-  transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.track.is-playing .track-no {
-  color: hsl(var(--primary));
 }

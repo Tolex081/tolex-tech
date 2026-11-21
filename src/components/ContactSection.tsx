@@ -3,41 +3,44 @@ import { InkLink } from "@/components/Ink";
 import Section from "@/components/Section";
 import { mailtoLink, site, whatsappLink } from "@/data/site";
 
+/** Down at the horizon: one wide plate holding every way to reach him. */
 const ContactSection = () => (
   <Section id="contact" title="Contact">
-    <p className="max-w-[34ch] font-serif text-[clamp(1.375rem,1.1rem+1vw,1.875rem)] leading-snug">
-      I'm currently looking for new opportunities and my inbox is always open.
-    </p>
-    <p className="mt-5 max-w-measure text-[1.125rem] leading-[1.65] text-muted-foreground">
-      Whether you have a question, want to collaborate, or just want to say hi — send a message below
-      and I'll get back to you.
-    </p>
+    <div className="grid gap-x-12 gap-y-12 rounded-plate bg-plate p-6 shadow-plate ring-1 ring-inset ring-border sm:p-10 md:grid-cols-12 md:p-12">
+      <div className="md:col-span-5">
+        <p className="font-serif text-[clamp(1.625rem,1.3rem+1.1vw,2.25rem)] leading-[1.2]">
+          I'm currently looking for new opportunities and my inbox is always open.
+        </p>
+        <p className="mt-5 text-[1.0625rem] leading-[1.65] text-muted-foreground">
+          Whether you have a question, want to collaborate, or just want to say hi — send a message below
+          and I'll get back to you.
+        </p>
 
-    <div className="mt-14 grid gap-x-8 gap-y-14 md:grid-cols-9">
-      <dl className="font-sans text-[0.9375rem] md:col-span-3">
-        <div className="border-t border-border py-4">
-          <dt className="text-faint text-[0.8125rem]">Email</dt>
-          <dd className="mt-1 break-all">
-            <InkLink href={mailtoLink} tone="accent">
-              {site.email}
-            </InkLink>
-          </dd>
-        </div>
-        <div className="border-t border-border py-4">
-          <dt className="text-faint text-[0.8125rem]">WhatsApp</dt>
-          <dd className="mt-1">
-            <InkLink href={whatsappLink} target="_blank" rel="noopener noreferrer" tone="accent">
-              {site.whatsappDisplay}
-            </InkLink>
-          </dd>
-        </div>
-        <div className="border-y border-border py-4">
-          <dt className="text-faint text-[0.8125rem]">Location</dt>
-          <dd className="mt-1">{site.location}</dd>
-        </div>
-      </dl>
+        <dl className="mt-10 space-y-5 text-[0.9375rem]">
+          <div>
+            <dt className="text-[0.8125rem] text-faint">Email</dt>
+            <dd className="mt-1 break-all font-medium">
+              <InkLink href={mailtoLink} tone="accent">
+                {site.email}
+              </InkLink>
+            </dd>
+          </div>
+          <div>
+            <dt className="text-[0.8125rem] text-faint">WhatsApp</dt>
+            <dd className="mt-1 font-medium">
+              <InkLink href={whatsappLink} target="_blank" rel="noopener noreferrer" tone="accent">
+                {site.whatsappDisplay}
+              </InkLink>
+            </dd>
+          </div>
+          <div>
+            <dt className="text-[0.8125rem] text-faint">Location</dt>
+            <dd className="mt-1">{site.location}</dd>
+          </div>
+        </dl>
+      </div>
 
-      <div className="md:col-span-6">
+      <div className="md:col-span-7">
         <ContactForm />
       </div>
     </div>
