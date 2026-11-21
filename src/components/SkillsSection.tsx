@@ -25,7 +25,7 @@ const SkillsSection = () => (
       ))}
     </p>
 
-    <div className="grid gap-x-12 gap-y-14 md:grid-cols-3">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-x-12 gap-y-14 md:grid-cols-3">
       {skillGroups.map((group) => (
         <div key={group.title}>
           <h3 className="text-[1.75rem] leading-tight">{group.title}</h3>
@@ -35,7 +35,7 @@ const SkillsSection = () => (
             {group.skills.map((skill) => (
               <li
                 key={skill.name}
-                className="flex items-baseline justify-between gap-6 border-b border-border py-3 text-[0.9375rem]"
+                className="flex flex-wrap items-baseline justify-between gap-x-6 border-b border-border py-3 text-[0.9375rem]"
               >
                 <span>{skill.name}</span>
                 <span className={cn("text-[0.875rem]", levelInk[skill.level])}>

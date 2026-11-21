@@ -141,7 +141,7 @@ const pillTone: Record<PillTone, string> = {
 };
 
 const pillBase =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 font-sans text-[0.9375rem] font-medium leading-none transition-shadow duration-300 ease-out";
+  "inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-full px-5 py-2 text-center font-sans text-[0.9375rem] font-medium leading-none transition-shadow duration-300 ease-out";
 
 interface PillProps {
   tone?: PillTone;

@@ -134,7 +134,7 @@ const Sky = () => {
     };
   }, []);
 
-  const plane = "absolute inset-x-0 top-0 will-change-transform";
+  const plane = "absolute inset-x-0 top-0 motion-safe:will-change-transform";
 
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">

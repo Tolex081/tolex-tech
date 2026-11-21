@@ -36,7 +36,7 @@ const Section = ({ id, title, caption, children, aside, className }: Props) => {
   return (
     <section id={id} aria-labelledby={`${id}-heading`} className={cn("px-4 sm:px-6 lg:px-10", className)}>
       {aside ? (
-        <div className="mx-auto grid max-w-page gap-x-12 gap-y-14 pb-24 pt-16 md:grid-cols-12 md:pb-36 md:pt-20">
+        <div className="mx-auto grid max-w-page grid-cols-[minmax(0,1fr)] gap-x-12 gap-y-14 pb-24 pt-16 md:grid-cols-12 md:pb-36 md:pt-20">
           <div className="md:col-span-7">
             {head}
             {children}

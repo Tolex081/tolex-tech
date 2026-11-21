@@ -70,7 +70,7 @@ const FeaturedPlate = ({ project, onPreview, lead = false }: PlateProps) => (
         <div className={cn(lead && "md:col-span-6")}>
           <h4
             className={cn(
-              "leading-[1.02] tracking-[-0.02em]",
+              "break-words leading-[1.02] tracking-[-0.02em]",
               lead ? "text-[clamp(2.25rem,1.4rem+3vw,4rem)]" : "text-[clamp(2rem,1.5rem+1.6vw,2.75rem)]"
             )}
           >
@@ -94,7 +94,7 @@ const FeaturedPlate = ({ project, onPreview, lead = false }: PlateProps) => (
 
 /** The rest of the work as a strict index: fixed columns, one row each. */
 const IndexRow = ({ project, onPreview }: LinksProps) => (
-  <li className="grid gap-x-10 gap-y-2 border-b border-border py-6 md:grid-cols-[minmax(0,15rem)_1fr_auto] md:items-baseline">
+  <li className="grid grid-cols-[minmax(0,1fr)] gap-x-10 gap-y-2 border-b border-border py-6 md:grid-cols-[minmax(0,15rem)_1fr_auto] md:items-baseline">
     <h4 className="text-[1.5rem] leading-tight">{project.title}</h4>
     <div>
       <p className="max-w-measure text-[0.9375rem] text-muted-foreground">{project.description}</p>
@@ -115,7 +115,7 @@ const ProjectsSection = () => {
   return (
     <Section id="projects" title="Projects">
       <h3 className="sr-only">Featured projects</h3>
-      <ol className="grid gap-6 md:grid-cols-2 md:gap-8">
+      <ol className="grid grid-cols-[minmax(0,1fr)] gap-6 md:grid-cols-2 md:gap-8">
         {featuredProjects.map((project, index) => (
           <FeaturedPlate key={project.title} project={project} onPreview={setSelected} lead={index === 0} />
         ))}

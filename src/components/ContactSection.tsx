@@ -6,7 +6,7 @@ import { mailtoLink, site, whatsappLink } from "@/data/site";
 /** Down at the horizon: one wide plate holding every way to reach him. */
 const ContactSection = () => (
   <Section id="contact" title="Contact">
-    <div className="grid gap-x-12 gap-y-12 rounded-plate bg-plate p-6 shadow-plate ring-1 ring-inset ring-border sm:p-10 md:grid-cols-12 md:p-12">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-x-12 gap-y-12 rounded-plate bg-plate p-6 shadow-plate ring-1 ring-inset ring-border sm:p-10 md:grid-cols-12 md:p-12">
       <div className="md:col-span-5">
         <p className="font-serif text-[clamp(1.625rem,1.3rem+1.1vw,2.25rem)] leading-[1.2]">
           I'm currently looking for new opportunities and my inbox is always open.

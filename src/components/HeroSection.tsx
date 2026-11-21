@@ -14,13 +14,13 @@ const lastName = rest.join(" ");
  * with its caption. The About plate rises into view at the foot of the fold.
  */
 const HeroSection = () => (
-  <section id="home" aria-labelledby="hero-heading" className="px-4 pt-40 sm:px-6 md:pt-32 lg:px-10">
+  <section id="home" aria-labelledby="hero-heading" className="px-4 pt-32 sm:px-6 lg:px-10">
     <div className="mx-auto max-w-page">
-      <div className="grid items-center gap-x-10 gap-y-14 pb-16 md:grid-cols-12">
-        <div className="md:col-span-8">
+      <div className="grid grid-cols-[minmax(0,1fr)] items-center gap-x-10 gap-y-14 pb-16 md:grid-cols-12">
+        <div className="min-w-0 md:col-span-8">
           <h1
             id="hero-heading"
-            className="text-[clamp(3rem,1.2rem+6.4vw,6rem)] leading-[0.94] tracking-[-0.025em]"
+            className="text-[min(clamp(3rem,1.2rem+6.4vw,6rem),15vw)] leading-[0.94] tracking-[-0.025em]"
           >
             <span className="block">{firstName}</span>
             <span className="block italic">{lastName}</span>
@@ -64,7 +64,7 @@ const HeroSection = () => (
           <SocialLinks className="mt-9" />
         </div>
 
-        <figure className="w-48 justify-self-start rounded-plate bg-plate p-2.5 shadow-plate ring-1 ring-inset ring-border sm:w-56 md:col-span-4 md:w-full md:max-w-[17rem] md:justify-self-end">
+        <figure className="w-[min(12rem,60vw)] justify-self-start rounded-plate bg-plate p-2.5 shadow-plate ring-1 ring-inset ring-border sm:w-[min(14rem,60vw)] md:col-span-4 md:w-full md:max-w-[17rem] md:justify-self-end">
           <picture>
             <source srcSet={avatarWebp} type="image/webp" />
             <img
@@ -72,7 +72,7 @@ const HeroSection = () => (
               alt={`${site.name}'s avatar — an illustrated character in a blue suit and bow tie`}
               width={400}
               height={400}
-              fetchPriority="high"
+              {...{ fetchpriority: "high" } /* lowercase: React 18 drops the camelCase prop */}
               decoding="async"
               className="aspect-square w-full rounded-[0.875rem] object-cover"
             />

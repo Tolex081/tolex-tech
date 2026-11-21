@@ -17,7 +17,7 @@ const Footer = () => (
           decoding="async"
           className="h-6 w-6 rounded-full object-cover ring-1 ring-border"
         />
-        <span className="inline-flex items-center gap-1.5">
+        <span className="inline-flex flex-wrap items-center gap-1.5">
           Built with <Heart className="h-3.5 w-3.5" strokeWidth={1.5} aria-hidden="true" /><span className="sr-only">love</span> by {site.name}
         </span>
       </p>

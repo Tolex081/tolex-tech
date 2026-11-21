@@ -8,7 +8,7 @@ interface Props {
 
 /** Credits-line socials: set as words, not icon tiles. */
 const SocialLinks = ({ className }: Props) => (
-  <ul className={cn("flex flex-wrap gap-x-6 gap-y-2 font-sans text-[0.875rem]", className)}>
+  <ul className={cn("-mx-2 flex flex-wrap gap-x-3 gap-y-2 font-sans text-[0.875rem]", className)}>
     {socialLinks.map((social) => {
       const external = !social.href.startsWith("mailto:");
       return (
@@ -16,6 +16,7 @@ const SocialLinks = ({ className }: Props) => (
           <InkLink
             href={social.href}
             {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            className="min-w-11 justify-center px-2"
           >
             {social.label}
           </InkLink>

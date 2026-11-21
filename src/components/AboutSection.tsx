@@ -22,7 +22,7 @@ const aside = (
     <p className="font-serif text-[1.1875rem] italic leading-snug text-muted-foreground">
       Here are a few technologies I've been working with recently:
     </p>
-    <ul className="mt-4 grid grid-cols-2 gap-x-6 text-[0.9375rem]">
+    <ul className="mt-4 grid grid-cols-[repeat(auto-fit,minmax(min(9rem,100%),1fr))] gap-x-6 text-[0.9375rem]">
       {techStack.map((tech) => (
         <li key={tech} className="border-b border-border py-2.5">
           {tech}
