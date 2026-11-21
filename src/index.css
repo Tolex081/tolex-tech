@@ -166,8 +166,8 @@ html {
 }
 
 /*
- * The clouds' own drift: each plane's strip slides left by one of its four
- * tiles (25% of its width) and loops seamlessly. Speed is set per plane in
+ * The clouds' own drift: each plane's strip slides left by one of its three
+ * tiles (a third of its width) and loops seamlessly. Speed is set per plane in
  * Sky.tsx. Reduced motion holds the sky still.
  */
 @keyframes sky-drift {
@@ -175,7 +175,7 @@ html {
     transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translate3d(-25%, 0, 0);
+    transform: translate3d(-33.3333%, 0, 0);
   }
 }
 
